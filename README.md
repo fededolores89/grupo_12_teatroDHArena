@@ -11,7 +11,7 @@ Nuestro sitio, brindara un servicio de ventas de entradas para diferentes shows.
 
 - Soy Carlos y soy de México. Tengo 25 años y soy diseñador gráfico. Actualmente en formación para ser un desarrollador web FullStack. Me encanta la programación y el diseño.
 
-## 🚧 Sitios de referencia
+## 🚧 Webs de referencia
 
 -
 -
