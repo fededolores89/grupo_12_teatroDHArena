@@ -14,7 +14,7 @@ Nuestro sitio, brindara un servicio de ventas de entradas para diferentes shows.
 ## 🚧 Webs de referencia
 
 - https://www.movistararena.com.ar
--
+- https://www.ticketmaster.com.mx
 -
 -
 -
