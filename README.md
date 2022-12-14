@@ -23,4 +23,9 @@ Nuestro sitio, brindara un servicio de ventas de entradas para diferentes shows.
 - https://www.ticketek.com.ar/
 - https://www.entradauno.com/
 - https://www.autoentrada.com/
-- 
+
+====================================================================================================================
+
+## 🗒 Trello
+
+- https://trello.com/b/GYlSPA6y/dharena
