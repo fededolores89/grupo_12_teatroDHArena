@@ -16,6 +16,7 @@
   --nunito: "Nunito Sans", sans-serif;
   --azul-principal: "#16324F";
   --verde-principal: "#18435A";
+  --magenta: "#ff008a";
 }
 
 body {
@@ -27,7 +28,7 @@ img {
 }
 /* ----------------Main  */
 .hero {
-  background-image: url("/img/hero.jpg");
+  background-image: url("/img/Img-Index-Fondos/hero.jpg");
   background-size: cover;
   padding: 30%;
   display: flex;
@@ -57,6 +58,8 @@ main a {
 .Shows {
   display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    background-color:#16324F;
 } 
 
 
@@ -65,7 +68,29 @@ main a {
 }
 
 
-.Shows article {
-width: 100%;
+.eventos {
+  width: 90%;
+  border: solid 2px red;
+  margin-bottom: 1rem;
+}
 
+.titulo-shows {
+  color: #ff008a;
+}
+
+
+/* ----------------- Media queries para table ---------------*/
+@media (min-width: 460px) {
+  
+.eventos {
+  width: 45%;
+  margin-left: 1rem;
+}
+}
+/* ---------------Media queries para Escritorio ----------------*/
+@media (min-width: 760px) {
+
+  .eventos {
+    width: 30%;
+  }
 }
