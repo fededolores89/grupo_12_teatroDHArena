@@ -14,6 +14,8 @@
 /* Variables globales de estilo css */
 :root {
   --nunito: 'Nunito Sans', sans-serif;
+  --azul-principal: '#16324F';
+  --verde-principal: '#18435A';
 }
 
 body {
