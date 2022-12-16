@@ -42,3 +42,7 @@
   justify-content: center;
   align-items: center;
 }
+
+.nav-mobile-carrito a {
+  color: white;
+}
