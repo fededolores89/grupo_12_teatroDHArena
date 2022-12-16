@@ -5,45 +5,65 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DH Arena - Registrarse</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
     <link rel="stylesheet" href="css/app.css" />
   </head>
   <body>
     <header></header>
     <main>
       <form action="/register" method="POST">
-      <section class="formulario-reg">
-      <h3> AUN NO ESTAS REGISTRADO? </h3>
-      <h5>Completa el formulario con tus datos y hacete usuario para obtener grandes beneficios</h5>
+        <section class="formulario-reg">
+          <h3>AUN NO ESTAS REGISTRADO?</h3>
+          <h5>
+            Completa el formulario con tus datos y hacete usuario para obtener
+            grandes beneficios
+          </h5>
 
-      <h6>Campos obligatorios (*) </h6>
-        <section class="datos-pers">
-        <h4> DATOS PERSONALES </h4>
-        <section>
+          <h6>Campos obligatorios (*)</h6>
+          <section class="datos-pers">
+            <h4>DATOS PERSONALES</h4>
+            <section>
+              <label> Nombre*</label>
+              <input
+                type="text"
+                class=""
+                name=""
+                placeholder="Nombre completo"
+                required
+                minlength="6"
+              />
+            </section>
 
-        <label > Nombre*</label>
-        <input type="text" class="" name="" placeholder="Nombre completo" required minlength="6">
-      </section>
+            <section class="apellido">
+              <label> Apellido*</label>
+              <input
+                type="text"
+                class=""
+                name=""
+                placeholder="Apellido"
+                required
+                minlength="6"
+              />
+            </section>
 
-          <section class="apellido">
-        <label > Apellido*</label>
-        <input type="text" class="" name="" placeholder="Apellido" required minlength="6">
-      </section>
-
-      <section class="dni">
-        <label > Documento*</label>
-        <input type="number" class="" name="" placeholder="Numero de DNI o Pasaporte" required minlength="8">
-        <option value="">Tipo de ID</option>
-      </section>
-
-      </section>
-
-
-
-    </section>
-
-
-
-  </form>
+            <section class="dni">
+              <label> Documento*</label>
+              <input
+                type="number"
+                class=""
+                name=""
+                placeholder="Numero de DNI o Pasaporte"
+                required
+                minlength="8"
+              />
+              <option value="">Tipo de ID</option>
+            </section>
+          </section>
+        </section>
+      </form>
     </main>
     <footer></footer>
   </body>
