@@ -1,4 +1,5 @@
 /* Importando estilos de las paginas del proyecto */
+@import url(header/header.css);
 @import url(home/home.css);
 @import url(login/login.css);
 @import url(productCart/productCart.css);
@@ -17,9 +18,14 @@
 /* Variables globales de estilo css */
 :root {
   --nunito: 'Nunito Sans', sans-serif;
-  --azul-principal: '#16324F';
-  --verde-principal: '#18435A';
-  --magenta: '#ff008a';
+  --azul-principal: #16324f;
+  --verde-principal: #18435a;
+  --magenta: #ff008a;
+  --verde-neon: #2cf2c7;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
