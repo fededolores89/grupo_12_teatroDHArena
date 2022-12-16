@@ -6,18 +6,66 @@
 @import url(register/register.css);
 
 /* Importando fuente del proyecto */
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700&display=swap");
 
 /* Importando normalize */
 @import url(normalize.css);
 
 /* Variables globales de estilo css */
 :root {
-  --nunito: 'Nunito Sans', sans-serif;
-  --azul-principal: '#16324F';
-  --verde-principal: '#18435A';
+  --nunito: "Nunito Sans", sans-serif;
+  --azul-principal: "#16324F";
+  --verde-principal: "#18435A";
 }
 
 body {
   font-family: var(--nunito);
+}
+
+img {
+  width: 100%;
+}
+/* ----------------Main  */
+.hero {
+  background-image: url("/img/hero.jpg");
+  background-size: cover;
+  padding: 30%;
+  display: flex;
+  justify-content: center;
+}
+
+.Titulo-1 {
+  font-family: sans-serif;
+  color: white;
+  font-weight: bold;
+  font-size: 3rem;
+}
+.SubTitulo-2 {
+color: white;
+font-family: sans-serif;
+font-weight: 500;
+}
+
+main a {
+  text-decoration: none;
+  background-color: #2CF2C7;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+
+.Shows {
+  display: flex;
+    flex-wrap: wrap;
+} 
+
+
+.titulo-shows {
+  width: 100%;
+}
+
+
+.Shows article {
+width: 45%;
+
 }
