@@ -6,17 +6,20 @@
 @import url(register/register.css);
 
 /* Importando fuente del proyecto */
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700&display=swap');
 
 /* Importando normalize */
 @import url(normalize.css);
 
+/*Font Awesome*/
+@import url(../assets/fontawesome/css/all.css);
+
 /* Variables globales de estilo css */
 :root {
-  --nunito: "Nunito Sans", sans-serif;
-  --azul-principal: "#16324F";
-  --verde-principal: "#18435A";
-  --magenta: "#ff008a";
+  --nunito: 'Nunito Sans', sans-serif;
+  --azul-principal: '#16324F';
+  --verde-principal: '#18435A';
+  --magenta: '#ff008a';
 }
 
 body {
@@ -28,7 +31,7 @@ img {
 }
 /* ----------------Main  */
 .hero {
-  background-image: url("/img/Img-Index-Fondos/hero.jpg");
+  background-image: url('/img/Img-Index-Fondos/hero.jpg');
   background-size: cover;
   padding: 30%;
   display: flex;
@@ -42,31 +45,28 @@ img {
   font-size: 3rem;
 }
 .SubTitulo-2 {
-color: white;
-font-family: sans-serif;
-font-weight: 500;
+  color: white;
+  font-family: sans-serif;
+  font-weight: 500;
 }
 
 main a {
   text-decoration: none;
-  background-color: #2CF2C7;
+  background-color: #2cf2c7;
   padding: 8px;
   border-radius: 6px;
 }
 
-
 .Shows {
   display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    background-color:#16324F;
-} 
-
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #16324f;
+}
 
 .titulo-shows {
   width: 100%;
 }
-
 
 .eventos {
   width: 90%;
@@ -78,18 +78,15 @@ main a {
   color: #ff008a;
 }
 
-
 /* ----------------- Media queries para table ---------------*/
 @media (min-width: 460px) {
-  
-.eventos {
-  width: 45%;
-  margin-left: 1rem;
-}
+  .eventos {
+    width: 45%;
+    margin-left: 1rem;
+  }
 }
 /* ---------------Media queries para Escritorio ----------------*/
 @media (min-width: 760px) {
-
   .eventos {
     width: 30%;
   }
