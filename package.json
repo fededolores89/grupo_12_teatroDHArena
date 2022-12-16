@@ -1,0 +1,29 @@
+{
+  "name": "dharena",
+  "version": "1.0.0",
+  "description": "DH Arena, tu sitio para comprar tickets y disfrutar de los mejores eventos",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon src/app.js",
+    "start": "node src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fededolores89/grupo_12_teatroDHArena.git"
+  },
+  "keywords": [
+    "nodejs"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fededolores89/grupo_12_teatroDHArena/issues"
+  },
+  "homepage": "https://github.com/fededolores89/grupo_12_teatroDHArena#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
