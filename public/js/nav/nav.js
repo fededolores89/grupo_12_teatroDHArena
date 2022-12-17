@@ -8,13 +8,35 @@ navMobileBtn.addEventListener('click', e => {
   listMobileNav.classList.toggle('show-menu');
 
   // Cambiando icono del boton
-  cambiarIcono(navMobileBtn);
+  cambiarDisenioIcono(navMobileBtn);
 });
 
 // Functions
-function cambiarIcono(iconContainer) {
+function cambiarDisenioIcono(iconContainer) {
   let burguerIcon = iconContainer.querySelector('.fa-bars');
-  burguerIcon.remove();
+  let closeIcon = iconContainer.querySelector('.fa-x');
 
-  iconContainer.innerHtml = '<i>';
+  if (burguerIcon) {
+    let icon = '<i class="fa-solid fa-x"></i>';
+    burguerIcon.remove();
+
+    iconContainer.innerHTML = icon;
+
+    if (iconContainer.classList.contains('temaColor-1')) {
+      iconContainer.classList.remove('temaColor-1');
+
+      iconContainer.classList.add('temaColor-2');
+    }
+  } else if (closeIcon) {
+    let icon = '<i class="fa-solid fa-bars"></i>';
+    closeIcon.remove();
+
+    iconContainer.innerHTML = icon;
+
+    if (iconContainer.classList.contains('temaColor-2')) {
+      iconContainer.classList.remove('temaColor-2');
+
+      iconContainer.classList.add('temaColor-1');
+    }
+  }
 }

@@ -56,7 +56,6 @@ nav {
 }
 
 .nav-mobile-icon {
-  background-color: var(--magenta);
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -82,4 +81,14 @@ nav {
 /* Util Css */
 .show-menu {
   max-height: 100%;
+}
+
+.temaColor-1 {
+  background-color: var(--magenta);
+  color: white;
+}
+
+.temaColor-2 {
+  background-color: var(--verde-neon);
+  color: var(--verde-principal);
 }
