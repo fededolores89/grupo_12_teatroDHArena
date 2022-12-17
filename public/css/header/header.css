@@ -31,7 +31,6 @@ nav {
   text-align: center;
   background-color: var(--verde-principal);
   max-height: 0;
-  transition: max-height 0.5s ease-out;
 }
 
 .nav-mobile-menu li {
@@ -60,6 +59,7 @@ nav {
   width: 40px;
   height: 40px;
   margin-right: 0.5rem;
+  cursor: pointer;
 }
 
 .nav-mobile-carrito {
@@ -72,4 +72,9 @@ nav {
 
 .nav-mobile-carrito a {
   color: white;
+}
+
+/* Util Css */
+.show-menu {
+  max-height: 100%;
 }
