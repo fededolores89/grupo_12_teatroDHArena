@@ -1,10 +1,92 @@
-/*------------------------IMPORTACION DEL ARCHIVO NORMALIZE----------*/
+/* Importando estilos de las paginas del proyecto */
+@import url(header/header.css);
+@import url(home/home.css);
+@import url(login/login.css);
+@import url(productCart/productCart.css);
+@import url(productDetail/productDetail.css);
+@import url(register/register.css);
+
+/* Importando fuente del proyecto */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700&display=swap');
+
+/* Importando normalize */
 @import url(normalize.css);
 
+/*Font Awesome*/
+@import url(../assets/fontawesome/css/all.css);
 
+/* Variables globales de estilo css */
+:root {
+  --nunito: 'Nunito Sans', sans-serif;
+  --azul-principal: #16324f;
+  --verde-principal: #18435a;
+  --magenta: #ff008a;
+  --verde-neon: #2cf2c7;
+}
 
+* {
+  box-sizing: border-box;
+}
 
+body {
+  font-family: var(--nunito);
+}
 
+img {
+  width: 100%;
+}
+/* ----------------Main  */
+main {
+  background-image: url('/img/Img-Index-Fondos/hero.jpg');
+  background-size: cover;
+  padding: 30%;
+  display: flex;
+  justify-content: center;
+}
+
+.Titulo-1 {
+  font-family: sans-serif;
+  color: white;
+  font-weight: bold;
+  font-size: 3rem;
+}
+.SubTitulo-2 {
+  color: white;
+  font-family: sans-serif;
+  font-weight: 500;
+}
+
+main a {
+  text-decoration: none;
+  background-color: #2cf2c7;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+.Shows {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #16324f;
+}
+
+.titulo-shows {
+  width: 100%;
+}
+
+.eventos {
+  width: 90%;
+  border: solid 2px red;
+  margin-bottom: 1rem;
+}
+
+.titulo-shows {
+  color: #ff008a;
+}
+
+h4, .titulo-campo, h6, .texto-botoncito{
+  color: white;
+}
 
 
 /*---------Colocacion de label como titulos de campos-----*/
@@ -50,12 +132,36 @@ color: red;
     }
     
     input:checked + .deslizadora {
-    background-color: #34a853;
+    background-color: #00ffc2;
     }
     
     input:checked + .deslizadora:before {
       transform: translateX(1.6rem);
     }
-
+/*-------------------Boton registrarme----------------------*/
+button{
+  background-color:#00ffc2;
+  color: black;
+  border: solid black 1px;
+  height: 3rem;
+  width: 11rem;
+  border-radius: 4px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px; 
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
 /*----------------------------------------------------------------*/
 
+header{
+  background-color: black;
+  color: white;
+  padding: 10px;
+}
+main{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 1rem 5rem;
+
+}
