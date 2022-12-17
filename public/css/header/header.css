@@ -6,6 +6,11 @@ nav {
     rgb(0 0 0 / 30%) 0px 8px 16px -8px;
 }
 
+.site-header {
+  margin: 0;
+  padding: 0;
+}
+
 .nav-titulo {
   margin: 0;
 }
