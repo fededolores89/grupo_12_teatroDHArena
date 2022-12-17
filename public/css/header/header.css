@@ -2,6 +2,11 @@
   margin: 0;
 }
 
+.nav-titulo a {
+  color: white;
+  text-decoration: none;
+}
+
 .nav-mobile-superior {
   padding: 1rem;
   display: flex;
