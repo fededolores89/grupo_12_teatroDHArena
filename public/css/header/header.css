@@ -1,3 +1,11 @@
+nav {
+  width: 100%;
+  position: fixed;
+  overflow: hidden;
+  box-shadow: rgb(11 11 35 / 25%) 0px 13px 27px -5px,
+    rgb(0 0 0 / 30%) 0px 8px 16px -8px;
+}
+
 .nav-titulo {
   margin: 0;
 }
@@ -14,14 +22,28 @@
   align-items: center;
   background-color: var(--azul-principal);
   color: white;
-  position: fixed;
-  width: 100vw;
-  box-shadow: rgb(11 11 35 / 25%) 0px 13px 27px -5px,
-    rgb(0 0 0 / 30%) 0px 8px 16px -8px;
 }
 
 .nav-mobile-menu {
-  display: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+  background-color: var(--verde-principal);
+  max-height: 0;
+  transition: max-height 0.5s ease-out;
+}
+
+.nav-mobile-menu li {
+  padding: 1rem;
+}
+
+.nav-mobile-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  opacity: 0.7;
+  font-weight: bold;
 }
 
 .nav-mobile-iconos {
