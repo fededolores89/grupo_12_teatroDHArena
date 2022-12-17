@@ -1,28 +1,29 @@
-.contenedor-formulario{
-    padding: 15px;
-    border-top: solid 1px grey;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+.login-main {
+  color: white;
 }
 
-.contenedor-formulario label{
-    width: 50%;
-    padding: 10px;
+.contenedor-formulario {
+  padding: 15px;
+  border-top: solid 1px grey;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
-.contenedor-formulario input{
-    width: 50%;
-    padding: 10px;
+.contenedor-formulario label {
+  width: 50%;
+  padding: 10px;
 }
 
-.contenedor-formulario button{
-    height: 30px;
+.contenedor-formulario input {
+  width: 50%;
+  padding: 10px;
 }
 
+.contenedor-formulario button {
+  height: 30px;
+}
 
-
-
-.control-formulario{
-    padding: 15px;
+.control-formulario {
+  padding: 15px;
 }
