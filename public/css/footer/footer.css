@@ -24,11 +24,15 @@
   margin-bottom: 0.5rem;
 }
 
-.footer-mobile-nav a,
-.footer-social-icons a {
+.footer-mobile-nav a {
   text-decoration: none;
   color: white;
   opacity: 0.6;
+}
+
+.footer-social-icons a {
+  color: white;
+  opacity: 1;
 }
 
 .footer-mobile-nav a:hover,
@@ -58,4 +62,30 @@
 .copyright {
   margin-top: 1rem;
   font-size: 14px;
+  border-top: 1px solid white;
+  padding-top: 1rem;
+}
+
+@media screen and (min-width: 769px) {
+  .site-footer {
+    flex-direction: row;
+    text-align: left;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 2rem 4rem;
+  }
+
+  .footer-social-icons {
+    margin: 0;
+  }
+
+  .footer-social-icons i {
+    font-size: 1.7rem;
+  }
+
+  .copyright {
+    width: 100%;
+    text-align: center;
+  }
 }
