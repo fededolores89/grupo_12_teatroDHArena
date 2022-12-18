@@ -9,6 +9,7 @@ nav {
 .site-header {
   margin: 0;
   padding: 0;
+  height: 72px;
 }
 
 .site-header nav {
@@ -103,6 +104,9 @@ nav {
 
 /* Tamanio despues de tablet */
 @media screen and (min-width: 769px) {
+  .site-header {
+    height: 72px;
+  }
   .nav-mobile-superior {
     padding: 1.5rem;
   }
