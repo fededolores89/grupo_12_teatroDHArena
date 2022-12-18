@@ -54,12 +54,14 @@
         </ul>
       </nav>
     </header>
-    <main>
+    <main class="registro-main">
       <!----------TITULO DE LA PAGINA------------------>
-  
-      <h3> AUN NO ESTAS REGISTRADO? </h3>
-      <h5>Completa el formulario con tus datos y hacete usuario para obtener grandes beneficios!</h5>
-      <form action="/register" method="POST">
+
+      <div class="info-registro">
+        <h3> AUN NO ESTAS REGISTRADO? </h3>
+        <h5>Completa el formulario con tus datos y hacete usuario para obtener grandes beneficios!</h5>
+      </div>
+      <form class="registro-form" action="/register" method="POST">
       <section class="formulario-reg">
 
       <h6>Campos obligatorios (*) </h6>
@@ -90,7 +92,7 @@
         <input type="number" class="" name="" placeholder="Numero de DNI o Pasaporte" required minlength="8">
       </section>
 <!----------TIPO DE ID------------------>
-      <section>
+      <section class="campo-reg">
         <div>
       <label class="titulo-campo"> Tipo de ID </label>
       </div>
