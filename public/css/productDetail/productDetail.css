@@ -1,0 +1,57 @@
+.main-carritoDetalle {
+  padding: 1.4rem;
+  background-color: #051b28;
+  color: white;
+}
+
+.evento-portada img {
+  border-radius: 10px;
+}
+
+.evento-info-nombre h2 {
+  font-style: italic;
+  font-size: 1.2rem;
+}
+
+.evento-info-detalle {
+  display: flex;
+}
+
+.evento-descripcion {
+}
+
+.evento-fecha-contenedor {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1rem;
+}
+
+.evento-fecha-detalle {
+  display: flex;
+  flex-direction: column;
+  width: 120px;
+  text-align: center;
+  border: 4px solid white;
+  margin-top: 1rem;
+}
+
+.evento-fecha-contenedor i {
+  font-size: 3rem;
+  padding: 0.5rem;
+}
+
+.evento-fecha-mes {
+  border-bottom: 2px solid white;
+  padding: 0.5rem 0;
+  font-size: 1.5rem;
+  letter-spacing: 0.2rem;
+  margin: 0 auto;
+}
+
+.evento-fecha-dia {
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 0.5rem 0;
+}
