@@ -104,13 +104,6 @@ nav {
 
 /* Tamanio despues de tablet */
 @media screen and (min-width: 769px) {
-  .site-header {
-    height: 72px;
-  }
-  .nav-mobile-superior {
-    padding: 1.5rem;
-  }
-
   .nav-mobile-iconos {
     display: none;
   }
