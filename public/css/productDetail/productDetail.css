@@ -4,18 +4,25 @@
   color: white;
 }
 
-.evento-portada,
-.evento-info {
-  max-width: 768px;
-  margin: 0 auto;
+.evento-portada-container {
+  display: flex;
+  flex-direction: column;
 }
 
 .evento-portada {
   margin-bottom: 1rem;
+  flex-basis: 600px;
+  max-height: 440px;
+  max-width: 100%;
+  overflow: hidden;
+  display: flex;
 }
 
 .evento-portada img {
   border-radius: 10px;
+  min-height: 100%;
+  object-fit: cover;
+  object-position: center top;
 }
 
 .evento-info-nombre {
@@ -51,7 +58,7 @@
 }
 
 .evento-fecha-contenedor i {
-  font-size: 3rem;
+  font-size: 2rem;
   padding: 0.5rem;
 }
 
@@ -111,6 +118,13 @@
   border: 2px solid white;
   margin: 0.5rem 0;
   border-radius: 10px;
+  cursor: pointer;
+  transition: background-color ease-in-out 250ms;
+}
+
+.protocolo-contenedor:hover {
+  background-color: var(--magenta);
+  color: white;
 }
 
 .evento-compra-contenedor {
@@ -118,16 +132,17 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  margin-top: 2rem;
 }
 
 .evento-compra-contenedor i {
   font-size: 2rem;
   text-align: center;
-  width: 30%;
+  width: 100%;
 }
 
 .evento-compra-detalle {
-  width: 70%;
+  width: 100%;
 }
 
 .form-item {
@@ -163,4 +178,70 @@
   background-color: var(--magenta);
   color: white;
   border-radius: 1rem;
+  cursor: pointer;
+}
+
+.evento-compra-submit:hover {
+  font-weight: bold;
+}
+
+@media screen and (min-width: 769px) {
+  .main-carritoDetalle {
+    padding: 3rem 5rem;
+  }
+
+  .evento {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .evento-portada-container {
+    width: 45%;
+    order: 2;
+  }
+
+  .evento-info {
+    width: 50%;
+    order: 1;
+  }
+
+  .evento-info-nombre h1 {
+    font-size: 3rem;
+  }
+
+  .evento-artista {
+    order: 3;
+    padding: 2rem;
+  }
+
+  .evento-artista h2 {
+    font-size: 2.5rem;
+  }
+
+  .evento-compra-contenedor {
+    order: 4;
+  }
+
+  .evento-compra-contenedor i {
+    width: 30%;
+  }
+
+  .evento-compra-detalle {
+    width: 70%;
+  }
+
+  .evento-artista,
+  .evento-compra-contenedor {
+    width: 100%;
+  }
+
+  .form-item label {
+    font-size: 1.5rem;
+  }
+
+  .evento-fecha-contenedor i {
+    font-size: 3rem;
+  }
 }
