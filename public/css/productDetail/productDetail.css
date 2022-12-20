@@ -179,6 +179,7 @@
   color: white;
   border-radius: 1rem;
   cursor: pointer;
+  width: 100%;
 }
 
 .evento-compra-submit:hover {
