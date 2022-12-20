@@ -117,10 +117,11 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
 }
 
 .evento-compra-contenedor i {
-  font-size: 1.5rem;
+  font-size: 2rem;
   text-align: center;
   width: 30%;
 }
@@ -132,4 +133,34 @@
 .form-item {
   display: flex;
   flex-direction: column;
+  margin: 1.5rem 0;
+}
+
+.form-item label {
+  font-size: 1.3rem;
+  font-weight: bold;
+  border: 2px solid white;
+  padding: 0.5rem;
+}
+
+#evento-ubicacion,
+#evento-precio {
+  border: 2px solid white;
+}
+
+#evento-ubicacion,
+#evento-precio {
+  padding: 0.5rem;
+}
+
+#evento-precio {
+  border-top: none;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.evento-compra-submit {
+  background-color: var(--magenta);
+  color: white;
+  border-radius: 1rem;
 }
