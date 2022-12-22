@@ -1,28 +1,54 @@
+main{
+    background-image: url('/img/Img-Index-Fondos/hero.jpg');
+}
+
+h1{
+    text-align: center;
+    font-weight: bold;
+    color: white;
+}
+
 .contenedor-formulario{
     padding: 15px;
     border-top: solid 1px grey;
     display: flex;
-    justify-content: center;
     flex-direction: column;
+    justify-content: center;   
+    align-items: center;
 }
 
 .contenedor-formulario label{
-    width: 50%;
-    padding: 10px;
+    font-weight: bold;
+    width: 80%;
+    padding: 5px;
+    color: #ff008a;
+    font-weight: 400;
 }
 
+label i{
+    padding: 4px;
+}
 .contenedor-formulario input{
-    width: 50%;
-    padding: 10px;
+    width: 80%;
+    height: 30px;
+    padding: 5px;
+    margin-bottom: 10px;
+    color: #4180c4;
 }
 
 .contenedor-formulario button{
-    height: 30px;
+    width: 35%;
+    height: 40px;
+    font-weight: 800;
+    background-color: #ff008a;;
 }
-
-
-
-
 .control-formulario{
     padding: 15px;
+}
+
+.controles-login{
+    color:white;
+    font-size: 15px;
+    position: relative;
+    left: 55px;
 }

@@ -1,0 +1,51 @@
+
+h2{
+    margin: 0;
+    padding: 0;
+    color:white;
+}
+
+.Img-Artista{
+    width: 45%;
+    margin: 10px;
+}
+
+.carrito-de-compras{
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+}
+
+.cantidad-entradas{
+    color: white;
+}
+
+.boton-borrar{
+    width: 30%;
+    height: 30px;
+    margin: 15px;
+    position: relative;
+    left: 50px;
+}
+
+.total{
+    color: white;
+    position: relative;
+    left: 250px;
+}
+
+.continua-comprando{
+    color:white;
+    margin-top: 15px;
+}
+
+.compras{
+    display: flex;
+    justify-content: space-between;
+}
+
+.modos-de-pago{
+    background-color: white;
+    margin-top: 30px;
+    height: 50px;
+}

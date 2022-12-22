@@ -12,28 +12,21 @@
     <link rel="stylesheet" href="css/app.css" />
   </head>
   <body>
-    <header></header>
-    <h1>Ingresar a mi cuenta</h1>
-    <main>
+    <main class="main-login">
+      <h1>Ingresar a mi cuenta</h1>
       <form class="contenedor-formulario">
-        <label for="email">EMAIL</label>
-        <input
-          type="email"
-          name="email"
-          id="email"
-          placeholder="Ingresá tu email"
-        />
+        <label for="email"><i class="fas fa-envelope"></i>EMAIL</label>
+        <input type="email"name="email"id="email"placeholder="Ingresá tu email" required>
 
-        <label for="contraseña">CONTRASEÑA</label>
-        <input
-          type="password"
-          name="contraseña"
-          id="contraseña"
-          placeholder="Ingresá tu contraseña"
-        />
+        <label for="contraseña"><i class="fas fa-key"></i>CONTRASEÑA</label>
+        <input type="password" name="contraseña" id="contraseña" placeholder="Ingresá tu contraseña" required>
 
         <button>Ingresar</button>
       </form>
+      <div>
+        <p class="controles-login">¿Olvidaste tu contraseña?</p>
+        <p><a href="/register" class="controles-login">No tengo cuenta</a></p>
+      </div>
     </main>
     <footer></footer>
   </body>
