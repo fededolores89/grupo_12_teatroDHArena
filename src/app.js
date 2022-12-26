@@ -35,6 +35,6 @@ app.get('/productCart', (req, res) => {
 });
 
 // ProductDetail
-app.get('/productDetail/:event', (req, res) => {
+app.get('/productDetail', (req, res) => {
   res.sendFile(app.get('views') + '/productDetail.html');
 });
