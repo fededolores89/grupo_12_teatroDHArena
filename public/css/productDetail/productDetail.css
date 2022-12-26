@@ -65,3 +65,255 @@ footer{
 .compra{
   height: 100vh;
 }
+.main-carritoDetalle {
+  padding: 1.4rem;
+  background-color: #051b28;
+  color: white;
+}
+
+.evento-portada-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.evento-portada {
+  margin-bottom: 1rem;
+  flex-basis: 600px;
+  max-height: 440px;
+  max-width: 100%;
+  overflow: hidden;
+  display: flex;
+}
+
+.evento-portada img {
+  border-radius: 10px;
+  min-height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.evento-info-nombre {
+  margin-bottom: 1rem;
+}
+
+.evento-info-nombre h2 {
+  font-style: italic;
+  font-size: 1.2rem;
+}
+
+.evento-titulo {
+  text-align: left;
+}
+
+.evento-info-detalle {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.evento-fecha-contenedor {
+  margin-right: 1rem;
+}
+
+.evento-fecha-detalle {
+  display: flex;
+  flex-direction: column;
+  width: 120px;
+  text-align: center;
+  border: 2px solid var(--magenta);
+  border-radius: 10px;
+}
+
+.evento-descripcion-detalle {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.evento-fecha-contenedor i {
+  font-size: 2rem;
+  padding: 0.5rem;
+}
+
+.evento-fecha-mes {
+  border-bottom: 2px solid white;
+  padding: 0.5rem 0;
+  font-size: 1.5rem;
+  letter-spacing: 0.2rem;
+  margin: 0 auto;
+}
+
+.evento-fecha-dia {
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 0.5rem 0;
+}
+
+.evento-descripcion-horario-contendedor,
+.evento-descripcion-tipoPublico-container {
+  display: flex;
+  justify-content: flex-start;
+  opacity: 0.7;
+}
+
+.evento-descripcion-horario-contendedor i,
+.evento-descripcion-tipoPublico-container i,
+.evento-hora,
+.evento-tipoPublico {
+  font-size: 1.3rem;
+}
+
+.evento-descripcion-horario-contendedor i,
+.evento-descripcion-tipoPublico-container i {
+  margin-right: 1rem;
+}
+
+.evento-descripcion-horario-contendedor {
+  margin-bottom: 0.5rem;
+}
+
+.evento-artista {
+  padding: 1.3rem;
+  background-color: #0b2739;
+  border-radius: 10px;
+}
+
+.evento-artista h2 {
+  font-size: 1.6rem;
+}
+
+.evento-lista-protocolos {
+  margin-bottom: 2rem;
+}
+
+.protocolo-contenedor {
+  padding: 1rem;
+  border: 2px solid white;
+  margin: 0.5rem 0;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color ease-in-out 250ms;
+}
+
+.protocolo-contenedor:hover {
+  background-color: var(--magenta);
+  color: white;
+}
+
+.evento-compra-contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.evento-compra-contenedor i {
+  font-size: 2rem;
+  text-align: center;
+  width: 100%;
+}
+
+.evento-compra-detalle {
+  width: 100%;
+}
+
+.form-item {
+  display: flex;
+  flex-direction: column;
+  margin: 1.5rem 0;
+}
+
+.form-item label {
+  font-size: 1.3rem;
+  font-weight: bold;
+  border: 2px solid white;
+  padding: 0.5rem;
+}
+
+#evento-ubicacion,
+#evento-precio {
+  border: 2px solid white;
+}
+
+#evento-ubicacion,
+#evento-precio {
+  padding: 0.5rem;
+}
+
+#evento-precio {
+  border-top: none;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.evento-compra-submit {
+  background-color: var(--magenta);
+  color: white;
+  border-radius: 1rem;
+  cursor: pointer;
+  width: 100%;
+}
+
+.evento-compra-submit:hover {
+  font-weight: bold;
+}
+
+@media screen and (min-width: 769px) {
+  .main-carritoDetalle {
+    padding: 3rem 5rem;
+  }
+
+  .evento {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .evento-portada-container {
+    width: 45%;
+    order: 2;
+  }
+
+  .evento-info {
+    width: 50%;
+    order: 1;
+  }
+
+  .evento-info-nombre h1 {
+    font-size: 3rem;
+  }
+
+  .evento-artista {
+    order: 3;
+    padding: 2rem;
+  }
+
+  .evento-artista h2 {
+    font-size: 2.5rem;
+  }
+
+  .evento-compra-contenedor {
+    order: 4;
+  }
+
+  .evento-compra-contenedor i {
+    width: 30%;
+  }
+
+  .evento-compra-detalle {
+    width: 70%;
+  }
+
+  .evento-artista,
+  .evento-compra-contenedor {
+    width: 100%;
+  }
+
+  .form-item label {
+    font-size: 1.5rem;
+  }
+
+  .evento-fecha-contenedor i {
+    font-size: 3rem;
+  }
+}

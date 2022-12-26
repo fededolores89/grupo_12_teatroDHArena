@@ -6,6 +6,16 @@ nav {
     rgb(0 0 0 / 30%) 0px 8px 16px -8px;
 }
 
+.site-header {
+  margin: 0;
+  padding: 0;
+  height: 70px;
+}
+
+.site-header nav {
+  z-index: 1;
+}
+
 .nav-titulo {
   margin: 0;
 }
@@ -15,8 +25,12 @@ nav {
   text-decoration: none;
 }
 
+.nav-desktop {
+  display: none;
+}
+
 .nav-mobile-superior {
-  padding: 1rem;
+  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -31,7 +45,6 @@ nav {
   text-align: center;
   background-color: var(--verde-principal);
   max-height: 0;
-  transition: max-height 0.5s ease-out;
 }
 
 .nav-mobile-menu li {
@@ -52,7 +65,6 @@ nav {
 }
 
 .nav-mobile-icon {
-  background-color: var(--magenta);
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -60,6 +72,7 @@ nav {
   width: 40px;
   height: 40px;
   margin-right: 0.5rem;
+  cursor: pointer;
 }
 
 .nav-mobile-carrito {
@@ -72,4 +85,85 @@ nav {
 
 .nav-mobile-carrito a {
   color: white;
+}
+
+/* Util Css */
+.show-menu {
+  max-height: 100%;
+}
+
+.temaColor-1 {
+  background-color: var(--magenta);
+  color: white;
+}
+
+.temaColor-2 {
+  background-color: var(--verde-neon);
+  color: var(--verde-principal);
+}
+
+/* Tamanio despues de tablet */
+@media screen and (min-width: 769px) {
+  .nav-mobile-iconos {
+    display: none;
+  }
+
+  .nav-izquierda-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-titulo {
+    margin-right: 6rem;
+  }
+
+  .nav-desktop {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    align-items: center;
+  }
+
+  .nav-desktop li {
+    margin-right: 1.5rem;
+    opacity: 0.6;
+    transition: opacity 0.3s ease-in-out;
+    cursor: pointer;
+  }
+
+  .nav-desktop li:hover {
+    opacity: 1;
+  }
+
+  .nav-desktop a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .nav-desktop a:active {
+    opacity: 1;
+  }
+
+  .menu-derecha li:first-child {
+    display: flex;
+    align-items: center;
+    margin-right: 2.5rem;
+  }
+
+  .menu-derecha li:first-child i {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+  }
+
+  .menu-derecha li:nth-child(2) {
+    background-color: var(--verde-neon);
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+  }
+
+  .menu-derecha li:nth-child(2) a {
+    color: var(--verde-principal);
+    font-weight: bold;
+  }
 }

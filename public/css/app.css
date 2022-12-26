@@ -5,6 +5,7 @@
 @import url(productCart/productCart.css);
 @import url(productDetail/productDetail.css);
 @import url(register/register.css);
+@import url(footer/footer.css);
 
 /* Importando fuente del proyecto */
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700&display=swap');
@@ -35,65 +36,19 @@ body {
 img {
   width: 100%;
 }
-/* ----------------Main  */
-.hero {
-  background-image: url('/img/Img-Index-Fondos/hero.jpg');
-  background-size: cover;
-  padding: 30%;
-  display: flex;
-  justify-content: center;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
 }
 
-.Titulo-1 {
-  font-family: sans-serif;
-  color: white;
-  font-weight: bold;
-  font-size: 3rem;
-}
-.SubTitulo-2 {
-  color: white;
-  font-family: sans-serif;
-  font-weight: 500;
+.registrado {
+  font-size: 12px;
+  vertical-align: top;
 }
 
-main a {
-  text-decoration: none;
-  background-color: #2cf2c7;
-  padding: 8px;
-  border-radius: 6px;
-}
 
-.Shows {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  background-color: #16324f;
-}
-
-.titulo-shows {
-  width: 100%;
-}
-
-.eventos {
-  width: 90%;
-  border: solid 2px red;
-  margin-bottom: 1rem;
-}
-
-.titulo-shows {
-  color: #ff008a;
-}
-
-/* ----------------- Media queries para table ---------------*/
-@media (min-width: 460px) {
-  .eventos {
-    width: 45%;
-    margin-left: 1rem;
-  }
-}
-/* ---------------Media queries para Escritorio ----------------*/
-@media (min-width: 760px) {
-  .eventos {
-    width: 30%;
-  }
-}
