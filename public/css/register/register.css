@@ -1,28 +1,7 @@
-/* Importando estilos de las paginas del proyecto */
-@import url(header/header.css);
-@import url(home/home.css);
-@import url(login/login.css);
-@import url(productCart/productCart.css);
-@import url(productDetail/productDetail.css);
-@import url(register/register.css);
 
-/* Importando fuente del proyecto */
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700&display=swap');
 
-/* Importando normalize */
-@import url(normalize.css);
 
-/*Font Awesome*/
-@import url(../assets/fontawesome/css/all.css);
 
-/* Variables globales de estilo css */
-:root {
-  --nunito: 'Nunito Sans', sans-serif;
-  --azul-principal: #16324f;
-  --verde-principal: #18435a;
-  --magenta: #ff008a;
-  --verde-neon: #2cf2c7;
-}
 
 * {
   box-sizing: border-box;
@@ -150,18 +129,31 @@ button{
   border-top-right-radius: 4px; 
   border-bottom-right-radius: 4px;
   border-bottom-left-radius: 4px;
+  cursor: pointer;
 }
 /*----------------------------------------------------------------*/
-
+/*---------Header-------------------------------------------------*/
 header{
   background-color: black;
   color: white;
   padding: 10px;
 }
+/*--------Main---------------------------------------------------*/
 main{
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
   padding: 1rem 5rem;
 
+}
+
+/*------------Linea divisora entre titulos--------------------------*/
+
+   .linea-titulos {
+    background-color: #00ffc2;
+    line-height: -162.8em;
+    /* font-size: 89px; */
+    background-color:#00ffc2; ;
+    height: 5px;
+    width: 210px;
 }
