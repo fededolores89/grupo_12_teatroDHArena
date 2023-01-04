@@ -1,0 +1,3 @@
+const shows = [ {
+nombre: Camilo,
+}]
