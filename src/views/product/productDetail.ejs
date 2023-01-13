@@ -1,64 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DH-Arena Eventos</title>
-    <link rel="stylesheet" href="css/app.css" />
-  </head>
+  <%- include('../partials/head') %>
 
   
 
 
 
   <body>
-    <header class="site-header">
-      <nav>
-        <div class="nav-mobile-superior">
-          <div class="nav-izquierda-container">
-            <h1 class="nav-titulo">
-              <a href="/">DHArena<span class="registrado">®</span></a>
-            </h1>
-            <ul class="nav-desktop menu-izquierda">
-              <li><a href="#">Eventos</a></li>
-              <li><a href="#">Club DHArena</a></li>
-              <li><a href="#">Contacto</a></li>
-            </ul>
-          </div>
-          <div class="nav-derecha-container">
-            <div class="nav-mobile-iconos">
-              <div class="nav-mobile-icon temaColor-1">
-                <i class="fa-solid fa-bars"></i>
-              </div>
-              <div class="nav-mobile-carrito">
-                <a href="/productCart"
-                  ><i class="fa-solid fa-cart-shopping"></i
-                ></a>
-              </div>
-            </div>
-            <ul class="nav-desktop menu-derecha">
-              <li>
-                <i class="fa-solid fa-circle-user"></i>
-                <a href="/login">Iniciar sesion</a>
-              </li>
-              <li>
-                <a class="desktop-register-button" href="/register"
-                  >Registrate</a
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
-        <ul class="nav-mobile-menu">
-          <li><a href="#">Eventos</a></li>
-          <li><a href="#">Club DHArena</a></li>
-          <li><a href="#">Contacto</a></li>
-          <li><a href="/login">Iniciar sesion</a></li>
-          <li><a href="/register">Registrate</a></li>
-        </ul>
-      </nav>
-    </header>
+    <%- include('../partials/header') %>
     <main class="main-carritoDetalle">
       <section class="evento">
         <div class="evento-portada-container">
@@ -157,26 +106,7 @@
         </article>
       </section>
     </main>
-    <footer class="site-footer">
-      <div class="footer-izquierda">
-        <h3 class="footer-title">DHArena<span class="registrado">®</span></h3>
-        <ul class="footer-mobile-nav">
-          <li><a href="#">Eventos</a></li>
-          <li><a href="#">Club DHArena</a></li>
-          <li><a href="#">Contacto</a></li>
-          <li><a href="/login">Iniciar sesion</a></li>
-          <li><a href="/register">Registrate</a></li>
-        </ul>
-      </div>
-      <div class="footer-derecha">
-        <div class="footer-social-icons">
-          <a href=""><i class="fa-brands fa-facebook"></i></a>
-          <a href=""><i class="fa-brands fa-twitter"></i></a>
-          <a href=""><i class="fa-brands fa-instagram"></i></a>
-        </div>
-      </div>
-      <p class="copyright">© 2022 DHArena. Todos los derechos reservados.</p>
-    </footer>
+    <%- include('../partials/footer') %>
     <!-- Agregando archivo nav.js para el menu -->
     <script src="../js/nav/nav.js"></script>
   </body>
