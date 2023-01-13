@@ -10,6 +10,8 @@ const mainController = require("../controllers/userController")
 router.get('/login' , mainController.login ) 
 
 
+router.get('/register' ,  mainController.registro )
+
 
 
 
