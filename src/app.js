@@ -7,7 +7,7 @@ const methodOverride = require('method-override'); // Para poder usar los métod
 
 // Importamos los distintos enrutadores
 const mainRouter = require('./routes/mainRouter')
-const showsRouter = require('./routes/showsRouter.js')
+const showsRouter = require('./routes/showsRouter')
 const userRouter = require('./routes/userRouter.js')
 
 
@@ -30,7 +30,7 @@ app.set("views", path.resolve(__dirname, "views"));
 
 
 // Usando los enrutadores importados
-//app.use("/shows", showsRouter);
+app.use("/shows", showsRouter); 
 app.use("/usuarios", userRouter);
 app.use("/", mainRouter);
 
