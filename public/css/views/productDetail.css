@@ -251,6 +251,7 @@ footer{
   border-radius: 1rem;
   cursor: pointer;
   width: 100%;
+  margin-bottom: 5px;
 }
 
 .evento-compra-submit:hover {

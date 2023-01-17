@@ -9,7 +9,7 @@ router.get("/" , mainController.index )
 
 router.get('/detalle' , mainController.detalle)
 
-
+router.get('/edit' , mainController.edit)
 
 
 
