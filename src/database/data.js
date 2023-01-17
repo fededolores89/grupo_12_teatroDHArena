@@ -1,3 +1,0 @@
-const shows = [ {
-nombre: Camilo,
-}]
