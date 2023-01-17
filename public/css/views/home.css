@@ -24,13 +24,19 @@
     background-color: #2cf2c7;
     padding: 8px;
     border-radius: 6px;
+    
   }
+
+.boton-entrada {
+  padding: 0;
+}
   
   .Shows {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     background-color: #16324f;
+    text-align: center
   }
   
   .titulo-shows {
@@ -46,6 +52,13 @@
   .titulo-shows {
     color: #ff008a;
   }
+  
+  .descripcion {
+    color: white;
+    font-family: sans-serif
+  }
+  
+
    /* --------------------- Aca la parte de club Arena ------------------ */
   .club-arena {
     background-image: url('/img/Img-Index-Fondos/clubbg.jpg');
