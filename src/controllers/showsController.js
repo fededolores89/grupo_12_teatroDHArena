@@ -3,7 +3,7 @@ const path = require('path')
 
 const controllers = {
     index: (req , res) => {
-        res.render('product/productCart')
+        res.render('product/allsTheShows')
     },
     detalle: (req , res) => {
         res.render('product/productDetail')

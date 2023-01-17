@@ -5,9 +5,11 @@ const mainController = require("../controllers/showsController.js")
 
 
 
-router.get("/" , mainController.index)
+router.get("/" , mainController.index )
 
 router.get('/detalle' , mainController.detalle)
+
+
 
 
 

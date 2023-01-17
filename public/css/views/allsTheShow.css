@@ -1,0 +1,99 @@
+ /* --------------------Aca la parte de los Shows ---------------------------*/
+ .boton-entrada{
+    text-decoration: none;
+    background-color: #2cf2c7;
+    padding: 8px;
+    border-radius: 6px;
+    
+  }
+
+.boton-entrada {
+  padding: 0;
+}
+  
+  .Shows {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #16324f;
+    text-align: center
+  }
+  
+  .titulo-shows {
+    width: 100%;
+  }
+  
+  .eventos-home {
+    width: 70%;
+   border: solid 2px white;
+    margin-bottom: 1rem;
+  }
+  
+  .titulo-shows {
+    color: #ff008a;
+  }
+  
+  .descripcion {
+    color: white;
+    font-family: sans-serif
+  }
+  
+
+   /* --------------------- Aca la parte de club Arena ------------------ */
+  .club-arena {
+    background-image: url('/img/Img-Index-Fondos/clubbg.jpg');
+  
+    background-size: cover;
+    padding: 30%;
+    color: white;
+    font-family: sans-serif;
+  }
+
+  .control-clubarena {
+    text-align: center;
+  }
+
+
+  .fa-star {
+    color: goldenrod;
+    font-size: 3rem;
+}
+
+
+
+
+  /* --------------- Aca los iconos ----------------------- */
+.Sponsors h2 {
+    margin-bottom: 1rem;
+    text-align: center;
+    color: var(--magenta);
+}
+
+.Sponsors {
+    margin-top: 3rem;
+}
+
+
+.main-iconos{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 7rem;
+    gap: 4rem;
+    justify-content: center;
+    padding: 1rem;
+
+}
+
+  /* ----------------- Media queries para table ---------------*/
+  @media (min-width: 460px) {
+    .eventos-home {
+      width: 45%;
+      margin-left: 1rem;
+    }
+  }
+  /* ---------------Media queries para Escritorio ----------------*/
+  @media (min-width: 760px) {
+    .eventos-home {
+      width: 30%;
+    }
+  }
