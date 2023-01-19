@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+  <%-include ("../partials/head", {cssSheets: "createShow", title: "Crear Shows"}) %>
+  <body>
+    <%- include('../partials/header') %>
+    <form action="/shows/create" method="POST" enctype="multipart/form-data">
+      <div class="row product-detail" style="background-color:#16324f;">
+        <div class="col-12 col-md-6">
+          <label for="name" class="form-label"></label>
+          <input type="text" id="name" name="name" class="form-input" placeholder="Nombre del Artista">
+        </div>
+        <div class="col-12 col-md-6">
+          <label for="price" class="form-label"></label>
+          <input type="text" id="price" name="price" class="form-input" placeholder="Precio de la entrada">
+        </div>
+        <div class="col-12 col-md-6">
+          <label for="hour" class="form-label"></label>
+          <input type="text" id="hour" name="hour"  class="form-input" placeholder="Hora del evento">
+        </div>
+        <div class="col-12 col-md-6">
+          <label for="category" class="form-label">Categoría:</label>
+          <select name="category" id="category" class="form-input">
+            <option value="">Elegí</option>
+            <option value="rock">Rock</option>
+            <option value="pop">Pop</option>
+          </select>
+        </div>
+        <div class="col-12">
+          <label for="description" class="form-label" >descripcion del artista</label>
+          <textarea name="description" id="description" class="form-input" > </textarea>
+        </div>
+        <div class="col-12 col-md-6">
+          <label for="video" class="form-label"></label>
+          <input type="text" id="video" name="video"  class="form-input" placeholder="Url del video de Youtube.">
+        </div>
+        <div class="col-12">
+          <label for="description" class="form-label">descripcion adicional</label>
+          <textarea name="description" id="description" class="form-input"></textarea>
+        </div>
+        
+        <div class="col-12 col-md-6">
+          <label for="artistImage" class="form-label">Imagen del Artista:</label>
+          <input type="file" id="artistImage" name="artistImage" >
+        </div>
+        <div class="col-12">
+          <button type="submit" class="buy-now-button">Guardar Shows</button>
+        </div>
+      </div>
+    </form>
+    <%- include('../partials/footer') %>
+    <!-- Agregando archivo nav.js para el menu -->
+    <script src="js/nav/nav.js"></script>

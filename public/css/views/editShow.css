@@ -33,3 +33,10 @@ textarea.form-input {
   border-radius: 8px;
   overflow: hidden;
 }
+
+h2 {
+  color: white;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+

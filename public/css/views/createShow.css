@@ -1,0 +1,36 @@
+.row {
+    background-color: #16324f;
+  }
+  
+  .form-label {
+    display: inline-block;
+    font-size: 1.6em;
+    margin: 10px 0;
+    color: #ffffff;
+  }
+  
+  .form-input {
+    display: block;
+    width: 80%;
+    height: 45px;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    border-radius: 8px;
+    border: none;
+    border: solid 1px gray;
+    padding: 0 15px;
+    margin-left: 1rem;
+  }
+  
+  textarea.form-input {
+    min-height: 140px;
+    resize: vertical;
+    padding: 15px;
+  }
+  
+  .product-detail {
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  

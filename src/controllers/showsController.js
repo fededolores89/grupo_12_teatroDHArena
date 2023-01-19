@@ -5,7 +5,12 @@ const shows = JSON.parse(fs.readFileSync(showsFilePath, 'utf-8'));
 
 const controllers = {
     index: (req , res) => {
-        res.render('product/allsTheShows')
+        const shows = JSON.parse(fs.readFileSync(showsFilePath, 'utf-8'));
+       
+
+
+
+        res.render('product/allsTheShows' ,{ 'shows': shows  })
     },
     detalle: (req , res) => {
         let id = req.params.id
@@ -26,11 +31,39 @@ const controllers = {
         let showsFiltrado = shows.find(show => {
             return show.id == id
         })
-        
-        
+
+         
+         res.render('product/editShows' , {"shows": showsFiltrado})
+       } ,
        
-        res.render('product/editShows' , {"shows": showsFiltrado})
-}
+       
+    processEdit: (req , res) => { 
+        res.redirect("main/index");
+        },
+    create: (req , res) => { 
+        res.render("product/createShow")
+    },
+
+    destroy: (req, res) => {
+		// Do the magic
+		let id = req.params.id;
+		const shows = JSON.parse(fs.readFileSync(showsFilePath, 'utf-8'));
+
+		let showsFiltrados = shows.filter(producto => {
+			return producto.id != id
+		})
+
+		fs.writeFileSync(productsFilePath, JSON.stringify(showsFiltrados, null, " "));
+
+		res.redirect("allsTheShows");
+	},
+    shoppingCart: (req, res) => {
+        res.render('productCart')
+    }
+
+
+
+
 }
 
 

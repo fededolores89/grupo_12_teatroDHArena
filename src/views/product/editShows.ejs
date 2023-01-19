@@ -1,49 +1,47 @@
 <!DOCTYPE html>
 <html lang="es">
-  <%-include ("../partials/head", {cssSheets: "editShows", title: "Editar Shows"}) %>
+  <%-include ("../partials/head", {cssSheets: "editShow", title: "Editar Shows"}) %>
   <body>
     <%- include('../partials/header') %>
-    <form action="/shows/edit" method="POST" enctype="multipart/form-data">
-      <div class="row product-detail" style="background-color:#16324f;">
+    
+    <form action="/shows/detail/edit/<%= shows.id %>?_method=PUT" method="POST" enctype="multipart/form-data" >
+      <div class="row product-detail" style="background-color: #16324f ;">
         <div class="col-12 col-md-6">
           <label for="name" class="form-label">Nombre del shows:</label>
-          <input type="text" id="name" name="name" placeholder="Ej: Eva luna" class="form-input">
+          <input value="<%= shows.name %>" type="text" id="name" name="name" placeholder="Ej: Zapatillas Reebok" class="form-input">
         </div>
         <div class="col-12 col-md-6">
           <label for="price" class="form-label">Precio del shows:</label>
-          <input type="text" id="price" name="price" placeholder="Ej: $500" class="form-input">
+          <input value="<%= shows.price %>" type="text" id="price" name="price" placeholder="Ej: 5678" class="form-input">
         </div>
         <div class="col-12 col-md-6">
-          <label for="hour" class="form-label">Hora:</label>
-          <input type="text" id="hour" name="hour" placeholder="Ej: 20:00" class="form-input">
+          <label for="date" class="form-label">Fecha:</label>
+          <input value="<%= shows.date %>" type="text" id="date" name="date" placeholder="Ej: 15" class="form-input">
         </div>
         <div class="col-12 col-md-6">
           <label for="category" class="form-label">Categoría:</label>
           <select name="category" id="category" class="form-input">
-            <option value="">Elegí</option>
-            <option value="rock">Rock</option>
-            <option value="pop">Pop</option>
-          </select>
+            <option value="<%= shows.category %>">Rock</option>
+            <option value="<%= shows.category %>">Pop</option>
+            </select>
         </div>
         <div class="col-12">
-          <label for="description" class="form-label">Descipción Principal:</label>
-          <textarea name="description" id="description" class="form-input"></textarea>
+          <label for="description" class="form-label">Descripción Principal:</label>
+          <textarea name="description" id="description" class="form-input"><%= shows.descriptionHeader %></textarea>
+        </div>
+        <label for="price" class="form-label">Url de Artistas</label>
+        <input value="<%= shows.video %>" type="text" id="price" name="price" placeholder="Ej: youtube.com/watch?" class="form-input">
+          
+          <div class="col-12">
+          <label for="description" class="form-label">Descripción Video:</label>
+          <textarea name="description" id="description" class="form-input"><%= shows.descriptionVideo %></textarea>
         </div>
         <div class="col-12 col-md-6">
-          <label for="video" class="form-label">Link del video:</label>
-          <input type="text" id="video" name="video" placeholder="Ej: youtube.com/watch?v=5g2hT4GmAGU" class="form-input">
+          <label for="productImage" class="form-label">Imagen del Artista:</label>
+          <input type="file" id="productImage" name="editedProductImage">
         </div>
         <div class="col-12">
-          <label for="description" class="form-label">Descipción Video:</label>
-          <textarea name="description" id="description" class="form-input"></textarea>
-        </div>
-        
-        <div class="col-12 col-md-6">
-          <label for="artistImage" class="form-label">Imagen del Artista:</label>
-          <input type="file" id="artistImage" name="artistImage">
-        </div>
-        <div class="col-12">
-          <button type="submit" class="buy-now-button">Guardar Shows</button>
+          <button type="submit" class="buy-now-button">Guardar shows</button>
         </div>
       </div>
     </form>

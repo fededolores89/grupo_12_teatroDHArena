@@ -15,10 +15,9 @@
         </div>
       </section>
       <!-- Aca la parte de los shows -->
-
-      <section class="Shows">
-        <h2 class="titulo-shows">Próximos Shows</h2>
-        <% shows.forEach(show => { %> 
+       <section class="Shows">
+       <h2 class="titulo-shows">Shows de Pop</h2>
+        <% showsPopFiltrado.forEach(show => { %> 
         <article class="eventos-home">
          
           <figure class="Img-Artista"> <img
@@ -30,7 +29,32 @@
             <p class="nombre"><%= show.name %></p>
             <p class="fecha"><%= show.date %></p>
             <p class="Info">más info</p>
-            <a href="/shows/detalle/<%= show.id %>" class="boton-entrada">Compra tu entrada</a>
+            <a href="/shows/detail/<%= show.id %>" class="boton-entrada">Compra tu entrada</a>
+          </div>
+          
+        </article>
+        <% }) %>
+      </section>
+
+
+
+
+
+      <section class="Shows">
+        <h2 class="titulo-shows">Shows de Rock</h2>
+        <% showsRockFiltrado.forEach(show => { %> 
+        <article class="eventos-home">
+         
+          <figure class="Img-Artista"> <img
+            src="/img/Img-Index-Artistas/<%= show.image %>"
+            alt="Foto-Artista"
+          /></figure>
+          <div class="descripcion">
+            
+            <p class="nombre"><%= show.name %></p>
+            <p class="fecha"><%= show.date %></p>
+            <p class="Info">más info</p>
+            <a href="/shows/detail/<%= show.id %>" class="boton-entrada">Compra tu entrada</a>
           </div>
           
         </article>
