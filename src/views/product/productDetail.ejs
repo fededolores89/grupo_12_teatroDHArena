@@ -13,7 +13,7 @@
         <div class="evento-portada-container">
           <div class="evento-portada">
             <img
-              src="/img/Img-Index-Artistas/Camilo_780x400.jpg"
+              src="/img/Img-Index-Artistas/<%= shows.image %>"
               alt=""
               srcset=""
             />
@@ -22,7 +22,7 @@
         <article class="evento-info">
           <div class="evento-info-nombre">
             <h2>De adentro pa fuera Tour</h2>
-            <h1 class="evento-titulo">Camilo</h1>
+            <h1 class="evento-titulo"><%= shows.name %></h1>
           </div>
           <div class="evento-info-detalle">
             <div class="evento-fecha-contenedor">
@@ -34,14 +34,11 @@
             </div>
             <div class="evento-descripcion">
               <p class="evento-descripcion-detalle">
-                El máximo exponente del pop actual a nivel global, anunció su
-                nueva gira por Latinoamérica con la que batió récords de público
-                en Europa y Estados Unidos. Entradas a la venta a partir del
-                lunes 5 de diciembre a las 20hs.
+                <%= shows.descriptionHeader %> 
               </p>
               <div class="evento-descripcion-horario-contendedor">
                 <i class="fa-regular fa-clock"></i>
-                <span class="evento-hora">20:00 hrs</span>
+                <span class="evento-hora"><%= shows.hour %>  hrs</span>
               </div>
               <div class="evento-descripcion-tipoPublico-container">
                 <i class="fa-solid fa-people-group"></i>
@@ -64,18 +61,13 @@
         <article class="evento-artista">
           <h2>Acerca del artista</h2>
           <p class="evento-artista-descripcion">
-            Blindado con una impecable habilidad de composición y una
-            sensibilidad intuitiva, Camilo, ganador de cinco Latin GRAMMY® 2020
-            y dos veces nominado al GRAMMY® americano, es considerado uno de los
-            mayores exponentes del nuevo Pop de su generación, con más de cinco
-            billones de reproducciones en todas las plataformas digitales
-            alrededor del mundo.
+            <%= shows.descriptionVideo %> 
           </p>
           <div class="evento-artista-video">
             <iframe
               width="100%"
               height="415"
-              src="https://www.youtube.com/embed/ZbxUiwi5Rx8"
+              src=<%= shows.video %> 
               title="YouTube video player"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -96,14 +88,12 @@
               </div>
               <div class="form-item">
                 <label for="evento-precio">Precio</label>
-                <span id="evento-precio">$7500</span>
+                <span id="evento-precio">$ <%= shows.price %> </span>
               </div>
              <a href="#"><button class="evento-compra-submit" type="submit">
                 Comprá tu entrada
               </button></a> 
-             <a href="#"><button class="evento-compra-submit" type="submit">
-                Editar Show
-              </button></a> 
+             <a href="/shows/edit/<%= shows.id %>" class="evento-compra-submit">Editar Show</a> 
               <a href="#"><button class="evento-compra-submit" type="submit">
                 Borrar Show
               </button></a>

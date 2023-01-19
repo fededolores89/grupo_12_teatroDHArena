@@ -7,9 +7,10 @@ const mainController = require("../controllers/showsController.js")
 
 router.get("/" , mainController.index )
 
-router.get('/detalle' , mainController.detalle)
+router.get('/detalle/:id' , mainController.detalle)
 
-router.get('/edit' , mainController.edit)
+router.get('/edit/:id' , mainController.edit)
+
 
 
 
