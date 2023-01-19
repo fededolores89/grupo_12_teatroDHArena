@@ -14,6 +14,9 @@
           <label for="price" class="form-label">Precio del shows:</label>
           <input value="<%= shows.price %>" type="text" id="price" name="price" placeholder="Ej: 5678" class="form-input">
         </div>
+        <div class="col-12 col-md-6">Hora del shows:</label>
+          <input value="<%= shows.price %>" type="text" id="hour" name="hour" placeholder="Ej: 5678" class="form-input">
+        </div>
         <div class="col-12 col-md-6">
           <label for="date" class="form-label">Fecha:</label>
           <input value="<%= shows.date %>" type="text" id="date" name="date" placeholder="Ej: 15" class="form-input">
@@ -27,14 +30,14 @@
         </div>
         <div class="col-12">
           <label for="description" class="form-label">Descripción Principal:</label>
-          <textarea name="description" id="description" class="form-input"><%= shows.descriptionHeader %></textarea>
+          <textarea name="descriptionH2" id="description" class="form-input"><%= shows.descriptionHeader %></textarea>
         </div>
         <label for="price" class="form-label">Url de Artistas</label>
         <input value="<%= shows.video %>" type="text" id="price" name="price" placeholder="Ej: youtube.com/watch?" class="form-input">
           
           <div class="col-12">
           <label for="description" class="form-label">Descripción Video:</label>
-          <textarea name="description" id="description" class="form-input"><%= shows.descriptionVideo %></textarea>
+          <textarea name="descriptionVideo" id="description" class="form-input"><%= shows.descriptionVideo %></textarea>
         </div>
         <div class="col-12 col-md-6">
           <label for="productImage" class="form-label">Imagen del Artista:</label>
