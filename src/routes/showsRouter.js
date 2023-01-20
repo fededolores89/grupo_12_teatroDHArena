@@ -1,8 +1,7 @@
 const express = require('express')
 const router = express.Router()
-
 const mainController = require("../controllers/showsController.js")
-const { route } = require('./mainRouter.js')
+
 
 
 /* Vista a todos los Shows */
