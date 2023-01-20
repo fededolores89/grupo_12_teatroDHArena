@@ -39,7 +39,43 @@ const controllers = {
   
   /* --------------Procesa la Edicion----------------- */
   processEdit: (req, res) => {
-    res.send("voy por put")
+    // Do the magic
+
+		/* Incorporar FS */
+		/* Leer el archivo */
+		const shows = JSON.parse(fs.readFileSync(showsFilePath, "utf-8"));
+
+		let id = req.params.id;
+		let showAnterior = shows.find(producto => {
+			return producto.id == id
+		})
+
+		let showEditado = {
+			/* dejar el id anterior */
+			id: showAnterior.id,
+      name: req.body.name,
+      price: req.body.price,
+      category: req.body.category,
+      descriptionHeader: req.body.descriptionHeader,
+      descriptionVideo: req.body.descriptionVideo,
+      video: req.body.video,
+      day: req.body.day,
+      hour: req.body.hour,
+      image: req.file ? req.file.filename : "default-image.png",
+      month: req.body.month,
+		}
+		/* Modificar el array en la posición correspondiente */
+		
+		let indice = shows.findIndex(product => {
+			return product.id == id
+		})
+
+		shows[indice] = showEditado;
+
+		/* Convertir a JSON */
+		/* Escribir sobre el archivo json */
+		fs.writeFileSync(showsFilePath, JSON.stringify(shows, null, " "));
+		res.redirect("/");
   },
 
   /* --------------Muestro la vista de crear shows----------------- */

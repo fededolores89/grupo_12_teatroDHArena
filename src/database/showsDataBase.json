@@ -84,15 +84,14 @@
  },
  {
   "id": 7,
-  "name": "Ana Sol Ortiz",
+  "name": "Ana Sol Ortiz Editada",
   "price": "200000",
   "category": "rock",
-  "descriptionHeader": " Una hermosa y talentosa joven",
   "descriptionVideo": " Una hermosa y talentosa joven 2",
   "video": "https://www.youtube.com/watch?v=1w7OgIMMRc4",
   "day": "3",
-  "hour": "20:00",
-  "image": "artistImage-1674221268263.jpg",
-  "month": "JUL"
+  "hour": "200000",
+  "image": "default-image.png",
+  "month": ""
  }
 ]

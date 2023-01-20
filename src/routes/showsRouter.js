@@ -32,7 +32,7 @@ router.get('/detail/:id' , mainController.detalle)
 
 /* Editar Show */
 router.get('/edit/:id' , mainController.edit)
-router.put('/edit/:id' , mainController.processEdit)
+router.put('/edit/:id' , upload.single("editedArtistImage") ,mainController.processEdit)
 
 /* Carrito de compras */
 router.get('/detail/:id/compra', mainController.shoppingCart)
