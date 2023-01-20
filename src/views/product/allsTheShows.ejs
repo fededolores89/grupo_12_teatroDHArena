@@ -3,6 +3,8 @@
   <%-include ("../partials/head", {cssSheets: "allsTheShow", title: "Todos los Shows"}) %>
   <body>
     <%- include('../partials/header') %>
+    
+    <!--***************** Siglo For recorrer todos los productos y mostramos dinamicamente.***************-->
     <% shows.forEach(show => { %> 
       <section class="Shows">
       <article class="eventos-home">

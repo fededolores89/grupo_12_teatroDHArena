@@ -3,9 +3,12 @@
   <%-include ("../partials/head", {cssSheets: "createShow", title: "Crear Shows"}) %>
   <body>
     <%- include('../partials/header') %>
+   
+   <!--***************** Formulario de creacion de producto ***************-->
+   
     <form action="/shows/create" method="POST" enctype="multipart/form-data" >
       <div class="row product-detail" style="background-color:#16324f;">
-        <div class="col-12 col-md-6">
+            <div class="col-12 col-md-6">
           <label for="name" class="form-label">Nombre de las Artista</label>
           <input type="text" id="name" name="name" class="form-input" placeholder="Ej: Juan Carlos">
         </div>

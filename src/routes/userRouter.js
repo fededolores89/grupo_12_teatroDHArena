@@ -6,10 +6,10 @@ const mainController = require("../controllers/userController")
 
 
 
-//Login
+/* --------------Muestra la vista del login----------------- */
 router.get('/login' , mainController.login ) 
 
-
+/* --------------Muestra la vista del registro----------------- */
 router.get('/register' ,  mainController.registro )
 
 

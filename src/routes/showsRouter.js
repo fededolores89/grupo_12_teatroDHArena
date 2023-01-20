@@ -4,7 +4,10 @@ const mainController = require("../controllers/showsController.js")
 const multer = require("multer");
 const path = require('path')
 
-// ************ Multer ************
+
+
+
+/* --------------Creamos la ruta y el nombre de la imagen----------------- */
 const storage = multer.diskStorage({
     destination: function(req, file, cb) {
         cb(null, "public/img/Img-Index-Artistas")
@@ -13,7 +16,7 @@ const storage = multer.diskStorage({
         cb(null, file.fieldname + "-" + Date.now() + path.extname(file.originalname))
     }
 })
-
+/* --------------Pasamos a la variable uploud el metodo storage----------------- */
 const upload = multer({storage: storage})
 
 
