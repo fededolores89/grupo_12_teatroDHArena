@@ -31,8 +31,8 @@ router.post('/create' , upload.single("artistImage"), mainController.processCrea
 router.get('/detail/:id' , mainController.detalle)
 
 /* Editar Show */
-router.get('/detail/:id/edit/' , mainController.edit)
-router.put('/detail/edit/:id' , mainController.processEdit)
+router.get('/edit/:id' , mainController.edit)
+router.put('/edit/:id' , mainController.processEdit)
 
 /* Carrito de compras */
 router.get('/detail/:id/compra', mainController.shoppingCart)

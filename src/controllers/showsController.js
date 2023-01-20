@@ -32,13 +32,14 @@ const controllers = {
     let showsFiltrado = shows.find((show) => {
       return show.id == id;
     });
-
+    
     res.render("product/editShows", { shows: showsFiltrado });
   },
 
+  
   /* --------------Procesa la Edicion----------------- */
   processEdit: (req, res) => {
-    res.redirect("main/index");
+    res.send("voy por put")
   },
 
   /* --------------Muestro la vista de crear shows----------------- */
