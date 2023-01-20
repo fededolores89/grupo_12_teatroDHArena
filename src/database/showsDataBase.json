@@ -8,9 +8,10 @@
   "descriptionVideo": "Blindado con una impecable habilidad de composición y una sensibilidad intuitiva, Camilo, ganador de cinco Latin GRAMMY® 2020 y dos veces nominado al GRAMMY® americano, es considerado uno de los mayores exponentes del nuevo Pop de su generación, con más de cinco billones de reproducciones en todas las plataformas digitales alrededor del mundo.",
   "image": "Camilo_385x250.jpg",
   "location": "platea",
-  "date": "15 enero 2023",
+  "day": "15",
   "hour": "20:00",
-  "video": "https://www.youtube.com/embed/ZbxUiwi5Rx8"
+  "video": "https://www.youtube.com/embed/ZbxUiwi5Rx8",
+  "month": "dic"
  },
  {
   "id": 2,
@@ -21,9 +22,10 @@
   "descriptionVideo": "Blindado con una impecable habilidad de composición y una sensibilidad intuitiva, Camilo, ganador de cinco Latin GRAMMY® 2020 y dos veces nominado al GRAMMY® americano, es considerado uno de los mayores exponentes del nuevo Pop de su generación, con más de cinco billones de reproducciones en todas las plataformas digitales alrededor del mundo.",
   "image": "Camilo_385x250.jpg",
   "location": "platea",
-  "date": "15 enero 2023",
+  "day": "15",
   "hour": "20:00",
-  "video": "https://www.youtube.com/embed/ZbxUiwi5Rx8"
+  "video": "https://www.youtube.com/embed/ZbxUiwi5Rx8",
+  "month": "dic"
  },
  {
   "id": 3,
@@ -34,9 +36,10 @@
   "descriptionVideo": "Blindado con una impecable habilidad de composición y una sensibilidad intuitiva, Camilo, ganador de cinco Latin GRAMMY® 2020 y dos veces nominado al GRAMMY® americano, es considerado uno de los mayores exponentes del nuevo Pop de su generación, con más de cinco billones de reproducciones en todas las plataformas digitales alrededor del mundo.",
   "image": "Camilo_385x250.jpg",
   "location": "platea",
-  "date": "15 enero 2023",
+  "day": "15",
   "hour": "20:00",
-  "video": "https://www.youtube.com/embed/ZbxUiwi5Rx8"
+  "video": "https://www.youtube.com/embed/ZbxUiwi5Rx8",
+  "month": "dic"
  },
  {
   "id": 4,
@@ -47,9 +50,10 @@
   "descriptionVideo": "Blindado con una impecable habilidad de composición y una sensibilidad intuitiva, Camilo, ganador de cinco Latin GRAMMY® 2020 y dos veces nominado al GRAMMY® americano, es considerado uno de los mayores exponentes del nuevo Pop de su generación, con más de cinco billones de reproducciones en todas las plataformas digitales alrededor del mundo.",
   "image": "Camilo_385x250.jpg",
   "location": "platea",
-  "date": "15 enero 2023",
+  "day": "15",
   "hour": "20:00",
-  "video": "https://www.youtube.com/embed/ZbxUiwi5Rx8"
+  "video": "https://www.youtube.com/embed/ZbxUiwi5Rx8",
+  "month": "dic"
  },
  {
   "id": 5,
@@ -60,18 +64,9 @@
   "descriptionVideo": "Blindado con una impecable habilidad de composición y una sensibilidad intuitiva, Camilo, ganador de cinco Latin GRAMMY® 2020 y dos veces nominado al GRAMMY® americano, es considerado uno de los mayores exponentes del nuevo Pop de su generación, con más de cinco billones de reproducciones en todas las plataformas digitales alrededor del mundo.",
   "image": "Camilo_385x250.jpg",
   "location": "platea",
-  "date": "15 enero 2023",
+  "day": "15",
   "hour": "20:00",
-  "video": "https://www.youtube.com/embed/ZbxUiwi5Rx8"
- },
- {
-  "id": 6,
-  "name": "Ana Sol Ortiz",
-  "price": "100000",
-  "category": "rock",
-  "descriptionVideo": "En este video Sol arrasa con todo.",
-  "video": "https://www.youtube.com/watch?v=5g2hT4GmAGU",
-  "date": "20 Jun 2023",
-  "hour": "20:00"
+  "video": "https://www.youtube.com/embed/ZbxUiwi5Rx8",
+  "month": "dic"
  }
 ]

@@ -20,15 +20,15 @@
         </div>
         <article class="evento-info">
           <div class="evento-info-nombre">
-            <h2>De adentro pa fuera Tour</h2>
+            <!-- <h2>De adentro pa fuera Tour</h2> -->
             <h1 class="evento-titulo"><%= shows.name %></h1>
           </div>
           <div class="evento-info-detalle">
             <div class="evento-fecha-contenedor">
               <div class="evento-fecha-detalle">
                 <i class="fa-regular fa-calendar"></i>
-                <span class="evento-fecha-mes">DIC</span>
-                <span class="evento-fecha-dia">5</span>
+                <span class="evento-fecha-mes"><%= shows.month %></span>
+                <span class="evento-fecha-dia"><%= shows.day %></span>
               </div>
             </div>
             <div class="evento-descripcion">
@@ -91,9 +91,11 @@
               </div>
              <a href="/detail/:id/compra" class="evento-compra-submit">Comprá tu entrada</a> 
              <a href="/shows/detail/<%= shows.id %>/edit" class="evento-compra-submit">Editar Show</a> 
-              <a href="#"><button class="evento-compra-submit" type="submit">
+             <form action="/shows/delete/<%= shows.id %>?_method=DELETE" method="POST">
+               <button class="evento-compra-submit" type="submit">
                 Borrar Show
-              </button></a>
+              </button></form>
+              
             </form>
           </div>
         </article>

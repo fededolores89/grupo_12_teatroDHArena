@@ -51,14 +51,15 @@ const controllers = {
       name: req.body.name,
       price: req.body.price,
       category: req.body.category,
-      descriptionHeader: req.body.descriptionH2,
+      descriptionHeader: req.body.descriptionHeader,
       descriptionVideo: req.body.descriptionVideo,
       video: req.body.video,
-      date: req.body.date,
+      day: req.body.day,
       hour: req.body.hour,
-    //image: req.file ? req.file.filename : "default-image.png"
+      image: req.file ? req.file.filename : "default-image.png",
+      month: req.body.month
     };
-  
+  console.log(req.body, req.file)
     /* Push */
     shows.push(nuevoShow);
     /* Convertir a JSON */
@@ -69,19 +70,18 @@ const controllers = {
 
   destroy: (req, res) => {
     // Do the magic
-    let id = req.params.id;
+    
     const shows = JSON.parse(fs.readFileSync(showsFilePath, "utf-8"));
-
-    let showsFiltrados = shows.filter((producto) => {
-      return producto.id != id;
-    });
-
+    let id = req.params.id;
+    
+    console.log(shows)
+    
     fs.writeFileSync(
-      productsFilePath,
+      showsFilePath,
       JSON.stringify(showsFiltrados, null, " ")
     );
 
-    res.redirect("allsTheShows");
+    res.redirect("/shows");
   },
   shoppingCart: (req, res) => {
     res.render("productCart");

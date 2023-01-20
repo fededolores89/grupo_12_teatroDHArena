@@ -8,18 +8,38 @@
       <div class="row product-detail" style="background-color: #16324f ;">
         <div class="col-12 col-md-6">
           <label for="name" class="form-label">Nombre del shows:</label>
-          <input value="<%= shows.name %>" type="text" id="name" name="name" placeholder="Ej: Zapatillas Reebok" class="form-input">
+          <input value="<%= shows.name %>" type="text" id="name" name="name" placeholder="Ej: Juan Carlos" class="form-input">
         </div>
         <div class="col-12 col-md-6">
           <label for="price" class="form-label">Precio del shows:</label>
-          <input value="<%= shows.price %>" type="text" id="price" name="price" placeholder="Ej: 5678" class="form-input">
-        </div>
-        <div class="col-12 col-md-6">Hora del shows:</label>
-          <input value="<%= shows.price %>" type="text" id="hour" name="hour" placeholder="Ej: 5678" class="form-input">
+          <input value="<%= shows.price %>" type="text" id="price" name="price" placeholder="Ej: 5000" class="form-input">
         </div>
         <div class="col-12 col-md-6">
-          <label for="date" class="form-label">Fecha:</label>
-          <input value="<%= shows.date %>" type="text" id="date" name="date" placeholder="Ej: 15" class="form-input">
+          <label for="hour" class="form-label">Hora del shows:</label>
+          <input value="<%= shows.price %>" type="text" id="hour" name="hour" placeholder="Ej: 14:00" class="form-input">
+        </div>
+        <div class="col-12 col-md-6">
+          <label for="day" class="form-label">Dia:</label>
+          <input value="<%= shows.day %>" type="text" id="day" name="day" placeholder="Ej: 15" class="form-input">
+        </div>
+        <div class="col-12 col-md-6">
+          <label for="month" class="form-label">Mes:</label>
+          <select name="month" id="month" class="form-input">
+            <option value="">Elegí</optnion>
+            <option value="<%= shows.month %>">Enero</option>
+            <option value="<%= shows.month %>">Febrero</option>
+            <option value="<%= shows.month %>">Marzo</option>
+            <option value="<%= shows.month %>">Abril</option>
+            <option value="<%= shows.month %>">Mayo</option>
+            <option value="<%= shows.month %>">Junio</option>
+            <option value="<%= shows.month %>">Julio</option>
+            <option value="<%= shows.month %>">Agosto</option>
+            <option value="<%= shows.month %>">Septiembre</option>
+            <option value="<%= shows.month %>">Octubre</option>
+            <option value="<%= shows.month %>">Noviembre</option>
+            <option value="<%= shows.month %>">Diciembre</option>
+            
+          </select>
         </div>
         <div class="col-12 col-md-6">
           <label for="category" class="form-label">Categoría:</label>

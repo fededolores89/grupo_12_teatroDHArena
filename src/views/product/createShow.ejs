@@ -3,24 +3,46 @@
   <%-include ("../partials/head", {cssSheets: "createShow", title: "Crear Shows"}) %>
   <body>
     <%- include('../partials/header') %>
-    <form action="/shows/create" method="POST" >
+    <form action="/shows/create" method="POST" enctype="multipart/form-data" >
       <div class="row product-detail" style="background-color:#16324f;">
         <div class="col-12 col-md-6">
           <label for="name" class="form-label">Nombre de las Artista</label>
-          <input type="text" id="name" name="name" class="form-input" placeholder="Nombre del Artista">
+          <input type="text" id="name" name="name" class="form-input" placeholder="Ej: Juan Carlos">
         </div>
         <div class="col-12 col-md-6">
           <label for="price" class="form-label">Precio de la Entrada</label>
-          <input type="text" id="price" name="price" class="form-input" placeholder="Precio de la entrada">
+          <input type="text" id="price" name="price" class="form-input" placeholder="Ej: 15000">
         </div>
         <div class="col-12 col-md-6">
           <label for="hour" class="form-label">Hora del Show</label>
-          <input type="text" id="hour" name="hour"  class="form-input" placeholder="Hora del evento">
+          <input type="text" id="hour" name="hour"  class="form-input" placeholder="Ej: 14:00">
         </div>
         <div class="col-12 col-md-6">
-          <label for="date" class="form-label">Fecha del Show</label>
-          <input type="text" id="date" name="date"  class="form-input" placeholder="Fecha del evento">
+          <label for="day" class="form-label">Dia del Show</label>
+          <input type="text" id="day" name="day"  class="form-input" placeholder="Ej: 5 ">
         </div>
+        <div class="col-12 col-md-6">
+          <label for="month" class="form-label">Mes:</label>
+          <select name="month" id="month" class="form-input">
+            <option value="">Elegí</option>
+            <option value="ENE">Enero</option>
+            <option value="FEB">Febrero</option>
+            <option value="MAR">Marzo</option>
+            <option value="ABR">Abril</option>
+            <option value="MAY">Mayo</option>
+            <option value="JUN">Junio</option>
+            <option value="JUL">Julio</option>
+            <option value="AGOS">Agosto</option>
+            <option value="SEPT">Septiembre</option>
+            <option value="OCT">Octubre</option>
+            <option value="NOV">Noviembre</option>
+            <option value="DIC">Diciembre</option>
+            
+          </select>
+        </div>
+        
+        
+        
         <div class="col-12 col-md-6">
           <label for="category" class="form-label">Categoría:</label>
           <select name="category" id="category" class="form-input">
@@ -42,10 +64,10 @@
           <textarea name="descriptionVideo" id="descriptionVideo" class="form-input"></textarea>
         </div>
         
-       <!--  <div class="col-12 col-md-6">
+        <div class="col-12 col-md-6">
           <label for="artistImage" class="form-label">Imagen del Artista:</label>
           <input type="file" id="artistImage" name="artistImage" >
-        </div> -->
+        </div>
         <div class="col-12">
           <button type="submit" class="buy-now-button">Guardar Shows</button>
         </div>

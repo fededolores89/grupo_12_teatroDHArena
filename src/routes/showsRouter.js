@@ -1,7 +1,20 @@
 const express = require('express')
 const router = express.Router()
 const mainController = require("../controllers/showsController.js")
+const multer = require("multer");
+const path = require('path')
 
+// ************ Multer ************
+const storage = multer.diskStorage({
+    destination: function(req, file, cb) {
+        cb(null, "public/img/Img-Index-Artistas")
+    },
+    filename: function(req, file, cb) {
+        cb(null, file.fieldname + "-" + Date.now() + path.extname(file.originalname))
+    }
+})
+
+const upload = multer({storage: storage})
 
 
 /* Vista a todos los Shows */
@@ -9,7 +22,7 @@ router.get("/" , mainController.index )
 
 /* Creacion de show */
 router.get('/create' , mainController.create)
-router.post('/create' , mainController.processCreate)
+router.post('/create' , upload.single("artistImage"), mainController.processCreate)
 
 /* Vista a el show */
 router.get('/detail/:id' , mainController.detalle)
@@ -24,7 +37,7 @@ router.get('/detail/:id/compra', mainController.shoppingCart)
 
 /* Borrar un Show */
 
-//router.delete('/delete/:id', productsController.destroy);
+router.delete('/delete/:id', mainController.destroy);
 
 
 
