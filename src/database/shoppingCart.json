@@ -1,0 +1,35 @@
+[
+  {
+    "showId": 1,
+    "showName": "Camilo",
+    "showDescription": "La mejor musica de Camilo en el Tour del 2023",
+    "showPrice": 240,
+    "showImg": "Camilo_385x250.jpg",
+    "showDate": "01/05/2023",
+    "showHour": "20:00",
+    "quantity": 1,
+    "location": "platea"
+  },
+  {
+    "showId": 2,
+    "showName": "Reik",
+    "showDescription": "La mejor musica de Reik en el Tour del 2023",
+    "showPrice": 240,
+    "showImg": "Reik-385x250-1.jpg",
+    "showDate": "01/05/2023",
+    "showHour": "20:00",
+    "quantity": 2,
+    "location": "platea"
+  },
+  {
+    "showId": 3,
+    "showName": "Servando",
+    "showDescription": "La mejor musica de Servando en el Tour del 2023",
+    "showPrice": 240,
+    "showImg": "Servando-385x250-1.png",
+    "showDate": "01/05/2023",
+    "showHour": "20:00",
+    "quantity": 3,
+    "location": "platea"
+  }
+]
