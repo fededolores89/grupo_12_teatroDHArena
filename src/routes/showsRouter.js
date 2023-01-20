@@ -10,6 +10,7 @@ router.get("/" , mainController.index )
 
 /* Creacion de show */
 router.get('/create' , mainController.create)
+router.post('/create' , mainController.processCreate)
 
 /* Vista a el show */
 router.get('/detail/:id' , mainController.detalle)
