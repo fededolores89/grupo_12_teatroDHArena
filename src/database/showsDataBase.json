@@ -13,10 +13,36 @@
   "video": "https://www.youtube.com/embed/ZbxUiwi5Rx8"
  },
  {
-  "id": 4,
+  "id": 2,
   "name": "Camilo",
   "price": 150,
   "category": "pop",
+  "descriptionHeader": "El máximo exponente del pop actual a nivel global, anunció su nueva gira por Latinoamérica con la que batió récords de público en Europa y Estados Unidos. Entradas a la venta a partir del lunes 5 de diciembre a las 20hs.",
+  "descriptionVideo": "Blindado con una impecable habilidad de composición y una sensibilidad intuitiva, Camilo, ganador de cinco Latin GRAMMY® 2020 y dos veces nominado al GRAMMY® americano, es considerado uno de los mayores exponentes del nuevo Pop de su generación, con más de cinco billones de reproducciones en todas las plataformas digitales alrededor del mundo.",
+  "image": "Camilo_385x250.jpg",
+  "location": "platea",
+  "date": "15 enero 2023",
+  "hour": "20:00",
+  "video": "https://www.youtube.com/embed/ZbxUiwi5Rx8"
+ },
+ {
+  "id": 3,
+  "name": "Camilo",
+  "price": 150,
+  "category": "rock",
+  "descriptionHeader": "El máximo exponente del pop actual a nivel global, anunció su nueva gira por Latinoamérica con la que batió récords de público en Europa y Estados Unidos. Entradas a la venta a partir del lunes 5 de diciembre a las 20hs.",
+  "descriptionVideo": "Blindado con una impecable habilidad de composición y una sensibilidad intuitiva, Camilo, ganador de cinco Latin GRAMMY® 2020 y dos veces nominado al GRAMMY® americano, es considerado uno de los mayores exponentes del nuevo Pop de su generación, con más de cinco billones de reproducciones en todas las plataformas digitales alrededor del mundo.",
+  "image": "Camilo_385x250.jpg",
+  "location": "platea",
+  "date": "15 enero 2023",
+  "hour": "20:00",
+  "video": "https://www.youtube.com/embed/ZbxUiwi5Rx8"
+ },
+ {
+  "id": 4,
+  "name": "pop",
+  "price": 150,
+  "category": "rock",
   "descriptionHeader": "El máximo exponente del pop actual a nivel global, anunció su nueva gira por Latinoamérica con la que batió récords de público en Europa y Estados Unidos. Entradas a la venta a partir del lunes 5 de diciembre a las 20hs.",
   "descriptionVideo": "Blindado con una impecable habilidad de composición y una sensibilidad intuitiva, Camilo, ganador de cinco Latin GRAMMY® 2020 y dos veces nominado al GRAMMY® americano, es considerado uno de los mayores exponentes del nuevo Pop de su generación, con más de cinco billones de reproducciones en todas las plataformas digitales alrededor del mundo.",
   "image": "Camilo_385x250.jpg",
@@ -39,29 +65,13 @@
   "video": "https://www.youtube.com/embed/ZbxUiwi5Rx8"
  },
  {
-  "id": 2,
-  "name": "pop",
-  "price": 150,
+  "id": 6,
+  "name": "Ana Sol Ortiz",
+  "price": "100000",
   "category": "rock",
-  "descriptionHeader": "El máximo exponente del pop actual a nivel global, anunció su nueva gira por Latinoamérica con la que batió récords de público en Europa y Estados Unidos. Entradas a la venta a partir del lunes 5 de diciembre a las 20hs.",
-  "descriptionVideo": "Blindado con una impecable habilidad de composición y una sensibilidad intuitiva, Camilo, ganador de cinco Latin GRAMMY® 2020 y dos veces nominado al GRAMMY® americano, es considerado uno de los mayores exponentes del nuevo Pop de su generación, con más de cinco billones de reproducciones en todas las plataformas digitales alrededor del mundo.",
-  "image": "Camilo_385x250.jpg",
-  "location": "platea",
-  "date": "15 enero 2023",
-  "hour": "20:00",
-  "video": "https://www.youtube.com/embed/ZbxUiwi5Rx8"
- },
- {
-  "id": 3,
-  "name": "Camilo",
-  "price": 150,
-  "category": "rock",
-  "descriptionHeader": "El máximo exponente del pop actual a nivel global, anunció su nueva gira por Latinoamérica con la que batió récords de público en Europa y Estados Unidos. Entradas a la venta a partir del lunes 5 de diciembre a las 20hs.",
-  "descriptionVideo": "Blindado con una impecable habilidad de composición y una sensibilidad intuitiva, Camilo, ganador de cinco Latin GRAMMY® 2020 y dos veces nominado al GRAMMY® americano, es considerado uno de los mayores exponentes del nuevo Pop de su generación, con más de cinco billones de reproducciones en todas las plataformas digitales alrededor del mundo.",
-  "image": "Camilo_385x250.jpg",
-  "location": "platea",
-  "date": "15 enero 2023",
-  "hour": "20:00",
-  "video": "https://www.youtube.com/embed/ZbxUiwi5Rx8"
+  "descriptionVideo": "En este video Sol arrasa con todo.",
+  "video": "https://www.youtube.com/watch?v=5g2hT4GmAGU",
+  "date": "20 Jun 2023",
+  "hour": "20:00"
  }
 ]
