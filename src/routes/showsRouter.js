@@ -35,7 +35,7 @@ router.get('/edit/:id' , mainController.edit)
 router.put('/edit/:id' , upload.single("editedArtistImage") ,mainController.processEdit)
 
 /* Carrito de compras */
-router.get('/detail/:id/compra', mainController.shoppingCart)
+router.get('/carrito', mainController.shoppingCart)
 
 
 /* Borrar un Show */
