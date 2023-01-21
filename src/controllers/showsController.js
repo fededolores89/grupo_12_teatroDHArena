@@ -12,7 +12,7 @@ const controllers = {
     res.render("product/allsTheShows", { shows: shows });
   },
 
-  /* --------------Muestra Los Detalles del Show por Id----------------- */
+  /* --------------Muestra el show en detalle por id----------------- */
   detalle: (req, res) => {
     let id = req.params.id;
     const shows = JSON.parse(fs.readFileSync(showsFilePath, "utf-8"));
@@ -41,17 +41,15 @@ const controllers = {
   processEdit: (req, res) => {
     // Do the magic
 
-		/* Incorporar FS */
-		/* Leer el archivo */
-		const shows = JSON.parse(fs.readFileSync(showsFilePath, "utf-8"));
+	const shows = JSON.parse(fs.readFileSync(showsFilePath, "utf-8"));
 
 		let id = req.params.id;
-		let showAnterior = shows.find(producto => {
-			return producto.id == id
+		let showAnterior = shows.find(show => {
+			return show.id == id
 		})
 
 		let showEditado = {
-			/* dejar el id anterior */
+			
 			id: showAnterior.id,
       name: req.body.name,
       price: req.body.price,
@@ -64,16 +62,14 @@ const controllers = {
       image: req.file ? req.file.filename : "default-image.png",
       month: req.body.month,
 		}
-		/* Modificar el array en la posición correspondiente */
 		
 		let indice = shows.findIndex(product => {
 			return product.id == id
 		})
 
 		shows[indice] = showEditado;
-
-		/* Convertir a JSON */
-		/* Escribir sobre el archivo json */
+   
+	
 		fs.writeFileSync(showsFilePath, JSON.stringify(shows, null, " "));
 		res.redirect("/");
   },
@@ -114,14 +110,25 @@ const controllers = {
     const shows = JSON.parse(fs.readFileSync(showsFilePath, "utf-8"));
     let id = req.params.id;
 
-    console.log(shows);
+    let showsFiltrados = shows.filter(show => {
+			return show.id != id
+		})
 
     fs.writeFileSync(showsFilePath, JSON.stringify(showsFiltrados, null, " "));
 
     res.redirect("/shows");
   },
   shoppingCart: (req, res) => {
-    res.render("productCart");
+    
+    const shows = JSON.parse(fs.readFileSync(showsFilePath, "utf-8"));
+    let id = req.params.id;
+    let showsFiltrado = shows.find((show) => {
+      return show.id == id;
+    });
+
+    console.log(showsFiltrado)
+    
+    res.render("product/productCart", { shows: showsFiltrado });
   },
 };
 
