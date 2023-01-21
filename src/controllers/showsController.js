@@ -8,7 +8,6 @@ const shows = JSON.parse(fs.readFileSync(showsFilePath, "utf-8"));
 const controllers = {
   /* --------------Muestra Todos los Shows----------------- */
   index: (req, res) => {
-    const shows = JSON.parse(fs.readFileSync(showsFilePath, "utf-8"));
 
     res.render("product/allsTheShows", { shows: shows });
   },
@@ -16,7 +15,6 @@ const controllers = {
   /* --------------Muestra Los Detalles del Show por Id----------------- */
   detalle: (req, res) => {
     let id = req.params.id;
-    const shows = JSON.parse(fs.readFileSync(showsFilePath, "utf-8"));
 
     let showsFiltrado = shows.find((show) => {
       return show.id == id;
@@ -28,7 +26,6 @@ const controllers = {
   /* --------------Muestra El Shows que queremos editar----------------- */
   edit: (req, res) => {
     let id = req.params.id;
-    const shows = JSON.parse(fs.readFileSync(showsFilePath, "utf-8"));
 
     let showsFiltrado = shows.find((show) => {
       return show.id == id;
@@ -44,7 +41,6 @@ const controllers = {
 
 		/* Incorporar FS */
 		/* Leer el archivo */
-		const shows = JSON.parse(fs.readFileSync(showsFilePath, "utf-8"));
 
 		let id = req.params.id;
 		let showAnterior = shows.find(producto => {
@@ -88,8 +84,6 @@ const controllers = {
   processCreate: (req, res) => {
     // Do the magic
 
-    const shows = JSON.parse(fs.readFileSync(showsFilePath, "utf-8"));
-
     let nuevoShow = {
       id: shows[shows.length - 1].id + 1,
       name: req.body.name,
@@ -112,10 +106,7 @@ const controllers = {
   destroy: (req, res) => {
     // Do the magic
 
-    const shows = JSON.parse(fs.readFileSync(showsFilePath, "utf-8"));
     let id = req.params.id;
-
-    console.log(shows);
 
     fs.writeFileSync(showsFilePath, JSON.stringify(showsFiltrados, null, " "));
 
@@ -125,7 +116,6 @@ const controllers = {
     const shoppingCartItems = JSON.parse(fs.readFileSync(shoppingCartFilePath, "utf-8"));
 
     res.render('product/productCart', {shoppingCartItems: shoppingCartItems});
-    //res.send(shoppingCartItems);
   },
 };
 

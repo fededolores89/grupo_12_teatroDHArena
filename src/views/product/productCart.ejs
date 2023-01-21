@@ -7,58 +7,67 @@
     <main class="carrito-main">
       <h2>Carrito de compras</h2>
       <article class="carrito-de-compras">
-      <div class="carrito-item">
-        <div class="item-img">
-          <img src="/img/Img-Index-Artistas/Camilo_385x250.jpg" alt="">
-        </div>
-        <div class="item-info">
-          <h2 class="item-nombre">Camilo</h2>
-          <p class="item-date"><i class="fas fa-calendar-alt"></i> 8 Agosto 2023</p>
-          <p class="item-hour"><i class="far fa-clock"></i> 22:00 hs</p>
-          <section class="left-productcart">
-            <div class="cant-borrar">
-              <div class="cantidad-entradas">
-                <label for="tickets">Tickets</label>
-                <select name="tickets" id="tickets">
-                  <option value="1">1</option>
-                  <option value="1">2</option>
-                  <option value="1">3</option>
-                  <option value="1">4</option>
-                  <option value="1">5</option>
-                  <option value="1">6</option>
-                </select>
-              </div>    
-            </div>
-            <p class="total">Subtotal: $8000 </p>
-            <hr>
-            <section class="compras">
-              <div class="continua-comprando"><a><i class="fas fa-reply-all"></i>  Continua comprando</a></div>
-              <button class="boton-borrar"><i class="fas fa-times"></i> Borrar</button>
-            </section>
-          </section>
+        <% if (shoppingCartItems.length) { %>
+          <% for( let index = 0; index < shoppingCartItems.length; index++ ) { %>
           
-        </div>
-      </div>      
+            <div class="carrito-item" data-showId="<%= shoppingCartItems[index].showId %> ">
+              <div class="item-img">
+                <img src="/img/Img-Index-Artistas/<%= shoppingCartItems[index].showImg %> " alt="">
+              </div>
+              <div class="item-info">
+                <h2 class="item-nombre"><%= shoppingCartItems[index].showName %> </h2>
+                <p class="item-date"><i class="fas fa-calendar-alt"></i> <%= shoppingCartItems[index].showDate %> </p>
+                <p class="item-hour"><i class="far fa-clock"></i> <%= shoppingCartItems[index].showHour %>  hs</p>
+                <p class="item-price-container"><i class="fa-solid fa-money-bill"></i> $<span class="item-price"><%= shoppingCartItems[index].showPrice %></span></p>
+                <section class="left-productcart">
+                  <div class="cant-borrar">
+                    <div class="cantidad-entradas">
+                      <label for="tickets">Tickets</label>
+                      <select name="tickets" id="tickets">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                      </select>
+                    </div>    
+                  </div>
+                  <p class="subtotal-container">Subtotal: $<span class="subtotal"></span></p>
+                  <hr>
+                  <section class="compras">
+                    <div class="continua-comprando"><a href="/shows"><i class="fas fa-reply-all"></i>  Continua comprando</a></div>
+                    <button class="boton-borrar"><i class="fas fa-times"></i> Borrar</button>
+                  </section>
+                </section>
+              </div>
+            </div> 
+          <% } %>
+          <article class="order-summary">
+            <h2>Resumen de compra</h2>
+            <div class="order-info">
+              <p class="order-total">Precio total: $<span class="order-total-price"></span></p>
+              <button class="order-buy" type="submit">Comprar ahora</button>
+            </div>
+          </article>
+          <section class="payment-methods">
+            <h3>Métodos de pago</h3>
+            <div class="payment-icons">
+              <i class="fa-brands fa-cc-visa"></i>
+              <i class="fa-brands fa-cc-mastercard"></i>
+              <i class="fa-brands fa-cc-paypal"></i>
+              <i class="fa-brands fa-cc-amex"></i>
+            </div>
+          </section>
+        <% } else { %>
+          <h2>Su carrito de compras se encuentra vacío</h2>
+        <% } %>
+         
       </article>
-      <article class="order-summary">
-        <h2>Resumen de compra</h2>
-        <div class="order-info">
-          <p class="order-total">Precio total: $22222.00</p>
-          <button class="order-buy" type="submit">Comprar ahora</button>
-        </div>
-      </article>
-      <section class="payment-methods">
-        <h3>Métodos de pago</h3>
-        <div class="payment-icons">
-          <i class="fa-brands fa-cc-visa"></i>
-          <i class="fa-brands fa-cc-mastercard"></i>
-          <i class="fa-brands fa-cc-paypal"></i>
-          <i class="fa-brands fa-cc-amex"></i>
-        </div>
-      </section>
             
     </main><%- include('../partials/footer') %>
     <!-- Agregando archivo nav.js para el menu -->
-    <script src="js/nav/nav.js"></script>
+    <script src="../js/nav/nav.js"></script>
+    <script src="../js/shoppingCart/shoppingCart.js"></script>
   </body>
 </html>

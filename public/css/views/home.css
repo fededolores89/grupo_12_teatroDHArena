@@ -26,9 +26,13 @@
     border-radius: 6px;
     
   }
+  .Img-Artista {
+    margin: 0;
+    margin-bottom: 1rem;
+  }
 
 .boton-entrada {
-  padding: 0;
+  padding: 0.7rem 1rem;
 }
   
   .Shows {
@@ -41,12 +45,23 @@
   
   .titulo-shows {
     width: 100%;
+    margin: 1rem 0;
+    font-size: 2rem;
   }
   
   .eventos-home {
     width: 70%;
-   border: solid 2px white;
+    border: solid 2px white;
     margin-bottom: 1rem;
+    padding-bottom: 2rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+  }
+
+  .eventos-home:hover {
+    transform: scale(1.01);
   }
   
   .titulo-shows {
@@ -55,8 +70,24 @@
   
   .descripcion {
     color: white;
-    font-family: sans-serif
+    font-family: sans-serif;
+    text-align: left;
+    padding: 0 1rem;
   }
+
+  .descripcion .nombre {
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    margin-top: 0;
+  }
+
+  .descripcion .fecha {
+    margin: 0;
+    font-size: 0.8rem;
+  }
+
+  .Info {margin-bottom: 2rem;}
   
 
    /* --------------------- Aca la parte de club Arena ------------------ */
