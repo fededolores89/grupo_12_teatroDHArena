@@ -2,6 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const { emitWarning } = require("process");
 const showsFilePath = path.join(__dirname, "../database/showsDataBase.json");
+const shoppingCartFilePath = path.join(__dirname, "../database/shoppingCart.json");
 const shows = JSON.parse(fs.readFileSync(showsFilePath, "utf-8"));
 
 const controllers = {
@@ -119,16 +120,10 @@ const controllers = {
     res.redirect("/shows");
   },
   shoppingCart: (req, res) => {
-    
-    const shows = JSON.parse(fs.readFileSync(showsFilePath, "utf-8"));
-    let id = req.params.id;
-    let showsFiltrado = shows.find((show) => {
-      return show.id == id;
-    });
+    const shoppingCartItems = JSON.parse(fs.readFileSync(shoppingCartFilePath, "utf-8"));
 
-    console.log(showsFiltrado)
-    
-    res.render("product/productCart", { shows: showsFiltrado });
+    res.render('product/productCart', {shoppingCartItems: shoppingCartItems});
+    //res.send(shoppingCartItems);
   },
 };
 

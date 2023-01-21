@@ -1,12 +1,6 @@
 /* Importando estilos de las paginas del proyecto */
 @import url(header/header.css);
-@import url(footer/footer.css); /* 
-@import url(home/home.css);
-@import url(login/login.css);
-@import url(productCart/productCart.css);
-@import url(productDetail/productDetail.css);
-@import url(register/register.css);
-*/
+@import url(footer/footer.css);
 
 /* Importando fuente del proyecto */
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700&display=swap');
