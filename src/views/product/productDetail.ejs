@@ -89,14 +89,15 @@
                 <label for="evento-precio">Precio</label>
                 <span id="evento-precio">$ <%= shows.price %> </span>
               </div>
-             <a href="/detail/:id/compra" class="evento-compra-submit">Comprá tu entrada</a> 
+             <a href="/shows/compra/:id" class="evento-compra-submit">Comprá tu entrada</a> 
              <a href="/shows/edit/<%= shows.id %>" class="evento-compra-submit">Editar Show</a> 
+             </form>
              <form action="/shows/delete/<%= shows.id %>?_method=DELETE" method="POST">
                <button class="evento-compra-submit" type="submit">
                 Borrar Show
               </button></form>
               
-            </form>
+            
           </div>
         </article>
       </section>

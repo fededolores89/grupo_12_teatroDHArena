@@ -12,7 +12,7 @@ const controllers = {
     res.render("product/allsTheShows", { shows: shows });
   },
 
-  /* --------------Muestra Los Detalles del Show por Id----------------- */
+  /* --------------Muestra el show en detalle por id----------------- */
   detalle: (req, res) => {
     let id = req.params.id;
 
@@ -39,16 +39,17 @@ const controllers = {
   processEdit: (req, res) => {
     // Do the magic
 
+	const shows = JSON.parse(fs.readFileSync(showsFilePath, "utf-8"));
 		/* Incorporar FS */
 		/* Leer el archivo */
 
 		let id = req.params.id;
-		let showAnterior = shows.find(producto => {
-			return producto.id == id
+		let showAnterior = shows.find(show => {
+			return show.id == id
 		})
 
 		let showEditado = {
-			/* dejar el id anterior */
+			
 			id: showAnterior.id,
       name: req.body.name,
       price: req.body.price,
@@ -61,16 +62,14 @@ const controllers = {
       image: req.file ? req.file.filename : "default-image.png",
       month: req.body.month,
 		}
-		/* Modificar el array en la posición correspondiente */
 		
 		let indice = shows.findIndex(product => {
 			return product.id == id
 		})
 
 		shows[indice] = showEditado;
-
-		/* Convertir a JSON */
-		/* Escribir sobre el archivo json */
+   
+	
 		fs.writeFileSync(showsFilePath, JSON.stringify(shows, null, " "));
 		res.redirect("/");
   },
@@ -107,6 +106,8 @@ const controllers = {
     // Do the magic
 
     let id = req.params.id;
+
+    console.log(shows);
 
     fs.writeFileSync(showsFilePath, JSON.stringify(showsFiltrados, null, " "));
 
