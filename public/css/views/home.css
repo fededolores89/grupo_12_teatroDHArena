@@ -56,7 +56,6 @@
     padding-bottom: 2rem;
     border-radius: 1rem;
     overflow: hidden;
-    cursor: pointer;
     transition: all .2s ease-in-out;
   }
 
