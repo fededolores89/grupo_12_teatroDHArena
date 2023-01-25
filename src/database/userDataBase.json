@@ -6,7 +6,7 @@
     "email": "martin-dev@gmail.com",
     "password": "123456",
     "category": "admin",
-    "Imagen": "image"
+    "imageUrl": "image"
   },
   {
     "id": "3",

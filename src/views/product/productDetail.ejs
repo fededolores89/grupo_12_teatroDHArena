@@ -77,29 +77,30 @@
         <article class="evento-compra-contenedor">
           <i class="fa-solid fa-location-arrow"></i>
           <div class="evento-compra-detalle">
-            <form action="">
               <div class="form-item">
                 <label for="evento-ubicacion">Ubicacion</label>
                 <select name="evento-ubicacion" id="evento-ubicacion">
                   <option value="">Seleccione ubicacion</option>
-                  <option value="dharena">DHArena</option>
+                  <option value="platea" selected>Platea</option>
                 </select>
               </div>
               <div class="form-item">
                 <label for="evento-precio">Precio</label>
                 <span id="evento-precio">$ <%= shows.price %> </span>
               </div>
-             <a href="/shows/compra/:id" class="evento-compra-submit">Comprá tu entrada</a> 
-             <a href="/shows/edit/<%= shows.id %>" class="evento-compra-submit">Editar Show</a> 
-             </form>
-             <form action="/shows/delete/<%= shows.id %>?_method=DELETE" method="POST">
-               <button class="evento-compra-submit" type="submit">
-                Borrar Show
-              </button></form>
-              
-            
+             <a class="evento-buy" href="/shows/compra/:id" class="evento-compra-submit">Comprá tu entrada</a> 
           </div>
         </article>
+        <div class="evento-admin-contenedor">
+          <div class="admin-buttons">
+            <a class="edit-button" href="/shows/<%= shows.id %>/edit" class=""><i class="fa-solid fa-pen-to-square"></i> Editar</a>
+            <form action="/shows/<%= shows.id %>?_method=DELETE" method="POST">
+              <button class="delete-button" type="submit">
+                <i class="fa-solid fa-trash"></i> Borrar
+              </button>
+            </form> 
+          </div>
+        </div>
       </section>
     </main>
     <%- include('../partials/footer') %>

@@ -29,8 +29,10 @@
                 <div class="descripcion">
                   <p class="nombre"><%= shows[j].name %></p>
                   <p class="fecha"><%= shows[j].date %></p>
-                  <p class="Info">más info</p>
-                  <a href="/shows/detail/<%= shows[j].id %>" class="boton-entrada">Compra tu entrada</a>
+                  <div class="botones-info">
+                    <a href="/shows/<%= shows[j].id %>" class="Info">más info</p>
+                    <a href="/shows/<%= shows[j].id %>" class="boton-entrada">Compra tu entrada</a>
+                  </div>
                 </div>
               </article>
             <% } %>

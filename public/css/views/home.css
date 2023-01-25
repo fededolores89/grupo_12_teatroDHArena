@@ -20,10 +20,7 @@
   }
   /* --------------------Aca la parte de los Shows ---------------------------*/
   main a {
-    text-decoration: none;
-    background-color: #2cf2c7;
-    padding: 8px;
-    border-radius: 6px;
+    
     
   }
   .Img-Artista {
@@ -31,8 +28,18 @@
     margin-bottom: 1rem;
   }
 
-.boton-entrada {
-  padding: 0.7rem 1rem;
+  .botones-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+  }
+
+.boton-entrada, .boton-clubarena, .hero a {
+  text-decoration: none;
+  background-color: #2cf2c7;
+  border-radius: 12px;
+  padding: 0.6rem;
+  font-weight: bold;
 }
   
   .Shows {
@@ -86,7 +93,14 @@
     font-size: 0.8rem;
   }
 
-  .Info {margin-bottom: 2rem;}
+  .Info {
+    text-decoration: none;
+    color: white;
+    border-bottom: 2px solid var(--magenta);
+    cursor: pointer;
+    width: 70px;
+    font-weight: bold;
+  }
   
 
    /* --------------------- Aca la parte de club Arena ------------------ */

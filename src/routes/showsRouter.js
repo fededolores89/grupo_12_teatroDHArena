@@ -28,11 +28,11 @@ router.get('/create' , mainController.create)
 router.post('/create' , upload.single("artistImage"), mainController.processCreate)
 
 /* Vista a el show */
-router.get('/detail/:id' , mainController.detalle)
+router.get('/:id' , mainController.detalle)
 
 /* Editar Show */
-router.get('/edit/:id' , mainController.edit)
-router.put('/edit/:id' , upload.single("editedArtistImage") ,mainController.processEdit)
+router.get('/:id/edit' , mainController.edit)
+router.put('/:id/edit' , upload.single("editedArtistImage") ,mainController.processEdit)
 
 /* Carrito de compras */
 router.get('/carrito', mainController.shoppingCart)
@@ -40,7 +40,7 @@ router.get('/carrito', mainController.shoppingCart)
 
 /* Borrar un Show */
 
-router.delete('/delete/:id', mainController.destroy);
+router.delete('/:id', mainController.destroy);
 
 
 
