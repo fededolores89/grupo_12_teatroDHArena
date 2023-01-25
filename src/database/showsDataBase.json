@@ -58,44 +58,5 @@
   "video": "https://www.youtube.com/embed/zC-nzOoFD6s",
   "month": "MAR",
   "date": "15/03/2023"
- },
- {
-  "id": 5,
-  "name": "Camilo",
-  "price": 150,
-  "categoryId": 2,
-  "descriptionHeader": "El máximo exponente del pop actual a nivel global, anunció su nueva gira por Latinoamérica con la que batió récords de público en Europa y Estados Unidos. Entradas a la venta a partir del lunes 5 de ENEiembre a las 20hs.",
-  "descriptionVideo": "Blindado con una impecable habilidad de composición y una sensibilidad intuitiva, Camilo, ganador de cinco Latin GRAMMY® 2020 y dos veces nominado al GRAMMY® americano, es considerado uno de los mayores exponentes del nuevo Pop de su generación, con más de cinco billones de reproducciones en todas las plataformas digitales alrededor del mundo.",
-  "image": "Camilo_385x250.jpg",
-  "location": "platea",
-  "day": "15",
-  "hour": "20:00",
-  "video": "https://www.youtube.com/embed/ZbxUiwi5Rx8",
-  "month": "ENE"
- },
- {
-  "id": 7,
-  "name": "Ana Sol Ortiz Editada",
-  "price": "200000",
-  "category": "",
-  "descriptionVideo": " Una hermosa y talentosa joven 2",
-  "video": "https://www.youtube.com/watch?v=1w7OgIMMRc4",
-  "day": "25",
-  "hour": "200000",
-  "image": "editedArtistImage-1674608346040.jpg",
-  "month": ""
- },
- {
-  "id": 8,
-  "name": "Jeans",
-  "price": "599",
-  "category": "rock",
-  "descriptionHeader": " Test",
-  "descriptionVideo": "No",
-  "video": "No",
-  "day": "2",
-  "hour": "12:00",
-  "image": "artistImage-1674607459347.jpg",
-  "month": "ENE"
  }
 ]

@@ -10,8 +10,6 @@ const controller = {
     const categories = JSON.parse(fs.readFileSync(categoriesFilePath, "utf-8"));
 
     res.render("main/index", {categories: categories, shows: shows});
-
-    //res.send(categories);
   },
 };
 

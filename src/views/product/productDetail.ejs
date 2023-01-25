@@ -88,7 +88,7 @@
                 <label for="evento-precio">Precio</label>
                 <span id="evento-precio">$ <%= shows.price %> </span>
               </div>
-             <a class="evento-buy" href="/shows/compra/:id" class="evento-compra-submit">Comprá tu entrada</a> 
+             <a class="evento-buy" href="/shows/<%= shows.id %>/agregar" class="evento-compra-submit">Agregar al carrito</a> 
           </div>
         </article>
         <div class="evento-admin-contenedor">

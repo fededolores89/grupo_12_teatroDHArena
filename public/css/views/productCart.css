@@ -57,10 +57,10 @@ h2{
 }
 
 .boton-borrar{
-    width: 120px;
-    height: 30px;
     cursor: pointer;
-
+    background: transparent;
+    color: var(--magenta);
+    border: none;
 }
 
 .total{

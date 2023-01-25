@@ -1,32 +1,17 @@
 [
-  {
-    "showId": 1,
-    "showName": "Camilo",
-    "showDescription": "La mejor musica de Camilo en el Tour del 2023",
-    "showPrice": 240,
-    "showImg": "Camilo_385x250.jpg",
-    "showDate": "01/05/2023",
-    "showHour": "20:00",
-    "location": "platea"
-  },
-  {
-    "showId": 2,
-    "showName": "Reik",
-    "showDescription": "La mejor musica de Reik en el Tour del 2023",
-    "showPrice": 240,
-    "showImg": "Reik-385x250-1.jpg",
-    "showDate": "01/05/2023",
-    "showHour": "20:00",
-    "location": "platea"
-  },
-  {
-    "showId": 3,
-    "showName": "Servando",
-    "showDescription": "La mejor musica de Servando en el Tour del 2023",
-    "showPrice": 320,
-    "showImg": "Servando-385x250-1.png",
-    "showDate": "01/05/2023",
-    "showHour": "20:00",
-    "location": "platea"
-  }
+ {
+  "id": 1,
+  "name": "Camilo",
+  "price": 150,
+  "categoryId": 1,
+  "descriptionHeader": "El máximo exponente del pop actual a nivel global, anunció su nueva gira por Latinoamérica con la que batió récords de público en Europa y Estados Unidos. Entradas a la venta a partir del lunes 5 de diciembre a las 20hs.",
+  "descriptionVideo": "Blindado con una impecable habilidad de composición y una sensibilidad intuitiva, Camilo, ganador de cinco Latin GRAMMY® 2020 y dos veces nominado al GRAMMY® americano, es considerado uno de los mayores exponentes del nuevo Pop de su generación, con más de cinco billones de reproducciones en todas las plataformas digitales alrededor del mundo.",
+  "image": "Camilo_385x250.jpg",
+  "location": "platea",
+  "day": "10",
+  "hour": "21:00",
+  "video": "https://www.youtube.com/embed/ZbxUiwi5Rx8",
+  "month": "MAR",
+  "date": "10/03/2023"
+ }
 ]

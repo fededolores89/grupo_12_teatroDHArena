@@ -2,8 +2,9 @@ const fs = require("fs");
 const path = require("path");
 const { emitWarning } = require("process");
 const showsFilePath = path.join(__dirname, "../database/showsDataBase.json");
-const shoppingCartFilePath = path.join(__dirname, "../database/shoppingCart.json");
+const cartFilePath = path.join(__dirname, "../database/shoppingCart.json");
 const shows = JSON.parse(fs.readFileSync(showsFilePath, "utf-8"));
+const shoppingCartItems = JSON.parse(fs.readFileSync(cartFilePath, "utf-8"));
 
 const controllers = {
   /* --------------Muestra Todos los Shows----------------- */
@@ -20,7 +21,11 @@ const controllers = {
       return show.id == id;
     });
 
-    res.render("product/productDetail", { shows: showsFiltrado });
+    if(showsFiltrado === undefined) {
+      res.send('No se encontro el que busca, intente con otro')
+    } else {
+      res.render("product/productDetail", { shows: showsFiltrado });
+    }
   },
 
   /* --------------Muestra El Shows que queremos editar----------------- */
@@ -30,8 +35,13 @@ const controllers = {
     let showsFiltrado = shows.find((show) => {
       return show.id == id;
     });
+
+    if(showsFiltrado === undefined) {
+      res.send('No se encontro ese evento. Intento con otro');
+    } else {
+      res.render("product/editShows", { shows: showsFiltrado });
+    }
     
-    res.render("product/editShows", { shows: showsFiltrado });
   },
 
   
@@ -101,6 +111,27 @@ const controllers = {
     res.redirect("/shows");
   },
 
+  addCart: (req, res) => {
+    const id =  parseInt(req.params.id);
+
+    let showFiltered = shows.find(show => show.id === id);
+
+    if(showFiltered === undefined) {
+      res.send('No fue posible agregar el evento al carrito de compras');
+    } else {
+
+      let itemFiltered = shoppingCartItems.find(item => item.id === id);
+
+      if(itemFiltered === undefined) {
+        shoppingCartItems.push(showFiltered);
+        fs.writeFileSync(cartFilePath, JSON.stringify(shoppingCartItems, null, " "));
+        res.redirect("/carrito");
+      } else {
+        res.redirect("/carrito");
+      }
+    }
+  },
+
   /* --------------Borra el Show de la DataBase ----------------- */
   destroy: (req, res) => {
     // Do the magic
@@ -112,12 +143,7 @@ const controllers = {
     fs.writeFileSync(showsFilePath, JSON.stringify(showsFiltrados, null, " "));
 
     res.redirect("/shows");
-  },
-  shoppingCart: (req, res) => {
-    const shoppingCartItems = JSON.parse(fs.readFileSync(shoppingCartFilePath, "utf-8"));
-
-    res.render('product/productCart', {shoppingCartItems: shoppingCartItems});
-  },
+  }
 };
 
 module.exports = controllers;

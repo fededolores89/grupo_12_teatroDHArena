@@ -10,15 +10,15 @@
         <% if (shoppingCartItems.length) { %>
           <% for( let index = 0; index < shoppingCartItems.length; index++ ) { %>
           
-            <div class="carrito-item" data-showId="<%= shoppingCartItems[index].showId %> ">
+            <div class="carrito-item" data-showId="<%= shoppingCartItems[index].id %> ">
               <div class="item-img">
-                <img src="/img/Img-Index-Artistas/<%= shoppingCartItems[index].showImg %> " alt="">
+                <img src="/img/Img-Index-Artistas/<%= shoppingCartItems[index].image %> " alt="">
               </div>
               <div class="item-info">
-                <h2 class="item-nombre"><%= shoppingCartItems[index].showName %> </h2>
-                <p class="item-date"><i class="fas fa-calendar-alt"></i> <%= shoppingCartItems[index].showDate %> </p>
-                <p class="item-hour"><i class="far fa-clock"></i> <%= shoppingCartItems[index].showHour %>  hs</p>
-                <p class="item-price-container"><i class="fa-solid fa-money-bill"></i> $<span class="item-price"><%= shoppingCartItems[index].showPrice %></span></p>
+                <h2 class="item-nombre"><%= shoppingCartItems[index].name %> </h2>
+                <p class="item-date"><i class="fas fa-calendar-alt"></i> <%= shoppingCartItems[index].date %> </p>
+                <p class="item-hour"><i class="far fa-clock"></i> <%= shoppingCartItems[index].hour %>  hs</p>
+                <p class="item-price-container"><i class="fa-solid fa-money-bill"></i> $<span class="item-price"><%= shoppingCartItems[index].price %></span></p>
                 <section class="left-productcart">
                   <div class="cant-borrar">
                     <div class="cantidad-entradas">
@@ -37,7 +37,9 @@
                   <hr>
                   <section class="compras">
                     <div class="continua-comprando"><a href="/shows"><i class="fas fa-reply-all"></i>  Continua comprando</a></div>
-                    <button class="boton-borrar"><i class="fas fa-times"></i> Borrar</button>
+                    <form action="/carrito/<%= shoppingCartItems[index].id %>?_method=DELETE" method="POST">
+                      <button type="submit" class="boton-borrar"><i class="fas fa-times"></i> Borrar</button>
+                    </form>
                   </section>
                 </section>
               </div>

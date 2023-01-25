@@ -29,8 +29,6 @@
   }
 
   .botones-info {
-    display: flex;
-    justify-content: space-between;
     margin-top: 1rem;
   }
 
@@ -159,5 +157,12 @@
   @media (min-width: 760px) {
     .eventos-home {
       width: 30%;
+    }
+  }
+
+  @media (min-width: 1023px) {
+    .botones-info {
+      display: flex;
+      justify-content: space-between;
     }
   }
