@@ -3,8 +3,10 @@ const path = require("path");
 const { emitWarning } = require("process");
 const showsFilePath = path.join(__dirname, "../database/showsDataBase.json");
 const cartFilePath = path.join(__dirname, "../database/shoppingCart.json");
+const categoriesFilePath = path.join(__dirname, "../database/categories.json");
 const shows = JSON.parse(fs.readFileSync(showsFilePath, "utf-8"));
 const shoppingCartItems = JSON.parse(fs.readFileSync(cartFilePath, "utf-8"));
+const categories = JSON.parse(fs.readFileSync(categoriesFilePath, "utf-8"));
 
 const controllers = {
   /* --------------Muestra Todos los Shows----------------- */
@@ -86,7 +88,7 @@ const controllers = {
 
   /* --------------Muestro la vista de crear shows----------------- */
   create: (req, res) => {
-    res.render("product/createShow");
+    res.render("product/createShow", {categories: categories});
   },
 
   /* --------------Guarda el show creado----------------- */
@@ -96,16 +98,18 @@ const controllers = {
     let nuevoShow = {
       id: shows[shows.length - 1].id + 1,
       name: req.body.name,
-      price: req.body.price,
-      category: req.body.category,
+      price: parseFloat(req.body.price),
+      categoryId: parseInt(req.body.categoryId),
       descriptionHeader: req.body.descriptionHeader,
       descriptionVideo: req.body.descriptionVideo,
+      image: req.file ? req.file.filename : "default-image.png",
       video: req.body.video,
       day: req.body.day,
       hour: req.body.hour,
-      image: req.file ? req.file.filename : "default-image.png",
       month: req.body.month,
+      date: req.body.date
     };
+
     shows.push(nuevoShow);
     fs.writeFileSync(showsFilePath, JSON.stringify(shows, null, " "));
     res.redirect("/shows");
