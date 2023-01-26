@@ -13,5 +13,20 @@
   "video": "https://www.youtube.com/embed/ZbxUiwi5Rx8",
   "month": "MAR",
   "date": "10/03/2023"
+ },
+ {
+  "id": 2,
+  "name": "David Guetta",
+  "price": 450,
+  "categoryId": 2,
+  "descriptionHeader": "El parisino David Guetta es uno de los más conocidos exponentes del house comercial del país galo. Como muchos de los Djs franceses que ahora tiene algo que decir en el panorama internacional, David tuvo contacto con el mundo de la radio a finales de los 80’s cuando pinchaba house en Radio Nova.",
+  "descriptionVideo": "La consolidación de David Guetta como rey de la música electrónica y figura mediática internacional llegaría en 2009 con su cuarto álbum de estudio, One Love, en el que contó con la colaboración, entre otros, de Kelly Rowland, Akon, Estelle, Kid Cudi y Chris Willis. El disco fue número 1 en 17 países el mismo día en que salió a la venta.",
+  "image": "David-guetta385x250-1.jpg",
+  "location": "platea",
+  "day": "20",
+  "hour": "21:00",
+  "month": "MAR",
+  "video": "https://www.youtube.com/embed/xaurMcGqZHU",
+  "date": "10/03/2023"
  }
 ]
