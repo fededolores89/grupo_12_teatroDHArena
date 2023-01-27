@@ -10,57 +10,59 @@
         <h3> AUN NO ESTAS REGISTRADO? </h3>
         <h5>Completa el formulario con tus datos y hacete usuario para obtener grandes beneficios!</h5>
       </div>
-      <form class="registro-form" action="/register" method="POST">
+      <form class="registro-form" action="/usuarios/register" method="POST">
         <h6 class="form-info">Campos obligatorios (*) </h6>
         <h4 class="titulo-campo"><i class="fas fa-pen"></i></i> DATOS PERSONALES </h4>
         <div class="campo-reg">
-          <label class="titulo-campo" > Nombre</label>
-          <input type="text" class="" name="" placeholder="Nombre completo" required minlength="6">
+          <label class="titulo-campo"> Nombre</label>
+          <input type="text" class="" name="name" id="name" placeholder="Nombre completo" required minlength="6">
         </div>
         <div class="campo-reg">
           <label class="titulo-campo"> Apellido</label>
-          <input type="text" class="" name="" placeholder="Apellido" required minlength="6">
+          <input type="text" class="" name="lastname" id="lastname" placeholder="Apellido" required minlength="6">
         </div>
         <div class="campo-reg">
-          <label class="titulo-campo"> Documento</label>
-          <input type="text" class="" name="" placeholder="Numero de DNI o Pasaporte" required minlength="8">
-        </div>
-        <div class="campo-reg">
-          <label class="titulo-campo"> Tipo de ID </label>
-          <select name="" id="">
-            <option value="">DNI</option>
-            <option value=""> Pasaporte</option>
+          <label class="titulo-campo"> Tipo de Documento </label>
+          <select name="documentType" id="documentType">
+            <% documents.forEach(document => { %>
+              <option value="<%= document.id %> "> <%= document.name %> </option>
+            <% }) %>
           </select>
+        </div>
+        <div class="campo-reg">
+          <label class="titulo-campo">No. Documento</label>
+          <input type="text" class="" name="documentNum" id="documentNum" placeholder="Numero de DNI o Pasaporte" required minlength="8">
         </div>
         <h4 class="titulo-campo"> FECHA DE NACIMIENTO</h4>
         <div class="campo-reg">
-          <input type="date" class="" id="" placeholder="Fecha de nacimiento">
+          <input type="date" class="" name="birth" id="birth" placeholder="Fecha de nacimiento">
         </div>
         <br>
         <div class="linea-titulos"></div>
         <div class="campo-reg">
           <h4 class="titulo-campo"><i class="fas fa-phone-volume"></i> TELEFONO</h4>
-          <label for="" class="titulo-campo" > Tipo </label>
-          <select name="" id="">
-            <option value=""> Celular</option>
-            <option value=""> Fijo </option>
+          <label for="phoneType" class="titulo-campo" > Tipo </label>
+          <select name="phoneType" id="phoneType">
+            <% phoneTypes.forEach(type => { %>
+              <option value="<%= type.id %> "> <%= type.name %> </option>
+            <% }) %>
           </select>
-          <label class="titulo-campo">Numero</label>
-          <input type="number" class="" id="" placeholder="+54 XXXXXXXXXX">
+          <label class="titulo-campo" for="number">Numero</label>
+          <input type="number" class="" id="number" name="number" placeholder="+54 XXXXXXXXXX">
         </div> 
         <br>
         <div class="linea-titulos"></div>
           <div class="campo-reg">
             <h4 class="titulo-campo"><i class="fas fa-envelope"></i></i> CORREO ELECTRONICO</h4>
-            <input type="email" class="" id="" placeholder="Email" required>
-            <input type="email" class="" id="" placeholder="Confirmar email">
+            <input type="email" class="" id="email" name="email" placeholder="Email" required>
+            <input type="email" class="" id="confirmEmail" placeholder="Confirmar email">
           </div>
           <br>
           <div class="linea-titulos"></div>
           <div class="campo-reg">
             <h4 class="titulo-campo"><i class="fas fa-key"></i> CONTRASEÑA</h4>
-            <input type="password" class="" id="" placeholder="Contraseña" required minlength="8">
-            <input type="password" class="" id="" placeholder="Confirmar contraseña">
+            <input type="password" class="" id="password" name="password" placeholder="Contraseña" required minlength="8">
+            <input type="password" class="" id="confirmPaswword" placeholder="Confirmar contraseña">
           </div>
           <h6 class="form-info"> La contraseña debe tener al menos 8 caracteres y una letra*.</h6>
           <label for="label-terms" class="texto-botoncito"> Acepto terminos y condiciones.</label>

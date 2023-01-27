@@ -1,16 +1,28 @@
 [
-  {
-    "id": "1",
-    "name": "Martin",
-    "lastName": "Martinez",
-    "documentType": 1,
-    "documentNum": "22323290",
-    "birth": "01/02/1990",
-    "phoneType": 1,
-    "number": "809232023",
-    "email": "martin-dev@gmail.com",
-    "password": "123456",
-    "userType": 1,
-    "image": "image.png"
-  }
+ {
+  "id": "1",
+  "name": "Martin",
+  "lastName": "Martinez",
+  "documentType": 1,
+  "documentNum": "22323290",
+  "birth": "01/02/1990",
+  "phoneType": 1,
+  "number": "809232023",
+  "email": "martin-dev@gmail.com",
+  "password": "123456",
+  "userType": 1
+ },
+ {
+  "id": "11",
+  "name": "Carlos",
+  "lastname": "Olivares",
+  "documentType": 1,
+  "documentNum": "63653977M",
+  "birth": "1992-01-01",
+  "phoneType": 1,
+  "number": "54667162591",
+  "email": "admin@test.com",
+  "password": "12345678",
+  "userType": 1
+ }
 ]

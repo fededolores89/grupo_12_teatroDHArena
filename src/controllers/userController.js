@@ -1,7 +1,13 @@
 const fs = require("fs");
 const path = require("path");
 const usersFilePath = path.join(__dirname, "../database/userDataBase.json");
+const phonesTypeFilePath = path.join(__dirname, "../database/phonesType.json");
+const usersTypeFilePath = path.join(__dirname, "../database/usersType.json");
+const documentsTypeFilePath = path.join(__dirname, "../database/documentsType.json");
 const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
+const phoneTypes = JSON.parse(fs.readFileSync(phonesTypeFilePath, "utf-8"));
+const documentTypes = JSON.parse(fs.readFileSync(documentsTypeFilePath, "utf-8"));
+const usersType = JSON.parse(fs.readFileSync(usersTypeFilePath, "utf-8"));
 
 const controller = {
   /* --------------Muestro la vista del Login----------------- */
@@ -10,7 +16,7 @@ const controller = {
   },
   /* --------------Muestro la vista del registro----------------- */
   registro: (req, res) => {
-    res.render("users/register");
+    res.render("users/register", {phoneTypes: phoneTypes, documents: documentTypes});
   },
   create: (req, res) => {
     let user = {
@@ -24,11 +30,13 @@ const controller = {
       number: req.body.number,
       email: req.body.email,
       password: req.body.password,
-      userType: parseInt(req.body.userType),
-      image: req.file ? req.file.filename : "default-image.png"
+      userType: 1
     }
 
-    res.send(user);
+    users.push(user);
+    fs.writeFileSync(usersFilePath, JSON.stringify(users, null, " "));
+
+    res.redirect('/');
   }
 };
 
