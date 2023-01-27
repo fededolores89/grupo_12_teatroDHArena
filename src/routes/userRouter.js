@@ -15,8 +15,7 @@ const storage = multer.diskStorage({
     cb(null, imageName);
   }
 });
-
-const uploadFile = multer({storage});
+const upload = multer({storage});
 
 /* --------------Muestra la vista del login----------------- */
 router.get('/login' , mainController.login ) 
@@ -24,7 +23,7 @@ router.get('/login' , mainController.login )
 /* --------------Muestra la vista del registro----------------- */
 router.get('/register' ,  mainController.registro )
 
-router.post('/register', uploadFile.single('image'), mainController.create);
+router.post('/register', upload.single('image'), mainController.create);
 
 
 

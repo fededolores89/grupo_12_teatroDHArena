@@ -18,7 +18,16 @@ const controller = {
   registro: (req, res) => {
     res.render("users/register", {phoneTypes: phoneTypes, documents: documentTypes});
   },
-  create: (req, res) => {
+  create: (req, res, next) => {
+
+    let imageFile = req.file;
+
+    if(!imageFile) {
+      const error = new Error('Por favor seleccione un archivo de imagen');
+      error.httpStatusCode = 400;
+      return next(error);
+    }
+
     let user = {
       id: parseInt(users[users.length - 1].id) + 1,
       name: req.body.name,
