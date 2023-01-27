@@ -54,5 +54,19 @@
   "password": "12345678",
   "userType": 1,
   "image": "1674847060408.png"
+ },
+ {
+  "id": 5,
+  "name": "Linda",
+  "lastname": "McClintock",
+  "documentType": 2,
+  "documentNum": "360065612",
+  "birth": "1993-01-25",
+  "phoneType": 1,
+  "number": "6789140243",
+  "email": "delia_balistre@gmail.com",
+  "password": "12345678",
+  "userType": 1,
+  "image": "1674848785359.jpg"
  }
 ]

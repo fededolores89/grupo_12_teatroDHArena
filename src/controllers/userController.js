@@ -19,7 +19,6 @@ const controller = {
     res.render("users/register", {phoneTypes: phoneTypes, documents: documentTypes});
   },
   create: (req, res) => {
-    console.log()
     let user = {
       id: parseInt(users[users.length - 1].id) + 1,
       name: req.body.name,
@@ -32,7 +31,7 @@ const controller = {
       email: req.body.email,
       password: req.body.password,
       userType: 1,
-      image: req.file ? req.file.filename : "default-profile.jpg"
+      image: req.file.filename ? req.file.filename : "default-profile.jpg"
     }
 
     users.push(user);
