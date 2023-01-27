@@ -136,8 +136,6 @@ const controllers = {
 
     let id = req.params.id;
 
-    console.log(shows);
-
     fs.writeFileSync(showsFilePath, JSON.stringify(showsFiltrados, null, " "));
 
     res.redirect("/shows");
