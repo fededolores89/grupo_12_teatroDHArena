@@ -44,7 +44,7 @@ const controllers = {
     if(showsFiltrado === undefined) {
       res.send('No se encontro ese evento. Intento con otro');
     } else {
-      res.render("product/editShows", { shows: showsFiltrado });
+      res.render("product/editShows", { show: showsFiltrado, categories: categories });
     }
     
   },
@@ -52,11 +52,6 @@ const controllers = {
   
   /* --------------Procesa la Edicion----------------- */
   processEdit: (req, res) => {
-    // Do the magic
-
-	const shows = JSON.parse(fs.readFileSync(showsFilePath, "utf-8"));
-		/* Incorporar FS */
-		/* Leer el archivo */
 
 		let id = req.params.id;
 		let showAnterior = shows.find(show => {
@@ -67,22 +62,20 @@ const controllers = {
 			
 			id: showAnterior.id,
       name: req.body.name,
-      price: req.body.price,
-      category: req.body.category,
+      price: parseFloat(req.body.price),
+      categoryId: parseInt(req.body.categoryId),
       descriptionHeader: req.body.descriptionHeader,
       descriptionVideo: req.body.descriptionVideo,
       video: req.body.video,
-      day: req.body.day,
-      hour: req.body.hour,
-      image: req.file ? req.file.filename : "default-image.png",
+      image: req.file ? req.file.filename : showAnterior.image,
       month: req.body.month,
 		}
 		
 		let indice = shows.findIndex(product => {
-			return product.id == id
+			return product.id == id;
 		})
 
-		shows[indice] = showEditado;
+		shows[indice] = {...showAnterior, ...showEditado};
    
 	
 		fs.writeFileSync(showsFilePath, JSON.stringify(shows, null, " "));

@@ -1,5 +1,23 @@
+.main-container {
+  width: 100%;
+  background-color: #16324f;
+}
+
 .row {
   background-color: #16324f;
+}
+
+.main-container h2 {
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+  padding-top: 1rem;
+}
+
+.form-container {
+  width: 70%;
+  margin: 0 auto;
+  padding-bottom: 1rem;
 }
 
 .form-label {
@@ -10,8 +28,7 @@
 }
 
 .form-input {
-  display: block;
-  width: 80%;
+  width: 100%;
   height: 45px;
   margin-bottom: 15px;
   font-size: 1.5em;
@@ -19,7 +36,21 @@
   border: none;
   border: solid 1px gray;
   padding: 0 15px;
-  margin-left: 1rem;
+}
+
+.artistImage {
+  width: 100%;
+}
+
+.save-button {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.8rem 0;
+  border-radius: 12px;
+  border: none;
+  background-color: var(--magenta);
+  color: white;
+  cursor: pointer;
 }
 
 textarea.form-input {
@@ -32,11 +63,5 @@ textarea.form-input {
   background-color: #ffffff;
   border-radius: 8px;
   overflow: hidden;
-}
-
-h2 {
-  color: white;
-  margin-bottom: 1rem;
-  text-align: center;
 }
 
