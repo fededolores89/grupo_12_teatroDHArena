@@ -82,17 +82,5 @@
   "video": "https://www.youtube.com/embed/zsH0dQ5vkOk",
   "hour": "21:00",
   "date": "2023-05-12"
- },
- {
-  "id": 8,
-  "name": "Andres Calamaro",
-  "price": 8000,
-  "categoryId": 1,
-  "descriptionHeader": " Test",
-  "descriptionVideo": "Test",
-  "image": "editedArtistImage-1674834542985.jpg",
-  "video": "https://www.youtube.com/embed/WEms4KB2Q3o",
-  "hour": "21:00",
-  "date": "2023-04-12"
  }
 ]

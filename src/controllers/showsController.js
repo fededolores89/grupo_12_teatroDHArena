@@ -134,11 +134,21 @@ const controllers = {
   destroy: (req, res) => {
     // Do the magic
 
-    let id = req.params.id;
+    let id = parseInt(req.params.id);
 
-    fs.writeFileSync(showsFilePath, JSON.stringify(showsFiltrados, null, " "));
+    let showIndex = shows.findIndex(show => show.id === id);
 
-    res.redirect("/shows");
+    if(showIndex != undefined) {
+
+      shows.splice(showIndex, 1);
+
+      fs.writeFileSync(showsFilePath, JSON.stringify(shows, null, " "));
+  
+      res.redirect("/shows");
+    } else {
+      res.send('No se encontro ese show para eliminarse');
+    }
+
   }
 };
 
