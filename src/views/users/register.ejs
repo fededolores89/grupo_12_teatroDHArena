@@ -10,7 +10,7 @@
         <h3> AUN NO ESTAS REGISTRADO? </h3>
         <h5>Completa el formulario con tus datos y hacete usuario para obtener grandes beneficios!</h5>
       </div>
-      <form class="registro-form" action="/usuarios/register" method="POST">
+      <form class="registro-form" action="/usuarios/register" method="POST" enctype="multipart/form-data">
         <h6 class="form-info">Campos obligatorios (*) </h6>
         <h4 class="titulo-campo"><i class="fas fa-pen"></i></i> DATOS PERSONALES </h4>
         <div class="campo-reg">
@@ -32,6 +32,10 @@
         <div class="campo-reg">
           <label class="titulo-campo">No. Documento</label>
           <input type="text" class="" name="documentNum" id="documentNum" placeholder="Numero de DNI o Pasaporte" required minlength="8">
+        </div>
+        <div class="campo-reg">
+          <label for="image" class="titulo-campo">Foto de perfil</label>
+          <input type="file" name="image" id="image">
         </div>
         <h4 class="titulo-campo"> FECHA DE NACIMIENTO</h4>
         <div class="campo-reg">
@@ -58,17 +62,17 @@
             <input type="email" class="" id="confirmEmail" placeholder="Confirmar email">
           </div>
           <br>
-          <div class="linea-titulos"></div>
-          <div class="campo-reg">
-            <h4 class="titulo-campo"><i class="fas fa-key"></i> CONTRASEÑA</h4>
-            <input type="password" class="" id="password" name="password" placeholder="Contraseña" required minlength="8">
-            <input type="password" class="" id="confirmPaswword" placeholder="Confirmar contraseña">
-          </div>
-          <h6 class="form-info"> La contraseña debe tener al menos 8 caracteres y una letra*.</h6>
-          <label for="label-terms" class="texto-botoncito"> Acepto terminos y condiciones.</label>
-          <label class="botoncito"> 
-            <input name="label-terms" type="checkbox">
-            <span class="deslizadora"></span>
+        <div class="linea-titulos"></div>
+        <div class="campo-reg">
+          <h4 class="titulo-campo"><i class="fas fa-key"></i> CONTRASEÑA</h4>
+          <input type="password" class="" id="password" name="password" placeholder="Contraseña" required minlength="8">
+          <input type="password" class="" id="confirmPaswword" placeholder="Confirmar contraseña">
+        </div>
+        <h6 class="form-info"> La contraseña debe tener al menos 8 caracteres y una letra*.</h6>
+        <label for="label-terms" class="texto-botoncito"> Acepto terminos y condiciones.</label>
+        <label class="botoncito"> 
+          <input name="label-terms" type="checkbox">
+          <span class="deslizadora"></span>
         </label>
         <br>
         <button type="submit" class="boton-registrarme"> REGISTRARME </button>

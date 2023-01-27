@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const mainController = require("../controllers/showsController.js")
 const multer = require("multer");
-const path = require('path')
+const path = require('path');
 
 
 
@@ -17,7 +17,7 @@ const storage = multer.diskStorage({
     }
 })
 /* --------------Pasamos a la variable uploud el metodo storage----------------- */
-const upload = multer({storage: storage})
+const upload = multer({storage: storage});
 
 
 /* Vista a todos los Shows */

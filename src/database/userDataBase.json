@@ -1,6 +1,6 @@
 [
  {
-  "id": "1",
+  "id": 1,
   "name": "Martin",
   "lastName": "Martinez",
   "documentType": 1,
@@ -10,10 +10,11 @@
   "number": "809232023",
   "email": "martin-dev@gmail.com",
   "password": "123456",
-  "userType": 1
+  "userType": 1,
+  "image": "default-profile.jpg"
  },
  {
-  "id": "11",
+  "id": 2,
   "name": "Carlos",
   "lastname": "Olivares",
   "documentType": 1,
@@ -23,6 +24,35 @@
   "number": "54667162591",
   "email": "admin@test.com",
   "password": "12345678",
-  "userType": 1
+  "userType": 1,
+  "image": "default-profile.jpg"
+ },
+ {
+  "id": 3,
+  "name": "Lisa C.",
+  "lastname": "Marriott",
+  "documentType": 1,
+  "documentNum": "92833949S",
+  "birth": "1996-03-05",
+  "phoneType": 1,
+  "number": "6678295437",
+  "email": "ryley1998@gmail.com",
+  "password": "12345678",
+  "userType": 1,
+  "image": "1674846664732.jpg"
+ },
+ {
+  "id": 4,
+  "name": "Dottie",
+  "lastname": "Willis",
+  "documentType": 1,
+  "documentNum": "27697215V",
+  "birth": "1969-06-06",
+  "phoneType": 2,
+  "number": "5104850134",
+  "email": "horace1987@hotmail.com",
+  "password": "12345678",
+  "userType": 1,
+  "image": "1674847060408.png"
  }
 ]
