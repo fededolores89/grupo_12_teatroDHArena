@@ -1,85 +1,16 @@
 [
   {
     "id": "1",
-    "firstName": "Martin",
+    "name": "Martin",
     "lastName": "Martinez",
+    "documentType": 1,
+    "documentNum": "22323290",
+    "birth": "01/02/1990",
+    "phoneType": 1,
+    "number": "809232023",
     "email": "martin-dev@gmail.com",
     "password": "123456",
-    "category": "admin",
-    "imageUrl": "image"
-  },
-  {
-    "id": "3",
-    "firstName": "Martin",
-    "lastName": "Martinez",
-    "email": "martin-dev@gmail.com",
-    "password": "123456",
-    "category": "admin",
-    "Imagen": "image"
-  },
-  {
-    "id": "2",
-    "firstName": "Martin",
-    "lastName": "Martinez",
-    "email": "martin-dev@gmail.com",
-    "password": "123456",
-    "category": "admin",
-    "Imagen": "image"
-  },
-  {
-    "id": "4",
-    "firstName": "Martin",
-    "lastName": "Martinez",
-    "email": "martin-dev@gmail.com",
-    "password": "123456",
-    "category": "admin",
-    "Imagen": "image"
-  },
-  {
-    "id": "5",
-    "firstName": "Martin",
-    "lastName": "Martinez",
-    "email": "martin-dev@gmail.com",
-    "password": "123456",
-    "category": "admin",
-    "Imagen": "image"
-  },
-  {
-    "id": "6",
-    "firstName": "Martin",
-    "lastName": "Martinez",
-    "email": "martin-dev@gmail.com",
-    "password": "123456",
-    "category": "admin",
-    "Imagen": "image"
-  },
-
-  {
-    "id": "7",
-    "firstName": "Martin",
-    "lastName": "Martinez",
-    "email": "martin-dev@gmail.com",
-    "password": "123456",
-    "category": "admin",
-    "Imagen": "image"
-  },
-
-  {
-    "id": "8",
-    "firstName": "Martin",
-    "lastName": "Martinez",
-    "email": "martin-dev@gmail.com",
-    "password": "123456",
-    "category": "admin",
-    "Imagen": "image"
-  },
-  {
-    "id": "9",
-    "firstName": "Martin",
-    "lastName": "Martinez",
-    "email": "martin-dev@gmail.com",
-    "password": "123456",
-    "category": "admin",
-    "Imagen": "image"
+    "userType": 1,
+    "image": "image.png"
   }
 ]

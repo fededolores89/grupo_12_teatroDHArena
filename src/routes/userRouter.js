@@ -12,7 +12,7 @@ router.get('/login' , mainController.login )
 /* --------------Muestra la vista del registro----------------- */
 router.get('/register' ,  mainController.registro )
 
-
+router.post('/register', mainController.create);
 
 
 

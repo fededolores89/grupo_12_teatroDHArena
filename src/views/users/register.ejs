@@ -6,115 +6,71 @@
   <body>
     <%- include('../partials/header') %>
     <main class="registro-main">
-      <!----------TITULO DE LA PAGINA------------------>
-
       <div class="info-registro">
         <h3> AUN NO ESTAS REGISTRADO? </h3>
         <h5>Completa el formulario con tus datos y hacete usuario para obtener grandes beneficios!</h5>
       </div>
       <form class="registro-form" action="/register" method="POST">
-      <section class="formulario-reg">
-
-      <h6>Campos obligatorios (*) </h6>
-        <section class="datos-pers">
-
-<!----------FORMULARIO DE REGISTRO------------------>
+        <h6 class="form-info">Campos obligatorios (*) </h6>
         <h4 class="titulo-campo"><i class="fas fa-pen"></i></i> DATOS PERSONALES </h4>
-        
-        <section  class="campo-reg">
-<!----------NOMBRE------------------>
-        <div>
-        <label class="titulo-campo" > Nombre</label>
-      </div>
-        <input type="text" class="" name="" placeholder="Nombre completo" required minlength="6">
-      </section>
-<!----------APELLIDO------------------>
-          <section class="campo-reg">
-            <div>
-        <label class="titulo-campo"> Apellido</label>
-      </div>
-        <input type="text" class="" name="" placeholder="Apellido" required minlength="6">
-      </section>
-      
-<!----------DOCUMENTO------------------>
-      <section class="campo-reg">
-        <div>
-        <label class="titulo-campo"> Documento</label>
-      </div>
-        <input type="number" class="" name="" placeholder="Numero de DNI o Pasaporte" required minlength="8">
-      </section>
-<!----------TIPO DE ID------------------>
-      <section class="campo-reg">
-        <div>
-      <label class="titulo-campo"> Tipo de ID </label>
-      </div>
-      <select name="" id="">
-        <option value="">DNI</option>
-        <option value=""> Pasaporte</option>
-      </select>
-    </section>
-<!----------FECHA DE NACIMIENTO ------------------>
-      <label class="titulo-campo"> FECHA DE NACIMIENTO</label>
-      <section class="fecha-nac">
-      <input type="date" class="" id="" placeholder="Fecha de nacimiento">
-      </section>
-
-<!----------NUMERO DE TELEFONO ------------------>
-<br>
-<div class="linea-titulos"></div>
-<section class="num-telefono">
-      <h4> <i class="fas fa-phone-volume"></i> TELEFONO</h4>
-      <label for="" class="titulo-campo" > Tipo </label>
-
-      <select name="" id="">
-        <option value=""> Celular</option>
-        <option value=""> Fijo </option>
-
-     </select>
-     <div>
-      <label class="titulo-campo">Numero</label>
-    </div>
-      <input type="number" class="" id="" placeholder="+54 XXXXXXXXXX">
-    </section>
-    
-<!----------CORREO ELECTRONICO ------------------>
-<br>
-<div class="linea-titulos"></div>
-    <section class="campo-reg">
-      <h4> <i class="fas fa-envelope"></i></i> CORREO ELECTRONICO</h4>
-      <div>
-<input type="email" class="" id="" placeholder="Email" required>
-</div>
-<div>
-<input type="email" class="" id="" placeholder="Confirmar email">
-</div>
-    </section>
-
-<!----------CONTRASENA------------------>
-<br>
-<div class="linea-titulos"></div>
-  <section class="campo-reg">
-    <h4> <i class="fas fa-key"></i>CONTRASEÑA</h4>
-      <div>
-        <input type="password" class="" id="" placeholder="Contraseña" required minlength="8">
-      </div>
-      
-        <input type="password" class="" id="" placeholder="Confirmar contraseña">
-      </section>
-  <h6> La contraseña debe tener al menos 8 caracteres y una letra*.</h6>
-
-  <!------------Boton deslizante------------------------------------------>
-  <label for="" class="texto-botoncito"> Acepto terminos y condiciones.</label>
-  <label class="botoncito"> 
-    <input type="checkbox">
-     <span class="deslizadora"></span>
- </label>
- <br>
- <!---------------BOTON REGISTRARME---------------------->
-<section>
- <button type="submit" class="boton-registrarme"> REGISTRARME </button>
-</section>
-  </form>
+        <div class="campo-reg">
+          <label class="titulo-campo" > Nombre</label>
+          <input type="text" class="" name="" placeholder="Nombre completo" required minlength="6">
+        </div>
+        <div class="campo-reg">
+          <label class="titulo-campo"> Apellido</label>
+          <input type="text" class="" name="" placeholder="Apellido" required minlength="6">
+        </div>
+        <div class="campo-reg">
+          <label class="titulo-campo"> Documento</label>
+          <input type="text" class="" name="" placeholder="Numero de DNI o Pasaporte" required minlength="8">
+        </div>
+        <div class="campo-reg">
+          <label class="titulo-campo"> Tipo de ID </label>
+          <select name="" id="">
+            <option value="">DNI</option>
+            <option value=""> Pasaporte</option>
+          </select>
+        </div>
+        <h4 class="titulo-campo"> FECHA DE NACIMIENTO</h4>
+        <div class="campo-reg">
+          <input type="date" class="" id="" placeholder="Fecha de nacimiento">
+        </div>
+        <br>
+        <div class="linea-titulos"></div>
+        <div class="campo-reg">
+          <h4 class="titulo-campo"><i class="fas fa-phone-volume"></i> TELEFONO</h4>
+          <label for="" class="titulo-campo" > Tipo </label>
+          <select name="" id="">
+            <option value=""> Celular</option>
+            <option value=""> Fijo </option>
+          </select>
+          <label class="titulo-campo">Numero</label>
+          <input type="number" class="" id="" placeholder="+54 XXXXXXXXXX">
+        </div> 
+        <br>
+        <div class="linea-titulos"></div>
+          <div class="campo-reg">
+            <h4 class="titulo-campo"><i class="fas fa-envelope"></i></i> CORREO ELECTRONICO</h4>
+            <input type="email" class="" id="" placeholder="Email" required>
+            <input type="email" class="" id="" placeholder="Confirmar email">
+          </div>
+          <br>
+          <div class="linea-titulos"></div>
+          <div class="campo-reg">
+            <h4 class="titulo-campo"><i class="fas fa-key"></i> CONTRASEÑA</h4>
+            <input type="password" class="" id="" placeholder="Contraseña" required minlength="8">
+            <input type="password" class="" id="" placeholder="Confirmar contraseña">
+          </div>
+          <h6 class="form-info"> La contraseña debe tener al menos 8 caracteres y una letra*.</h6>
+          <label for="label-terms" class="texto-botoncito"> Acepto terminos y condiciones.</label>
+          <label class="botoncito"> 
+            <input name="label-terms" type="checkbox">
+            <span class="deslizadora"></span>
+        </label>
+        <br>
+        <button type="submit" class="boton-registrarme"> REGISTRARME </button>
+      </form>
 
     </main>
     <%- include('../partials/footer') %>
