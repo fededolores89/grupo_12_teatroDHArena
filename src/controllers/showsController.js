@@ -26,7 +26,10 @@ const controllers = {
     if(showsFiltrado === undefined) {
       res.send('No se encontro el que busca, intente con otro')
     } else {
-      res.render("product/productDetail", { shows: showsFiltrado });
+
+      let date = showsFiltrado.date.split('-');
+
+      res.render("product/productDetail", { show: showsFiltrado, showDate: date });
     }
   },
 
@@ -103,10 +106,8 @@ const controllers = {
       descriptionHeader: req.body.descriptionHeader,
       descriptionVideo: req.body.descriptionVideo,
       image: req.file ? req.file.filename : "default-image.png",
-      video: req.body.video,
-      day: req.body.day,
+      video: req.body.video ? req.body.video: "https://www.youtube.com/embed/WEms4KB2Q3o",
       hour: req.body.hour,
-      month: req.body.month,
       date: req.body.date
     };
 

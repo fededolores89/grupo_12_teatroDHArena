@@ -20,28 +20,15 @@
           </div>
           <div class="col-12 col-md-6">
             <label for="hour" class="form-label">Hora del show</label>
-            <input type="text" id="hour" name="hour"  class="form-input" placeholder="Ej: 14:00" required>
-          </div>
-          <div class="col-12 col-md-6">
-            <label for="day" class="form-label">Dia del show</label>
-            <input type="text" id="day" name="day"  class="form-input" placeholder="Ej: 5" required>
-          </div>
-          <div class="col-12 col-md-6">
-            <label for="month" class="form-label">Mes:</label>
-            <select name="month" id="month" class="form-input" required>
-              <option value="">Elegí</option>
-              <option value="ENE">Enero</option>
-              <option value="FEB">Febrero</option>
-              <option value="MAR">Marzo</option>
-              <option value="ABR">Abril</option>
-              <option value="MAY">Mayo</option>
-              <option value="JUN">Junio</option>
-              <option value="JUL">Julio</option>
-              <option value="AGOS">Agosto</option>
-              <option value="SEPT">Septiembre</option>
-              <option value="OCT">Octubre</option>
-              <option value="NOV">Noviembre</option>
-              <option value="DIC">Diciembre</option>
+            <select id="hour" name="hour"  class="form-input" required>
+              <option value="16:00">16:00 hrs</option>
+              <option value="17:00">17:00 hrs</option>
+              <option value="18:00">18:00 hrs</option>
+              <option value="19:00">19:00 hrs</option>
+              <option value="20:00">20:00 hrs</option>
+              <option value="21:00">21:00 hrs</option>
+              <option value="22:00">22:00 hrs</option>
+              <option value="23:00">23:00 hrs</option>
             </select>
           </div>
           <div class="col-12 col-md-6">
@@ -59,17 +46,16 @@
           </div>
           <div class="col-12">
             <label for="descriptionHeader" class="form-label">Descripcion del evento</label>
-            <textarea name="descriptionHeader" id="descriptionHeader" class="form-input" required> </textarea>
-          </div>
-          <div class="col-12 col-md-6">
-            <label for="video" class="form-label">Url Youtube</label>
-            <input type="text" id="video" name="video"  class="form-input" placeholder="Url del video de Youtube." required>
+            <textarea name="descriptionHeader" id="descriptionHeader" class="form-input"> </textarea>
           </div>
           <div class="col-12">
             <label for="descriptionVideo" class="form-label">Descripcion del artista</label>
-            <textarea name="descriptionVideo" id="descriptionVideo" class="form-input" required></textarea>
+            <textarea name="descriptionVideo" id="descriptionVideo" class="form-input"></textarea>
           </div>
-          
+          <div class="col-12 col-md-6">
+            <label for="video" class="form-label">Url Youtube</label>
+            <input type="text" id="video" name="video"  class="form-input" placeholder="Url del video de Youtube.">
+          </div>
           <div class="col-12 col-md-6">
             <label for="artistImage" class="form-label">Imagen del Artista:</label>
             <input class="artistImage" type="file" id="artistImage" name="artistImage" required>
