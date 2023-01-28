@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const { emitWarning } = require("process");
+const { validationResult } = require('express-validator');
 const showsFilePath = path.join(__dirname, "../database/showsDataBase.json");
 const cartFilePath = path.join(__dirname, "../database/shoppingCart.json");
 const categoriesFilePath = path.join(__dirname, "../database/categories.json");
@@ -89,24 +90,41 @@ const controllers = {
 
   /* --------------Guarda el show creado----------------- */
   processCreate: (req, res) => {
-    // Do the magic
+    const errors = validationResult(req);
 
-    let nuevoShow = {
-      id: shows[shows.length - 1].id + 1,
-      name: req.body.name,
-      price: parseFloat(req.body.price),
-      categoryId: parseInt(req.body.categoryId),
-      descriptionHeader: req.body.descriptionHeader,
-      descriptionVideo: req.body.descriptionVideo,
-      image: req.file ? req.file.filename : "default-image.png",
-      video: req.body.video ? req.body.video: "https://www.youtube.com/embed/WEms4KB2Q3o",
-      hour: req.body.hour,
-      date: req.body.date
-    };
+    console.log(req.body);
 
-    shows.push(nuevoShow);
-    fs.writeFileSync(showsFilePath, JSON.stringify(shows, null, " "));
-    res.redirect("/shows");
+    if(errors.isEmpty()) {
+      let nuevoShow = {
+        id: shows[shows.length - 1].id + 1,
+        name: req.body.name,
+        price: parseFloat(req.body.price),
+        categoryId: parseInt(req.body.categoryId),
+        descriptionHeader: req.body.descriptionHeader,
+        descriptionVideo: req.body.descriptionVideo,
+        image: req.file ? req.file.filename : "default-image.png",
+        video: req.body.video ? req.body.video: "https://www.youtube.com/embed/WEms4KB2Q3o",
+        hour: req.body.hour,
+        date: req.body.date
+      };
+  
+      shows.push(nuevoShow);
+      fs.writeFileSync(showsFilePath, JSON.stringify(shows, null, " "));
+      res.redirect("/shows");
+    } else {
+      const validations = errors.array();
+      let filteredCat = null;
+      const inputs = req.body;
+      const selectedCategory = req.body.categoryId;
+
+      //Si el usuario elije una categoria, enviarla filtrada a la vista
+      if(selectedCategory != undefined) {
+        filteredCat = categories.find(category => category.id == selectedCategory);
+      }
+
+      res.render('product/createShow', {categories: categories, errors: validations, inputs: inputs, selectedCat: filteredCat});
+    }
+
   },
 
   addCart: (req, res) => {

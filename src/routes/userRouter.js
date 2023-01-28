@@ -32,7 +32,7 @@ router.get('/login' , mainController.login )
 /* --------------Muestra la vista del registro----------------- */
 router.get('/register' ,  mainController.registro )
 
-router.post('/register', validations, upload.single('image'), mainController.create);
+router.post('/register', upload.single('image'), validations, mainController.create);
 
 
 

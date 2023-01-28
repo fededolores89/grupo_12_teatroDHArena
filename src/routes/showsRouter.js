@@ -1,10 +1,19 @@
 const express = require('express')
 const router = express.Router()
 const mainController = require("../controllers/showsController.js")
+const { body } = require('express-validator');
 const multer = require("multer");
 const path = require('path');
 
-
+//Validaciones para crear un show
+const validations = [
+    body('name').notEmpty().withMessage('Ingrese el nombre del artista'),
+    body('price').notEmpty().withMessage('Ingrese el precio del show').bail().isNumeric().withMessage('El precio debe ser un valor numerico'),
+    body('date').isISO8601().withMessage('Ingrese una fecha válida'),
+    body('categoryId').not().isIn(['none']).withMessage('Escoja una categoría valida'),
+    body('descriptionHeader').notEmpty().withMessage('Ingrese la descripción del evento'),
+    body('descriptionVideo').notEmpty().withMessage('Ingrese la descripción del artista')
+];
 
 
 /* --------------Creamos la ruta y el nombre de la imagen----------------- */
@@ -25,7 +34,7 @@ router.get("/" , mainController.index )
 
 /* Creacion de show */
 router.get('/create' , mainController.create)
-router.post('/create' , upload.single("artistImage"), mainController.processCreate)
+router.post('/create' , upload.single("artistImage"), validations, mainController.processCreate)
 
 /* Vista a el show */
 router.get('/:id' , mainController.detalle)

@@ -58,4 +58,16 @@
   .product-detail {
     border-radius: 8px;
   }
+
+  .info-errores {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding: 1rem 2rem;
+    background-color: var(--magenta);
+  }
+  
+  .error {
+    margin-bottom: 0.5rem;
+  }
   
