@@ -10,19 +10,26 @@
         <h3> AUN NO ESTAS REGISTRADO? </h3>
         <h5>Completa el formulario con tus datos y hacete usuario para obtener grandes beneficios!</h5>
       </div>
+      <% if (typeof errors != 'undefined') { %>
+        <div class="info-errores">
+          <% errors.forEach(error => { %>
+            <span class="error"><i class="fa-solid fa-circle-exclamation"></i> <%= error.msg %></span>
+          <% }) %>
+        </div>
+      <% } %>
       <form class="registro-form" action="/usuarios/register" method="POST" enctype="multipart/form-data">
         <h6 class="form-info">Campos obligatorios (*) </h6>
         <h4 class="titulo-campo"><i class="fas fa-pen"></i></i> DATOS PERSONALES </h4>
         <div class="campo-reg">
-          <label class="titulo-campo"> Nombre</label>
-          <input type="text" class="" name="name" id="name" placeholder="Nombre completo" required minlength="3">
+          <label class="titulo-campo">Nombre</label>
+          <input type="text" class="" name="name" id="name" placeholder="Nombre completo" value="<%= typeof inputs != 'undefined' ? inputs.name : '' %>">
         </div>
         <div class="campo-reg">
-          <label class="titulo-campo"> Apellido</label>
-          <input type="text" class="" name="lastname" id="lastname" placeholder="Apellido" required minlength="3">
+          <label class="titulo-campo">Apellido</label>
+          <input type="text" class="" name="lastname" id="lastname" placeholder="Apellido" value="<%= typeof inputs != 'undefined' ? inputs.lastname : '' %>">
         </div>
         <div class="campo-reg">
-          <label class="titulo-campo"> Tipo de Documento </label>
+          <label class="titulo-campo">Tipo de Documento </label>
           <select name="documentType" id="documentType">
             <% documents.forEach(document => { %>
               <option value="<%= document.id %> "> <%= document.name %> </option>
@@ -31,7 +38,7 @@
         </div>
         <div class="campo-reg">
           <label class="titulo-campo">No. Documento</label>
-          <input type="text" class="" name="documentNum" id="documentNum" placeholder="Numero de DNI o Pasaporte" required minlength="8">
+          <input type="text" class="" name="documentNum" id="documentNum" placeholder="Numero de DNI o Pasaporte" value="<%= typeof inputs != 'undefined' ? inputs.documentNum : '' %>">
         </div>
         <div class="campo-reg">
           <label for="image" class="titulo-campo">Foto de perfil</label>
@@ -39,7 +46,7 @@
         </div>
         <h4 class="titulo-campo"> FECHA DE NACIMIENTO</h4>
         <div class="campo-reg">
-          <input type="date" class="" name="birth" id="birth" placeholder="Fecha de nacimiento">
+          <input type="date" class="" name="birth" id="birth" placeholder="Fecha de nacimiento" value="<%= typeof inputs != 'undefined' ? inputs.birth : '' %>">
         </div>
         <br>
         <div class="linea-titulos"></div>
@@ -52,24 +59,24 @@
             <% }) %>
           </select>
           <label class="titulo-campo" for="number">Numero</label>
-          <input type="number" class="" id="number" name="number" placeholder="+54 XXXXXXXXXX">
+          <input type="number" class="" id="number" name="number" placeholder="+54 XXXXXXXXXX" value="<%= typeof inputs != 'undefined' ? inputs.number : '' %>">
         </div> 
         <br>
         <div class="linea-titulos"></div>
           <div class="campo-reg">
             <h4 class="titulo-campo"><i class="fas fa-envelope"></i></i> CORREO ELECTRONICO</h4>
-            <input type="email" class="" id="email" name="email" placeholder="Email" required>
-            <input type="email" class="" id="confirmEmail" placeholder="Confirmar email">
+            <input type="email" class="" id="email" name="email" placeholder="Email" value="<%= typeof inputs != 'undefined' ? inputs.email : '' %>">
+            <input type="email" class="" name="confirmEmail" id="confirmEmail" placeholder="Confirmar email" value="<%= typeof inputs != 'undefined' ? inputs.confirmEmail : '' %>">
           </div>
           <br>
         <div class="linea-titulos"></div>
         <div class="campo-reg">
           <h4 class="titulo-campo"><i class="fas fa-key"></i> CONTRASEÑA</h4>
-          <input type="password" class="" id="password" name="password" placeholder="Contraseña" required minlength="8">
+          <input type="password" class="" id="password" name="password" placeholder="Contraseña">
           <input type="password" class="" id="confirmPaswword" placeholder="Confirmar contraseña">
         </div>
-        <h6 class="form-info"> La contraseña debe tener al menos 8 caracteres y una letra*.</h6>
-        <label for="label-terms" class="texto-botoncito"> Acepto terminos y condiciones.</label>
+        <h6 class="form-info"> La contraseña debe tener al menos 8 caracteres, una letra y un número*.</h6>
+        <label for="label-terms" class="texto-botoncito"> Acepto los términos y condiciones.</label>
         <label class="botoncito"> 
           <input name="label-terms" type="checkbox">
           <span class="deslizadora"></span>

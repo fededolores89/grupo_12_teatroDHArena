@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const { validationResult } = require('express-validator');
 const usersFilePath = path.join(__dirname, "../database/userDataBase.json");
 const phonesTypeFilePath = path.join(__dirname, "../database/phonesType.json");
 const usersTypeFilePath = path.join(__dirname, "../database/usersType.json");
@@ -19,34 +20,35 @@ const controller = {
     res.render("users/register", {phoneTypes: phoneTypes, documents: documentTypes});
   },
   create: (req, res, next) => {
+    const errors = validationResult(req);
 
-    let imageFile = req.file;
+    if(errors.isEmpty()) {
+      let user = {
+        id: parseInt(users[users.length - 1].id) + 1,
+        name: req.body.name,
+        lastname: req.body.lastname,
+        documentType: parseInt(req.body.documentType),
+        documentNum: req.body.documentNum,
+        birth: req.body.birth,
+        phoneType: parseInt(req.body.phoneType),
+        number: req.body.number,
+        email: req.body.email,
+        password: req.body.password,
+        userType: 1,
+        image: req.file.filename ? req.file.filename : "default-profile.jpg"
+      }
+  
+      users.push(user);
+      fs.writeFileSync(usersFilePath, JSON.stringify(users, null, " "));
+  
+      res.redirect('/');
+    } else {
+      const validations = errors.array();
+      const inputs = req.body; //Valores del formulario
 
-    if(!imageFile) {
-      const error = new Error('Por favor seleccione un archivo de imagen');
-      error.httpStatusCode = 400;
-      return next(error);
+      res.render('users/register', {errors: validations, phoneTypes: phoneTypes, documents: documentTypes, inputs: inputs});
     }
 
-    let user = {
-      id: parseInt(users[users.length - 1].id) + 1,
-      name: req.body.name,
-      lastname: req.body.lastname,
-      documentType: parseInt(req.body.documentType),
-      documentNum: req.body.documentNum,
-      birth: req.body.birth,
-      phoneType: parseInt(req.body.phoneType),
-      number: req.body.number,
-      email: req.body.email,
-      password: req.body.password,
-      userType: 1,
-      image: req.file.filename ? req.file.filename : "default-profile.jpg"
-    }
-
-    users.push(user);
-    fs.writeFileSync(usersFilePath, JSON.stringify(users, null, " "));
-
-    res.redirect('/');
   }
 };
 
