@@ -111,14 +111,9 @@ const controllers = {
       res.redirect("/shows");
     } else {
       const validations = errors.array();
-      let filteredCat = null;
       const inputs = req.body;
       const selectedCategory = req.body.categoryId;
-
-      //Si el usuario elije una categoria, enviarla filtrada a la vista
-      if(selectedCategory != undefined) {
-        filteredCat = categories.find(category => category.id == selectedCategory);
-      }
+      let filteredCat = categories.find(category => category.id == selectedCategory);
 
       res.render('product/createShow', {categories: categories, errors: validations, inputs: inputs, selectedCat: filteredCat});
     }
