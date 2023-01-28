@@ -92,8 +92,6 @@ const controllers = {
   processCreate: (req, res) => {
     const errors = validationResult(req);
 
-    console.log(req.body);
-
     if(errors.isEmpty()) {
       let nuevoShow = {
         id: shows[shows.length - 1].id + 1,
