@@ -10,7 +10,7 @@
         <h3> AUN NO ESTAS REGISTRADO? </h3>
         <h5>Completa el formulario con tus datos y hacete usuario para obtener grandes beneficios!</h5>
       </div>
-      <% if (typeof errors != 'undefined') { %>
+      <% if (locals.errors) { %>
         <div class="info-errores">
           <% errors.forEach(error => { %>
             <span class="error"><i class="fa-solid fa-circle-exclamation"></i> <%= error.msg %></span>
@@ -22,11 +22,11 @@
         <h4 class="titulo-campo"><i class="fas fa-pen"></i></i> DATOS PERSONALES </h4>
         <div class="campo-reg">
           <label class="titulo-campo">Nombre</label>
-          <input type="text" class="" name="name" id="name" placeholder="Nombre completo" value="<%= typeof inputs != 'undefined' ? inputs.name : '' %>">
+          <input type="text" class="" name="name" id="name" placeholder="Nombre completo" value="<%= locals.inputs ? inputs.name : '' %>">
         </div>
         <div class="campo-reg">
           <label class="titulo-campo">Apellido</label>
-          <input type="text" class="" name="lastname" id="lastname" placeholder="Apellido" value="<%= typeof inputs != 'undefined' ? inputs.lastname : '' %>">
+          <input type="text" class="" name="lastname" id="lastname" placeholder="Apellido" value="<%= locals.inputs ? inputs.lastname : '' %>">
         </div>
         <div class="campo-reg">
           <label class="titulo-campo">Tipo de Documento </label>
@@ -38,7 +38,7 @@
         </div>
         <div class="campo-reg">
           <label class="titulo-campo">No. Documento</label>
-          <input type="text" class="" name="documentNum" id="documentNum" placeholder="Numero de DNI o Pasaporte" value="<%= typeof inputs != 'undefined' ? inputs.documentNum : '' %>">
+          <input type="text" class="" name="documentNum" id="documentNum" placeholder="Numero de DNI o Pasaporte" value="<%= locals.inputs ? inputs.documentNum : '' %>">
         </div>
         <div class="campo-reg">
           <label for="image" class="titulo-campo">Foto de perfil</label>
@@ -46,7 +46,7 @@
         </div>
         <h4 class="titulo-campo"> FECHA DE NACIMIENTO</h4>
         <div class="campo-reg">
-          <input type="date" class="" name="birth" id="birth" placeholder="Fecha de nacimiento" value="<%= typeof inputs != 'undefined' ? inputs.birth : '' %>">
+          <input type="date" class="" name="birth" id="birth" placeholder="Fecha de nacimiento" value="<%= locals.inputs ? inputs.birth : '' %>">
         </div>
         <br>
         <div class="linea-titulos"></div>
@@ -59,14 +59,14 @@
             <% }) %>
           </select>
           <label class="titulo-campo" for="number">Numero</label>
-          <input type="number" class="" id="number" name="number" placeholder="+54 XXXXXXXXXX" value="<%= typeof inputs != 'undefined' ? inputs.number : '' %>">
+          <input type="number" class="" id="number" name="number" placeholder="+54 XXXXXXXXXX" value="<%= locals.inputs ? inputs.number : '' %>">
         </div> 
         <br>
         <div class="linea-titulos"></div>
           <div class="campo-reg">
             <h4 class="titulo-campo"><i class="fas fa-envelope"></i></i> CORREO ELECTRONICO</h4>
-            <input type="email" class="" id="email" name="email" placeholder="Email" value="<%= typeof inputs != 'undefined' ? inputs.email : '' %>">
-            <input type="email" class="" name="confirmEmail" id="confirmEmail" placeholder="Confirmar email" value="<%= typeof inputs != 'undefined' ? inputs.confirmEmail : '' %>">
+            <input type="email" class="" id="email" name="email" placeholder="Email" value="<%= locals.inputs ? inputs.email : '' %>">
+            <input type="email" class="" name="confirmEmail" id="confirmEmail" placeholder="Confirmar email" value="<%= locals.inputs ? inputs.confirmEmail : '' %>">
           </div>
           <br>
         <div class="linea-titulos"></div>

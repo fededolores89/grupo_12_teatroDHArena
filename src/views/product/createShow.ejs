@@ -8,7 +8,7 @@
    <main class="main-container">
     <h2>Crear Show</h2>
     <section class="form-container">
-      <% if (typeof errors != 'undefined') { %>
+      <% if (locals.errors) { %>
         <div class="info-errores">
           <% errors.forEach(error => { %>
             <span class="error"><i class="fa-solid fa-circle-exclamation"></i> <%= error.msg %></span>
@@ -19,11 +19,11 @@
         <div class="row product-detail">
           <div class="col-12 col-md-6">
             <label for="name" class="form-label">Nombre del artista</label>
-            <input type="text" id="name" name="name" class="form-input" placeholder="Ej: Juan Carlos" value="<%= typeof inputs != 'undefined' ? inputs.name : '' %>">
+            <input type="text" id="name" name="name" class="form-input" placeholder="Ej: Juan Carlos" value="<%= locals.inputs ? inputs.name : '' %>">
           </div>
           <div class="col-12 col-md-6">
             <label for="price" class="form-label">Precio</label>
-            <input type="number" id="price" name="price" class="form-input" placeholder="Ej: 15000" value="<%= typeof inputs != 'undefined' ? inputs.price : '' %>">
+            <input type="number" id="price" name="price" class="form-input" placeholder="Ej: 15000" value="<%= locals.inputs ? inputs.price : '' %>">
           </div>
           <div class="col-12 col-md-6">
             <label for="hour" class="form-label">Hora del show</label>
@@ -45,12 +45,12 @@
           </div>
           <div class="col-12 col-md-6">
             <label for="date" class="form-label">Fecha:</label>
-            <input class="form-input" type="date" name="date" id="date" value="<%= typeof inputs != 'undefined' ? inputs.date : '' %>">
+            <input class="form-input" type="date" name="date" id="date" value="<%= locals.inputs ? inputs.date : '' %>">
           </div>
           <div class="col-12 col-md-6">
             <label for="categoryId" class="form-label">Categoría:</label>
             <select name="categoryId" id="categoryId" class="form-input">
-              <% if(typeof selectedCat != 'undefined') { %>
+              <% if(locals.selectedCat) { %>
                 <option value="<%= selectedCat.id %>" selected><%= selectedCat.name %></option>
                 <% let filteredCats = categories.filter(category => category.id != selectedCat.id) %>
                 <% filteredCats.forEach(cat => { %>
@@ -65,15 +65,15 @@
           </div>
           <div class="col-12">
             <label for="descriptionHeader" class="form-label">Descripcion del evento</label>
-            <textarea name="descriptionHeader" id="descriptionHeader" class="form-input" value="<%= typeof inputs != 'undefined' ? inputs.descriptionHeader : '' %>"></textarea>
+            <textarea name="descriptionHeader" id="descriptionHeader" class="form-input" value="<%= locals.inputs ? inputs.descriptionHeader : '' %>"></textarea>
           </div>
           <div class="col-12">
             <label for="descriptionVideo" class="form-label">Descripcion del artista</label>
-            <textarea name="descriptionVideo" id="descriptionVideo" class="form-input" value="<%= typeof inputs != 'undefined' ? inputs.descriptionVideo : '' %>"></textarea>
+            <textarea name="descriptionVideo" id="descriptionVideo" class="form-input" value="<%= locals.inputs ? inputs.descriptionVideo : '' %>"></textarea>
           </div>
           <div class="col-12 col-md-6">
             <label for="video" class="form-label">Url Youtube</label>
-            <input type="text" id="video" name="video"  class="form-input" placeholder="Url del video de Youtube." value="<%= typeof inputs != 'undefined' ? inputs.video : '' %>">
+            <input type="text" id="video" name="video"  class="form-input" placeholder="Url del video de Youtube." value="<%= locals.inputs ? inputs.video : '' %>">
           </div>
           <div class="col-12 col-md-6">
             <label for="artistImage" class="form-label">Imagen del Artista:</label>
