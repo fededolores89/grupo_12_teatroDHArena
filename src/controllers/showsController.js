@@ -112,10 +112,8 @@ const controllers = {
     } else {
       const validations = errors.array();
       const inputs = req.body;
-      const selectedCategory = req.body.categoryId;
-      let filteredCat = categories.find(category => category.id == selectedCategory);
 
-      res.render('product/createShow', {categories: categories, errors: validations, inputs: inputs, selectedCat: filteredCat});
+      res.render('product/createShow', {categories: categories, errors: validations, inputs: inputs});
     }
 
   },

@@ -50,17 +50,9 @@
           <div class="col-12 col-md-6">
             <label for="categoryId" class="form-label">Categoría:</label>
             <select name="categoryId" id="categoryId" class="form-input">
-              <% if(locals.selectedCat) { %>
-                <option value="<%= selectedCat.id %>" selected><%= selectedCat.name %></option>
-                <% let filteredCats = categories.filter(category => category.id != selectedCat.id) %>
-                <% filteredCats.forEach(cat => { %>
-                  <option value="<%= cat.id %>"><%=cat.name%></option>
-                <% }) %>
-              <% } else { %>
-                <% categories.forEach(category => { %>
-                  <option value="<%= category.id %>"><%= category.name %></option>
-                <% }) %>
-              <% } %>
+              <% categories.forEach(category => { %>
+                <option value="<%= category.id %> " <%= locals.inputs && inputs.categoryId == category.id ? 'selected' : '' %>  ><%= category.name %> </option>
+              <% }) %>
             </select>
           </div>
           <div class="col-12">
