@@ -46,6 +46,8 @@ const controller = {
       const validations = errors.array();
       const inputs = req.body; //Valores del formulario
 
+      console.log(req.body)
+
       res.render('users/register', {errors: validations, phoneTypes: phoneTypes, documents: documentTypes, inputs: inputs});
     }
 

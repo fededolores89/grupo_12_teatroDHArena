@@ -32,7 +32,7 @@
           <label class="titulo-campo">Tipo de Documento </label>
           <select name="documentType" id="documentType">
             <% documents.forEach(document => { %>
-              <option value="<%= document.id %> "> <%= document.name %> </option>
+              <option value="<%= document.id %>" <%= locals.inputs && inputs.documentType == document.id ? 'selected' : '' %>> <%= document.name %> </option>
             <% }) %>
           </select>
         </div>
@@ -55,7 +55,7 @@
           <label for="phoneType" class="titulo-campo" > Tipo </label>
           <select name="phoneType" id="phoneType">
             <% phoneTypes.forEach(type => { %>
-              <option value="<%= type.id %> "> <%= type.name %> </option>
+              <option value="<%= type.id %>" <%= locals.inputs && inputs.phoneType == type.id ? 'selected' : '' %>> <%= type.name %> </option>
             <% }) %>
           </select>
           <label class="titulo-campo" for="number">Numero</label>
