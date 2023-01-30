@@ -3,8 +3,10 @@ const router = express.Router();
 
 const shoppingCartController = require('../controllers/shoppingCartController.js');
 
+const authMiddleware = require('../middlewares/users/authMiddleware.js');
+
 /* Carrito de compras */
-router.get('/', shoppingCartController.shoppingCart);
+router.get('/', authMiddleware, shoppingCartController.shoppingCart);
 
 router.delete('/:id', shoppingCartController.deleteItem);
 

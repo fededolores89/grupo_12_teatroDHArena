@@ -41,3 +41,11 @@ h1{
 .control-formulario{
   padding: 15px;
 }
+
+.error-message {
+  color: white;
+}
+
+.error-input {
+  border-color: red;
+}

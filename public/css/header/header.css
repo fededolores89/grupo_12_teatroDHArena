@@ -102,6 +102,29 @@ nav {
   color: var(--verde-principal);
 }
 
+.logout-form {
+  color: var(--verde-principal);
+  font-weight: bold;
+}
+
+.logout-button {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+
+.logout-form-mobile, .logout-button-mobile {
+  color: white;
+  opacity: 0.7;
+  font-size: 1.5rem;
+}
+
+.logout-button-mobile {
+  background: transparent;
+  border: none;
+  font-weight: bold;
+}
+
 /* Tamanio despues de tablet */
 @media screen and (min-width: 769px) {
   .nav-mobile-iconos {

@@ -115,16 +115,18 @@
              <a class="evento-buy" href="/shows/<%= show.id %>/agregar" class="evento-compra-submit">Agregar al carrito</a> 
           </div>
         </article>
-        <div class="evento-admin-contenedor">
-          <div class="admin-buttons">
-            <a class="edit-button" href="/shows/<%= show.id %>/edit" class=""><i class="fa-solid fa-pen-to-square"></i> Editar</a>
-            <form action="/shows/<%= show.id %>?_method=DELETE" method="POST">
-              <button class="delete-button" type="submit">
-                <i class="fa-solid fa-trash"></i> Borrar
-              </button>
-            </form> 
+        <% if (userLogged != undefined && userLogged.userType == 2) { %>
+          <div class="evento-admin-contenedor">
+            <div class="admin-buttons">
+              <a class="edit-button" href="/shows/<%= show.id %>/edit" class=""><i class="fa-solid fa-pen-to-square"></i> Editar</a>
+              <form action="/shows/<%= show.id %>?_method=DELETE" method="POST">
+                <button class="delete-button" type="submit">
+                  <i class="fa-solid fa-trash"></i> Borrar
+                </button>
+              </form> 
+            </div>
           </div>
-        </div>
+        <% } %>
       </section>
     </main>
     <%- include('../partials/footer') %>

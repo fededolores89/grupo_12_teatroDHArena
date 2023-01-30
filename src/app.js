@@ -3,7 +3,7 @@ const path = require("path");
 const PORT = process.env.PORT || 3000;
 const app = express();
 const methodOverride = require('method-override'); // Para poder usar los métodos PUT y DELETE
-
+const session = require('express-session');
 
 // Importamos los distintos enrutadores
 const mainRouter = require('./routes/mainRouter')
@@ -11,6 +11,7 @@ const showsRouter = require('./routes/showsRouter')
 const userRouter = require('./routes/userRouter.js')
 const shoppingRouter = require('./routes/shoppingRouter.js')
 
+const authUserVariableMiddleware = require('./middlewares/users/authUserVariableMiddleware.js');
 
 app.set("view engine", "ejs");
 app.set("views", "./src/views");
@@ -21,7 +22,8 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: false })); // Para capturar el body
 app.use(express.json()); // Para capturar el body
 app.use(methodOverride('_method')); // Para poder usar los métodos PUT y DELETE
-
+app.use(session({secret: 'dhsession'}));
+app.use(authUserVariableMiddleware);
 
 
 app.listen(PORT, console.log("Servidor en http://localhost:" + PORT));
@@ -35,7 +37,13 @@ app.use("/shows", showsRouter);
 app.use("/usuarios", userRouter);
 app.use("/", mainRouter);
 app.use("/carrito", shoppingRouter);
-
+app.get('/check', (req, res) => {
+  if(req.session.authUser == undefined) {
+    res.send('No hay un usuario logueado')
+  } else {
+    res.send(req.session.authUser);
+  }
+})
 
 
 

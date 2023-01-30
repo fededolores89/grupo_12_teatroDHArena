@@ -25,17 +25,30 @@
               ></a>
             </div>
           </div>
-          <ul class="nav-desktop menu-derecha">
-            <li>
-              <i class="fa-solid fa-circle-user"></i>
-              <a href="/usuarios/login">Iniciar sesion</a>
-            </li>
-            <li>
-              <a class="desktop-register-button" href="/usuarios/register"
-                >Registrate</a
-              >
-            </li>
-          </ul>
+            <ul class="nav-desktop menu-derecha">
+              <% if (userLogged == undefined) { %>
+              <li>
+                <i class="fa-solid fa-circle-user"></i>
+                <a href="/usuarios/login">Iniciar sesion</a>
+              </li>
+              <li>
+                <a class="desktop-register-button" href="/usuarios/register"
+                  >Registrate</a
+                >
+              </li>
+              <% } else { %>
+                <li>
+                  <i class="fa-solid fa-user"></i>
+                  ¡Hola <%= userLogged.name %>!
+                </li>
+                <li>
+                  <form class="logout-form" action="/usuarios/logout" method="POST" style="display: flex;">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <button class="logout-button" type="submit" href="#">Cerrar sesion</a>
+                  </form>
+                </li>
+              <% } %>
+            </ul>
         </div>
       </div>
       <ul class="nav-mobile-menu">
@@ -43,8 +56,17 @@
         <li><a href="#">Club DHArena</a></li>
         <li><a href="#">Contacto</a></li>
         <li><a href="/shows/create">Crear Show</a></li>
+        <% if (userLogged == undefined) { %>
         <li><a href="/usuarios/login">Iniciar sesion</a></li>
         <li><a href="/usuarios/register">Registrate</a></li>
+        <% } else { %>
+          <li>
+            <form class="logout-form-mobile" action="/usuarios/logout" method="POST">
+              <i class="fa-solid fa-right-from-bracket"></i>
+              <button class="logout-button-mobile" type="submit" href="#">Cerrar sesion</a>
+            </form>
+          </li>
+        <% } %>
       </ul>
     </nav>
   </header>

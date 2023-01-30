@@ -15,6 +15,42 @@ const controller = {
   login: (req, res) => {
     res.render("users/login");
   },
+
+  processLogin: (req, res) => {
+    const validations = validationResult(req);
+    let authUser = null;
+    let errors = [];
+
+    if(validations.isEmpty()) {
+      for(let i = 0; i < users.length; i++) {
+        if(users[i].email == req.body.email) {
+          if(users[i].password == req.body.password) {
+            authUser = users[i];
+            break;
+          }
+        }
+      }
+
+      if(authUser == null) {
+        res.render('users/login', { errors: { invalidAuth: { msg: 'Las credenciales son incorrectas' } }, inputs: req.body});
+      } else {
+        req.session.authUser = authUser;
+        res.redirect('/');
+      }
+
+    } else {
+      const errors = validations.mapped(); //Con mapped el objeto de errores se ordena por tipo de input
+      const inputs = req.body;
+
+      res.render('users/login', { errors: errors, inputs: inputs });
+    }
+  },
+
+  processLogout: (req, res) => {
+    req.session.authUser = undefined;
+    res.redirect('/');
+  },
+
   /* --------------Muestro la vista del registro----------------- */
   registro: (req, res) => {
     res.render("users/register", {phoneTypes: phoneTypes, documents: documentTypes});
@@ -45,8 +81,6 @@ const controller = {
     } else {
       const validations = errors.array();
       const inputs = req.body; //Valores del formulario
-
-      console.log(req.body)
 
       res.render('users/register', {errors: validations, phoneTypes: phoneTypes, documents: documentTypes, inputs: inputs});
     }

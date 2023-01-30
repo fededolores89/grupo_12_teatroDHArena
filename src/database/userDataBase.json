@@ -23,8 +23,8 @@
   "phoneType": 1,
   "number": "54667162591",
   "email": "admin@test.com",
-  "password": "12345678",
-  "userType": 1,
+  "password": "QZFtyri5",
+  "userType": 2,
   "image": "default-profile.jpg"
  },
  {
@@ -82,5 +82,19 @@
   "password": "12345678",
   "userType": 1,
   "image": "1674849541845.png"
+ },
+ {
+  "id": 7,
+  "name": "Dana",
+  "lastname": "Coxer",
+  "documentType": 1,
+  "documentNum": "38268623G",
+  "birth": "1985-02-23",
+  "phoneType": 1,
+  "number": "7069743508",
+  "email": "marian1971@yahoo.com",
+  "password": "PQb29NAi",
+  "userType": 1,
+  "image": "1675041119865.jpg"
  }
 ]
