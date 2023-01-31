@@ -1,14 +1,8 @@
-
-
-
-
 .registro-main {
   background-image: url(/img/Img-Index-Fondos/hero.jpg);
   background-size: cover;
   background-position: center;
-  
-  display: flex;
-  flex-direction: column;
+  background-attachment: fixed;
 }
 
 .info-registro {
@@ -17,12 +11,18 @@
   padding: 2rem;
 }
 
+.form-info {
+  margin-bottom: 1rem;
+}
+
 .info-registro h3 {
   margin: 1rem 0;
 }
 
 .registro-form {
   padding: 3rem;
+  margin: 0 auto;
+  max-width: 1200px;
 }
 
 .Titulo-1 {
@@ -78,6 +78,18 @@ h6,
   color: red;
 }
 
+.campo-reg {
+  display: flex;
+  flex-direction: column;
+}
+
+.campo-reg input, .campo-reg select {
+  padding: 1rem 0.5rem;
+  border-radius: 12px;
+  border: none;
+  margin-bottom: 1rem;
+}
+
 /*-------------Boton deslizante----------------------------------*/
 .botoncito {
   position: relative;
@@ -112,6 +124,18 @@ h6,
   bottom: 0.2rem;
   background-color: white;
   transition: 0.4s;
+}
+
+.info-errores {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  padding: 1rem 2rem;
+  background-color: var(--magenta);
+}
+
+.error {
+  margin-bottom: 0.5rem;
 }
 
 input:checked + .deslizadora {
@@ -159,22 +183,14 @@ header{
   color: white;
   padding: 10px;
 }
-/*--------Main---------------------------------------------------*/
-main{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  padding: 1rem 5rem;
-
-}
 
 /*------------Linea divisora entre titulos--------------------------*/
 
    .linea-titulos {
     background-color: #00ffc2;
     line-height: -162.8em;
-    /* font-size: 89px; */
     background-color:#00ffc2; ;
     height: 5px;
     width: 210px;
+    margin-bottom: 1rem;
 }

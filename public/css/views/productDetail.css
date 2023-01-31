@@ -261,6 +261,38 @@ footer{
   font-weight: bold;
 }
 
+.evento-buy {
+  text-decoration: none;
+  background-color: #2cf2c7;
+  border-radius: 12px;
+  padding: 0.6rem;
+  font-weight: bold;
+  text-align: center;
+  display: block;
+  color: black;
+}
+
+.evento-admin-contenedor {
+  order: 5;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.admin-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.edit-button, .delete-button {
+  color: white;
+  text-decoration: none;
+  background-color: var(--magenta);
+  padding: 0.8rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
 @media screen and (min-width: 769px) {
   .main-carritoDetalle {
     padding: 3rem 5rem;
@@ -319,5 +351,13 @@ footer{
 
   .evento-fecha-contenedor i {
     font-size: 3rem;
+  }
+
+  .admin-buttons {
+    justify-content: flex-end;
+  }
+
+  .edit-button {
+    margin-right: 1rem;
   }
 }

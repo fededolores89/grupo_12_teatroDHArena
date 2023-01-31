@@ -5,7 +5,7 @@
 
     <%- include('../partials/header') %>
     <main class="login-main">
-      <form class="contenedor-formulario">
+      <form action="/usuarios/login" method="POST" class="contenedor-formulario">
         <h2 class="login-titulo">Ingresar a mi cuenta</h2>
         <label for="email"><i class="fas fa-envelope"></i> EMAIL</label>
         <input
@@ -13,11 +13,31 @@
           name="email"
           id="email"
           placeholder="Ingresá tu email"
+          class="<%= locals.errors && errors.email ? 'error-input' : '' %>"
+          value="<%= locals.inputs ? inputs.email : '' %>"
         />
+        <div class="error-message">
+          <% if (locals.errors && errors.email) { %>
+            <span class="error"><i class="fa-solid fa-circle-info"></i> <%= errors.email.msg %> </span>
+          <% } %>
+        </div>
         <label for="contraseña"><i class="fas fa-key"></i> CONTRASEÑA</label>
-        <input type="password" name="contraseña" id="contraseña" placeholder="Ingresá tu contraseña" required>
-
-        <button>Ingresar</button>
+        <input type="password" name="password" id="password" class="<%= locals.errors && errors.password ? 'error-input' : '' %>" placeholder="Ingresá tu contraseña">
+        <div class="error-message">
+          <% if (locals.errors && errors.password) { %>
+            <span class="error"><i class="fa-solid fa-circle-info"></i> <%= errors.password.msg %> </span>
+          <% } %>
+        </div>
+        <div class="form-input">
+          <label for="remember-me">Recuerdame</label>
+          <input type="checkbox" class="remember-me" name="remember" id="remember-me">
+        </div>
+        <button type="submit">Ingresar</button>
+        <div class="error-message">
+          <% if (locals.errors && errors.invalidAuth) { %>
+            <span class="error"><i class="fa-solid fa-circle-info"></i> <%= errors.invalidAuth.msg %> </span>
+          <% } %>
+        </div>
       </form>
       <div>
         <p class="controles-login">¿Olvidaste tu contraseña?</p>
@@ -29,6 +49,6 @@
     
     <%- include('../partials/footer') %>
     <!-- Agregando archivo nav.js para el menu -->
-    <script src="js/nav/nav.js"></script>
+    <script src="../js/nav/nav.js"></script>
   </body>
 </html>

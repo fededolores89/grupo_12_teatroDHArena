@@ -20,15 +20,24 @@
   }
   /* --------------------Aca la parte de los Shows ---------------------------*/
   main a {
-    text-decoration: none;
-    background-color: #2cf2c7;
-    padding: 8px;
-    border-radius: 6px;
+    
     
   }
+  .Img-Artista {
+    margin: 0;
+    margin-bottom: 1rem;
+  }
 
-.boton-entrada {
-  padding: 0;
+  .botones-info {
+    margin-top: 1rem;
+  }
+
+.boton-entrada, .boton-clubarena, .hero a {
+  text-decoration: none;
+  background-color: #2cf2c7;
+  border-radius: 12px;
+  padding: 0.6rem;
+  font-weight: bold;
 }
   
   .Shows {
@@ -41,12 +50,22 @@
   
   .titulo-shows {
     width: 100%;
+    margin: 1rem 0;
+    font-size: 2rem;
   }
   
   .eventos-home {
     width: 70%;
-   border: solid 2px white;
+    border: solid 2px white;
     margin-bottom: 1rem;
+    padding-bottom: 2rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: all .2s ease-in-out;
+  }
+
+  .eventos-home:hover {
+    transform: scale(1.01);
   }
   
   .titulo-shows {
@@ -55,7 +74,30 @@
   
   .descripcion {
     color: white;
-    font-family: sans-serif
+    font-family: sans-serif;
+    text-align: left;
+    padding: 0 1rem;
+  }
+
+  .descripcion .nombre {
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    margin-top: 0;
+  }
+
+  .descripcion .fecha {
+    margin: 0;
+    font-size: 0.8rem;
+  }
+
+  .Info {
+    text-decoration: none;
+    color: white;
+    border-bottom: 2px solid var(--magenta);
+    cursor: pointer;
+    width: 70px;
+    font-weight: bold;
   }
   
 
@@ -115,5 +157,12 @@
   @media (min-width: 760px) {
     .eventos-home {
       width: 30%;
+    }
+  }
+
+  @media (min-width: 1023px) {
+    .botones-info {
+      display: flex;
+      justify-content: space-between;
     }
   }

@@ -4,70 +4,78 @@
   <body>
     <%- include('../partials/header') %>
     <!--***************** Formulario de Edicion del producto ***************-->
-    <form action="/shows/edit/<%= shows.id %>?_method=PUT" method="POST" enctype="multipart/form-data"  >
-      <div class="row product-detail" style="background-color: #16324f ;">
-        <div class="col-12 col-md-6">
-          <label for="name" class="form-label">Nombre del shows:</label>
-          <input value="<%= shows.name %>" type="text" id="name" name="name" placeholder="Ej: Juan Carlos" class="form-input">
-        </div>
-        <div class="col-12 col-md-6">
-          <label for="price" class="form-label">Precio del shows:</label>
-          <input value="<%= shows.price %>" type="text" id="price" name="price" placeholder="Ej: 5000" class="form-input">
-        </div>
-        <div class="col-12 col-md-6">
-          <label for="hour" class="form-label">Hora del shows:</label>
-          <input value="<%= shows.price %>" type="text" id="hour" name="hour" placeholder="Ej: 14:00" class="form-input">
-        </div>
-        <div class="col-12 col-md-6">
-          <label for="day" class="form-label">Dia:</label>
-          <input value="<%= shows.day %>" type="text" id="day" name="day" placeholder="Ej: 15" class="form-input">
-        </div>
-        <div class="col-12 col-md-6">
-          <label for="month" class="form-label">Mes:</label>
-          <select name="month" id="month" class="form-input">
-            <option value="<%= shows.month %>">Elegí</optnion>
-            <option value="<%= shows.month %>">Enero</option>
-            <option value="<%= shows.month %>">Febrero</option>
-            <option value="<%= shows.month %>">Marzo</option>
-            <option value="<%= shows.month %>">Abril</option>
-            <option value="<%= shows.month %>">Mayo</option>
-            <option value="<%= shows.month %>">Junio</option>
-            <option value="<%= shows.month %>">Julio</option>
-            <option value="<%= shows.month %>">Agosto</option>
-            <option value="<%= shows.month %>">Septiembre</option>
-            <option value="<%= shows.month %>">Octubre</option>
-            <option value="<%= shows.month %>">Noviembre</option>
-            <option value="<%= shows.month %>">Diciembre</option>
-            
-          </select>
-        </div>
-        <div class="col-12 col-md-6">
-          <label for="category" class="form-label">Categoría:</label>
-          <select name="category" id="category" class="form-input">
-            <option value="<%= shows.category %>">Rock</option>
-            <option value="<%= shows.category %>">Pop</option>
-            </select>
-        </div>
-        <div class="col-12">
-          <label for="description" class="form-label">Descripción Principal:</label>
-          <textarea name="descriptionH2" id="description" class="form-input"><%= shows.descriptionHeader %></textarea>
-        </div>
-        <label for="price" class="form-label">Url de Artistas</label>
-        <input value="<%= shows.video %>" type="text" id="video" name="video" placeholder="Ej: youtube.com/watch?" class="form-input">
-          
-          <div class="col-12">
-          <label for="description" class="form-label">Descripción Video:</label>
-          <textarea name="descriptionVideo" id="descriptionVideo" class="form-input"><%= shows.descriptionVideo %></textarea>
-        </div>
-        <div class="col-12 col-md-6">
-          <label for="productImage" class="form-label">Imagen del Artista:</label>
-          <input type="file" id="productImage" name="editedArtistImage">
-        </div>
-        <div class="col-12">
-          <button type="submit" class="buy-now-button">Guardar shows</button>
-        </div>
-      </div>
-    </form>
+    <main class="main-container">
+      <h2>Editar Show</h2>
+      <section class="form-container">
+        <form action="/shows/<%= show.id %>/edit?_method=PUT" method="POST" enctype="multipart/form-data"  >
+          <div class="row product-detail" style="background-color: #16324f ;">
+            <div class="col-12 col-md-6">
+              <label for="name" class="form-label">Nombre del show:</label>
+              <input value="<%= show.name %>" type="text" id="name" name="name" placeholder="Ej: Juan Carlos" class="form-input">
+            </div>
+            <div class="col-12 col-md-6">
+              <label for="price" class="form-label">Precio del show:</label>
+              <input value="<%= show.price %>" type="text" id="price" name="price" placeholder="Ej: 5000" class="form-input">
+            </div>
+            <div class="col-12 col-md-6">
+              <label for="hour" class="form-label">Hora del show:</label>
+              <select id="hour" name="hour"  class="form-input" required>
+                <option value="<%= show.hour %>" selected><%= show.hour %>  hrs</option>
+                <option value="16:00">16:00 hrs</option>
+                <option value="16:30">16:30 hrs</option>
+                <option value="17:00">17:00 hrs</option>
+                <option value="17:30">17:30 hrs</option>
+                <option value="18:00">18:00 hrs</option>
+                <option value="18:30">18:30 hrs</option>
+                <option value="19:00">19:00 hrs</option>
+                <option value="19:30">19:30 hrs</option>
+                <option value="20:00">20:00 hrs</option>
+                <option value="20:30">20:30 hrs</option>
+                <option value="21:00">21:00 hrs</option>
+                <option value="21:30">21:30 hrs</option>
+                <option value="22:00">22:00 hrs</option>
+              </select>
+            </div>
+            <div class="col-12 col-md-6">
+              <label for="date" class="form-label">Fecha:</label>
+              <input class="form-input" type="date" name="date" id="date" data-date="<%= show.date %>" required>
+            </div>
+            <div class="col-12 col-md-6">
+                <label for="categoryId" class="form-label">Categoría:</label>
+                <select name="categoryId" id="categoryId" class="form-input" required>
+                  <option value="">Elegí</option>
+                  <% categories.forEach(category => { %>
+                    <% if (category.id == show.categoryId) { %>
+                      <option value="<%= category.id %>" selected><%= category.name %></option>
+                    <% } else { %>
+                      <option value="<%= category.id %>"><%= category.name %></option>
+                    <% } %> 
+                  <% }) %>
+                </select>
+              </div>
+            <div class="col-12">
+              <label for="description" class="form-label">Descripción Principal:</label>
+              <textarea name="descriptionHeader" id="description" class="form-input"><%= show.descriptionHeader %></textarea>
+            </div>
+            <label for="price" class="form-label">Url de Artistas</label>
+            <input value="<%= show.video %>" type="text" id="video" name="video" placeholder="Ej: youtube.com/watch?" class="form-input">
+            <div class="col-12">
+              <label for="description" class="form-label">Descripción Video:</label>
+              <textarea name="descriptionVideo" id="descriptionVideo" class="form-input"><%= show.descriptionVideo %></textarea>
+            </div>
+            <div class="col-12 col-md-6">
+              <label for="productImage" class="form-label">Imagen del Artista:</label>
+              <input type="file" id="productImage" name="editedArtistImage">
+            </div>
+            <div class="col-12">
+              <button type="submit" class="save-button">Guardar shows</button>
+            </div>
+          </div>
+        </form>
+      </section>
+    </main>
+    
     <%- include('../partials/footer') %>
     <!-- Agregando archivo nav.js para el menu -->
-    <script src="js/nav/nav.js"></script>
+    <script src="../../js/nav/nav.js"></script>
+    <script src="../../js/form/form.js"></script>

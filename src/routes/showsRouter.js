@@ -1,10 +1,21 @@
 const express = require('express')
 const router = express.Router()
 const mainController = require("../controllers/showsController.js")
+const { body } = require('express-validator');
 const multer = require("multer");
-const path = require('path')
+const path = require('path');
 
+//Validaciones para crear un show
+const validations = [
+    body('name').notEmpty().withMessage('Ingrese el nombre del artista'),
+    body('price').notEmpty().withMessage('Ingrese el precio del show').bail().isNumeric().withMessage('El precio debe ser un valor numerico'),
+    body('date').isISO8601().withMessage('Ingrese una fecha válida'),
+    body('descriptionHeader').notEmpty().withMessage('Ingrese la descripción del evento'),
+    body('descriptionVideo').notEmpty().withMessage('Ingrese la descripción del artista')
+];
 
+const adminMiddleware = require('../middlewares/users/adminMiddleware.js');
+const authMiddleware = require('../middlewares/users/authMiddleware.js');
 
 
 /* --------------Creamos la ruta y el nombre de la imagen----------------- */
@@ -17,30 +28,36 @@ const storage = multer.diskStorage({
     }
 })
 /* --------------Pasamos a la variable uploud el metodo storage----------------- */
-const upload = multer({storage: storage})
+const upload = multer({storage: storage});
 
 
 /* Vista a todos los Shows */
 router.get("/" , mainController.index )
 
 /* Creacion de show */
-router.get('/create' , mainController.create)
-router.post('/create' , upload.single("artistImage"), mainController.processCreate)
+router.get('/create' , adminMiddleware, mainController.create)
+router.post('/create', upload.single("artistImage"), validations, mainController.processCreate)
 
 /* Vista a el show */
-router.get('/detail/:id' , mainController.detalle)
+router.get('/:id' , mainController.detalle)
 
 /* Editar Show */
+<<<<<<< HEAD
 router.get('/edit/:id' , mainController.edit)
 router.put('/edit/:id' , upload.single("editedArtistImage") ,mainController.processEdit)
 
 /* Carrito de compras */
 router.get('/compra/:id', mainController.shoppingCart)
+=======
+router.get('/:id/edit', adminMiddleware, mainController.edit)
+router.put('/:id/edit', upload.single("editedArtistImage") ,mainController.processEdit)
+>>>>>>> 6b4d04cdf4944fa26b7be358d876a8c295d93787
 
+// Agregar show al carrito
+router.get('/:id/agregar', authMiddleware, mainController.addCart);
 
 /* Borrar un Show */
-
-router.delete('/delete/:id', mainController.destroy);
+router.delete('/:id', mainController.destroy);
 
 
 

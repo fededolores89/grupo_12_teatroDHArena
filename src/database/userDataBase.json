@@ -1,85 +1,100 @@
 [
-  {
-    "id": "1",
-    "firstName": "Martin",
-    "lastName": "Martinez",
-    "email": "martin-dev@gmail.com",
-    "password": "123456",
-    "category": "admin",
-    "Imagen": "image"
-  },
-  {
-    "id": "3",
-    "firstName": "Martin",
-    "lastName": "Martinez",
-    "email": "martin-dev@gmail.com",
-    "password": "123456",
-    "category": "admin",
-    "Imagen": "image"
-  },
-  {
-    "id": "2",
-    "firstName": "Martin",
-    "lastName": "Martinez",
-    "email": "martin-dev@gmail.com",
-    "password": "123456",
-    "category": "admin",
-    "Imagen": "image"
-  },
-  {
-    "id": "4",
-    "firstName": "Martin",
-    "lastName": "Martinez",
-    "email": "martin-dev@gmail.com",
-    "password": "123456",
-    "category": "admin",
-    "Imagen": "image"
-  },
-  {
-    "id": "5",
-    "firstName": "Martin",
-    "lastName": "Martinez",
-    "email": "martin-dev@gmail.com",
-    "password": "123456",
-    "category": "admin",
-    "Imagen": "image"
-  },
-  {
-    "id": "6",
-    "firstName": "Martin",
-    "lastName": "Martinez",
-    "email": "martin-dev@gmail.com",
-    "password": "123456",
-    "category": "admin",
-    "Imagen": "image"
-  },
-
-  {
-    "id": "7",
-    "firstName": "Martin",
-    "lastName": "Martinez",
-    "email": "martin-dev@gmail.com",
-    "password": "123456",
-    "category": "admin",
-    "Imagen": "image"
-  },
-
-  {
-    "id": "8",
-    "firstName": "Martin",
-    "lastName": "Martinez",
-    "email": "martin-dev@gmail.com",
-    "password": "123456",
-    "category": "admin",
-    "Imagen": "image"
-  },
-  {
-    "id": "9",
-    "firstName": "Martin",
-    "lastName": "Martinez",
-    "email": "martin-dev@gmail.com",
-    "password": "123456",
-    "category": "admin",
-    "Imagen": "image"
-  }
+ {
+  "id": 1,
+  "name": "Martin",
+  "lastName": "Martinez",
+  "documentType": 1,
+  "documentNum": "22323290",
+  "birth": "01/02/1990",
+  "phoneType": 1,
+  "number": "809232023",
+  "email": "martin-dev@gmail.com",
+  "password": "123456",
+  "userType": 1,
+  "image": "default-profile.jpg"
+ },
+ {
+  "id": 2,
+  "name": "Carlos",
+  "lastname": "Olivares",
+  "documentType": 1,
+  "documentNum": "63653977M",
+  "birth": "1992-01-01",
+  "phoneType": 1,
+  "number": "54667162591",
+  "email": "admin@test.com",
+  "password": "QZFtyri5",
+  "userType": 2,
+  "image": "default-profile.jpg"
+ },
+ {
+  "id": 3,
+  "name": "Lisa C.",
+  "lastname": "Marriott",
+  "documentType": 1,
+  "documentNum": "92833949S",
+  "birth": "1996-03-05",
+  "phoneType": 1,
+  "number": "6678295437",
+  "email": "ryley1998@gmail.com",
+  "password": "12345678",
+  "userType": 1,
+  "image": "1674846664732.jpg"
+ },
+ {
+  "id": 4,
+  "name": "Dottie",
+  "lastname": "Willis",
+  "documentType": 1,
+  "documentNum": "27697215V",
+  "birth": "1969-06-06",
+  "phoneType": 2,
+  "number": "5104850134",
+  "email": "horace1987@hotmail.com",
+  "password": "12345678",
+  "userType": 1,
+  "image": "1674847060408.png"
+ },
+ {
+  "id": 5,
+  "name": "Linda",
+  "lastname": "McClintock",
+  "documentType": 2,
+  "documentNum": "360065612",
+  "birth": "1993-01-25",
+  "phoneType": 1,
+  "number": "6789140243",
+  "email": "delia_balistre@gmail.com",
+  "password": "12345678",
+  "userType": 1,
+  "image": "1674848785359.jpg"
+ },
+ {
+  "id": 6,
+  "name": "Rachael",
+  "lastname": "Radford",
+  "documentType": 1,
+  "documentNum": "56919120P",
+  "birth": "1976-03-26",
+  "phoneType": 1,
+  "number": "3147246133",
+  "email": "lucius_schneid@gmail.com",
+  "password": "12345678",
+  "userType": 1,
+  "image": "1674849541845.png"
+ },
+ {
+  "id": 7,
+  "name": "Dana",
+  "lastname": "Coxer",
+  "documentType": 1,
+  "documentNum": "38268623G",
+  "birth": "1985-02-23",
+  "phoneType": 1,
+  "number": "7069743508",
+  "email": "marian1971@yahoo.com",
+  "password": "PQb29NAi",
+  "userType": 1,
+  "image": "1675041119865.jpg"
+ }
 ]

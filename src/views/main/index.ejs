@@ -14,52 +14,32 @@
           <a href="#">Registrate gratis</a>
         </div>
       </section>
-<!--************************* shows de Pop***********************-->
-       <section class="Shows">
-       <h2 class="titulo-shows">Shows de Pop</h2>
-        <% showsPopFiltrado.forEach(show => { %> 
-        <article class="eventos-home">
-         
-          <figure class="Img-Artista"> <img
-            src="/img/Img-Index-Artistas/<%= show.image %>"
-            alt="Foto-Artista"
-          /></figure>
-          <div class="descripcion">
-            
-            <p class="nombre"><%= show.name %></p>
-            <p class="fecha"><%= show.date %></p>
-            <p class="Info">más info</p>
-            <a href="/shows/detail/<%= show.id %>" class="boton-entrada">Compra tu entrada</a>
-          </div>
-          
-        </article>
-        <% }) %>
-      </section>
 
+      <% for( let i = 0; i < categories.length; i++ ) { %>
+        <section class="Shows">
+          <h2 class="titulo-shows">Shows de <%= categories[i].name %> </h2>
 
-<!--************************* shows de Rock***********************-->
+          <% for( let j = 0; j < shows.length; j++ ) { %>
+            <% if (shows[j].categoryId === categories[i].id) { %>
+              <article class="eventos-home">
+                <figure class="Img-Artista"> <img
+                  src="/img/Img-Index-Artistas/<%= shows[j].image %>"
+                  alt="Foto-Artista"
+                /></figure>
+                <div class="descripcion">
+                  <p class="nombre"><%= shows[j].name %></p>
+                  <p class="fecha"><%= shows[j].date %></p>
+                  <div class="botones-info">
+                    <a href="/shows/<%= shows[j].id %>" class="Info">más info</p>
+                    <a href="/shows/<%= shows[j].id %>" class="boton-entrada">Compra tu entrada</a>
+                  </div>
+                </div>
+              </article>
+            <% } %>
+          <% } %>
+        </section>
+      <% } %>
 
-
-      <section class="Shows">
-        <h2 class="titulo-shows">Shows de Rock</h2>
-        <% showsRockFiltrado.forEach(show => { %> 
-        <article class="eventos-home">
-         
-          <figure class="Img-Artista"> <img
-            src="/img/Img-Index-Artistas/<%= show.image %>"
-            alt="Foto-Artista"
-          /></figure>
-          <div class="descripcion">
-            
-            <p class="nombre"><%= show.name %></p>
-            <p class="fecha"><%= show.date %></p>
-            <p class="Info">más info</p>
-            <a href="/shows/detail/<%= show.id %>" class="boton-entrada">Compra tu entrada</a>
-          </div>
-          
-        </article>
-        <% }) %>
-      </section>
       <!--************************* CLUB ARENA ***********************-->
       <section class="club-arena">
         <div class="control-clubarena">

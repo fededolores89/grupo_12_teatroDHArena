@@ -4,11 +4,15 @@
     background-color: #2cf2c7;
     padding: 8px;
     border-radius: 6px;
-    
+    cursor: pointer;
   }
 
 .boton-entrada {
-  padding: 0;
+  text-decoration: none;
+  background-color: #2cf2c7;
+  border-radius: 12px;
+  padding: 0.6rem;
+  font-weight: bold;
 }
   
   .Shows {
@@ -25,8 +29,16 @@
   
   .eventos-home {
     width: 70%;
-   border: solid 2px white;
+    border: solid 2px white;
     margin-bottom: 1rem;
+    padding-bottom: 2rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: all .2s ease-in-out;
+  }
+
+  .eventos-home:hover {
+    transform: scale(1.01);
   }
   
   .titulo-shows {
@@ -35,55 +47,28 @@
   
   .descripcion {
     color: white;
-    font-family: sans-serif
-  }
-  
-
-   /* --------------------- Aca la parte de club Arena ------------------ */
-  .club-arena {
-    background-image: url('/img/Img-Index-Fondos/clubbg.jpg');
-  
-    background-size: cover;
-    padding: 30%;
-    color: white;
     font-family: sans-serif;
+    text-align: left;
+        padding: 0 1rem;
   }
 
-  .control-clubarena {
-    text-align: center;
-  }
-
-
-  .fa-star {
-    color: goldenrod;
-    font-size: 3rem;
-}
-
-
-
-
-  /* --------------- Aca los iconos ----------------------- */
-.Sponsors h2 {
+  .descripcion .nombre {
+    font-weight: bold;
+    font-size: 1.5rem;
     margin-bottom: 1rem;
-    text-align: center;
-    color: var(--magenta);
-}
+    margin-top: 0;
+  }
 
-.Sponsors {
-    margin-top: 3rem;
-}
+  .descripcion .fecha {
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+  }
 
-
-.main-iconos{
-    display: flex;
-    flex-wrap: wrap;
-    font-size: 7rem;
-    gap: 4rem;
-    justify-content: center;
-    padding: 1rem;
-
-}
-
+  .Img-Artista {
+    margin: 0;
+    margin-bottom: 1rem;
+  }
+  
   /* ----------------- Media queries para table ---------------*/
   @media (min-width: 460px) {
     .eventos-home {

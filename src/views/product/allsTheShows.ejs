@@ -5,8 +5,8 @@
     <%- include('../partials/header') %>
     
     <!--***************** Siglo For recorrer todos los productos y mostramos dinamicamente.***************-->
-    <% shows.forEach(show => { %> 
       <section class="Shows">
+         <% shows.forEach(show => { %> 
       <article class="eventos-home">
        <figure class="Img-Artista"> <img
           src="/img/Img-Index-Artistas/<%= show.image %>"
@@ -15,14 +15,14 @@
         <div class="descripcion">
           
           <p class="nombre"><%= show.name %></p>
-          <p class="fecha"><%= show.month %> - <%= show.day %></p>
+          <p class="fecha"><%= show.date %></p>
        <!--  <p class="Info">más info</p> -->
-          <a href="/shows/detail/<%= show.id %>" class="boton-entrada">Compra tu entrada</a>
+          <a href="/shows/<%= show.id %>" class="boton-entrada">Compra tu entrada</a>
         </div>
-        
-      </article></section>
+      </article>
       <% }) %>
+    </section>
     
     <%- include('../partials/footer') %>
     <!-- Agregando archivo nav.js para el menu -->
-    <script src="js/nav/nav.js"></script>
+    <script src="../js/nav/nav.js"></script>
