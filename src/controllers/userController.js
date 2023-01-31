@@ -35,6 +35,12 @@ const controller = {
         res.render('users/login', { errors: { invalidAuth: { msg: 'Las credenciales son incorrectas' } }, inputs: req.body});
       } else {
         req.session.authUser = authUser;
+
+        //Validar si se selecciona el checkbox de recordar incio de sesion con cookies
+        if(req.body.remember != undefined) {
+          res.cookie('remember', authUser.email, { maxAge: 60000});
+        }
+
         res.redirect('/');
       }
 
@@ -48,6 +54,7 @@ const controller = {
 
   processLogout: (req, res) => {
     req.session.authUser = undefined;
+    res.clearCookie('remember'); //Eliminar cualquier cookie de incio de sesion
     res.redirect('/');
   },
 

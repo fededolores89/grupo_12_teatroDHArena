@@ -49,3 +49,8 @@ h1{
 .error-input {
   border-color: red;
 }
+
+.remember-me {
+  width: 1rem !important;
+  height: 1rem !important;
+}

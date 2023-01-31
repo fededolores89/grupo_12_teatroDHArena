@@ -28,6 +28,10 @@
             <span class="error"><i class="fa-solid fa-circle-info"></i> <%= errors.password.msg %> </span>
           <% } %>
         </div>
+        <div class="form-input">
+          <label for="remember-me">Recuerdame</label>
+          <input type="checkbox" class="remember-me" name="remember" id="remember-me">
+        </div>
         <button type="submit">Ingresar</button>
         <div class="error-message">
           <% if (locals.errors && errors.invalidAuth) { %>

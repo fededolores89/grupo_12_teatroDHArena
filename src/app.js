@@ -4,6 +4,7 @@ const PORT = process.env.PORT || 3000;
 const app = express();
 const methodOverride = require('method-override'); // Para poder usar los métodos PUT y DELETE
 const session = require('express-session');
+const cookieParser = require('cookie-parser');
 
 // Importamos los distintos enrutadores
 const mainRouter = require('./routes/mainRouter')
@@ -12,6 +13,7 @@ const userRouter = require('./routes/userRouter.js')
 const shoppingRouter = require('./routes/shoppingRouter.js')
 
 const authUserVariableMiddleware = require('./middlewares/users/authUserVariableMiddleware.js');
+const cookieAuthMiddleware = require('./middlewares/users/cookieAuthMiddleware.js');
 
 app.set("view engine", "ejs");
 app.set("views", "./src/views");
@@ -20,10 +22,13 @@ app.set("views", "./src/views");
 // ************ Middlewares - (No tocar) ************
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: false })); // Para capturar el body
+app.use(cookieParser());
 app.use(express.json()); // Para capturar el body
 app.use(methodOverride('_method')); // Para poder usar los métodos PUT y DELETE
 app.use(session({secret: 'dhsession'}));
+app.use(cookieAuthMiddleware);
 app.use(authUserVariableMiddleware);
+
 
 
 app.listen(PORT, console.log("Servidor en http://localhost:" + PORT));
