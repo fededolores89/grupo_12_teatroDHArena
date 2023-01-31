@@ -42,16 +42,11 @@ router.post('/create', upload.single("artistImage"), validations, mainController
 router.get('/:id' , mainController.detalle)
 
 /* Editar Show */
-<<<<<<< HEAD
 router.get('/edit/:id' , mainController.edit)
 router.put('/edit/:id' , upload.single("editedArtistImage") ,mainController.processEdit)
 
 /* Carrito de compras */
 router.get('/compra/:id', mainController.shoppingCart)
-=======
-router.get('/:id/edit', adminMiddleware, mainController.edit)
-router.put('/:id/edit', upload.single("editedArtistImage") ,mainController.processEdit)
->>>>>>> 6b4d04cdf4944fa26b7be358d876a8c295d93787
 
 // Agregar show al carrito
 router.get('/:id/agregar', authMiddleware, mainController.addCart);
