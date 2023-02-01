@@ -40,7 +40,9 @@
               </li>
               <% } else { %>
                 <li>
-                  <i class="fa-solid fa-user"></i>
+                  <figure class="img-profile-container">
+                    <img src="/img/img-users/<%= userLogged.image %> " alt="">
+                  </figure>
                   ¡Hola <%= userLogged.name %>!
                 </li>
                 <li>
