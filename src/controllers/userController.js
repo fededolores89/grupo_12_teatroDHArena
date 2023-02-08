@@ -9,6 +9,7 @@ const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
 const phoneTypes = JSON.parse(fs.readFileSync(phonesTypeFilePath, "utf-8"));
 const documentTypes = JSON.parse(fs.readFileSync(documentsTypeFilePath, "utf-8"));
 const usersType = JSON.parse(fs.readFileSync(usersTypeFilePath, "utf-8"));
+const bcrypt = require('bcryptjs');
 
 const controller = {
   /* --------------Muestro la vista del Login----------------- */
@@ -24,7 +25,7 @@ const controller = {
     if(validations.isEmpty()) {
       for(let i = 0; i < users.length; i++) {
         if(users[i].email == req.body.email) {
-          if(users[i].password == req.body.password) {
+          if(bcrypt.compareSync(req.body.password, users[i].password)) {
             authUser = users[i];
             break;
           }
@@ -76,9 +77,9 @@ const controller = {
         phoneType: parseInt(req.body.phoneType),
         number: req.body.number,
         email: req.body.email,
-        password: req.body.password,
+        password: bcrypt.hashSync(req.body.password, 10),
         userType: 1,
-        image: req.file.filename ? req.file.filename : "default-profile.jpg"
+        image: req.file != undefined ? req.file.filename : "default-profile.jpg"
       }
   
       users.push(user);

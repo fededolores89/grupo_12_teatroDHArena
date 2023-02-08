@@ -194,3 +194,12 @@ header{
     width: 210px;
     margin-bottom: 1rem;
 }
+
+#image {
+  margin-bottom: 0;
+}
+
+.info-input {
+  color: var(--magenta);
+  font-weight: bold;
+}
