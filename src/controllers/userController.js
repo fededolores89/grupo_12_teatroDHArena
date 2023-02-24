@@ -1,10 +1,10 @@
 const fs = require("fs");
 const path = require("path");
 const { validationResult } = require('express-validator');
-const usersFilePath = path.join(__dirname, "../database/userDataBase.json");
-const phonesTypeFilePath = path.join(__dirname, "../database/phonesType.json");
-const usersTypeFilePath = path.join(__dirname, "../database/usersType.json");
-const documentsTypeFilePath = path.join(__dirname, "../database/documentsType.json");
+const usersFilePath = path.join(__dirname, "../db/userDataBase.json");
+const phonesTypeFilePath = path.join(__dirname, "../db/phonesType.json");
+const usersTypeFilePath = path.join(__dirname, "../db/usersType.json");
+const documentsTypeFilePath = path.join(__dirname, "../db/documentsType.json");
 const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
 const phoneTypes = JSON.parse(fs.readFileSync(phonesTypeFilePath, "utf-8"));
 const documentTypes = JSON.parse(fs.readFileSync(documentsTypeFilePath, "utf-8"));

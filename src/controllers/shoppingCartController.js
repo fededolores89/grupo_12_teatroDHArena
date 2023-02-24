@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const cartFilePath = path.join(__dirname, "../database/shoppingCart.json");
+const cartFilePath = path.join(__dirname, "../db/shoppingCart.json");
 const shoppingCartItems = JSON.parse(fs.readFileSync(cartFilePath, "utf-8"));
 
 const controller = {

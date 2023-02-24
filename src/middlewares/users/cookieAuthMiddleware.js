@@ -1,7 +1,7 @@
 const cookieAuthMiddleware = (req, res, next) => {
   const fs = require('fs');
   const path = require('path');
-  const usersFilePath = path.join(__dirname, "../../database/userDataBase.json");
+  const usersFilePath = path.join(__dirname, "../../db/userDataBase.json");
   const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
 
   //Si existe la cookie de remember pero, la informacion de la sesion se ha perdido, se debe restaurar la informacion del usuario en la sesion
