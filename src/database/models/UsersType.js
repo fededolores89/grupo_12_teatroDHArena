@@ -2,7 +2,7 @@ module.exports = (sequelize, dataTypes) => {
     let alias = 'UsersType';
     let cols = {
         id: {
-            type: dataTypes.integer,
+            type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
@@ -16,8 +16,8 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false,
         tableName: "usersType"
     }
-    const usersType = sequelize.define(alias, cols, config); 
 
-    //Aquí debes realizar lo necesario para crear las relaciones con el modelo.
+    const UsersType = sequelize.define(alias, cols, config); 
+
+    return UsersType
 }
-    return usersType

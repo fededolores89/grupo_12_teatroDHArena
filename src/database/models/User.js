@@ -18,7 +18,7 @@ module.exports = (sequelize, dataTypes) => {
             timestamps: false
         },
         birth: {
-            type: dataTypes.datetime,
+            type: dataTypes.STRING(20),
             timestamps: false
         },
         number: {
@@ -26,11 +26,11 @@ module.exports = (sequelize, dataTypes) => {
             timestamps: false
         },
         email: {
-            type: dataTypes.email,
+            type: dataTypes.STRING(20),
             timestamps: false
         },
         password: {
-            type: dataTypes.password,
+            type: dataTypes.STRING(20),
             timestamps: false
         },
         Image: {

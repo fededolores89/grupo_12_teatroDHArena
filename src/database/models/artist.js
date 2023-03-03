@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'Artists';
+    let alias = 'Artist';
     let cols = {
         id: {
             type: dataTypes.INTEGER,
@@ -11,7 +11,7 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false
         },
         Image: {
-            type: dataTypes.Image,
+            type: dataTypes.INTEGER,
             allowNull: false
         }
     };
@@ -22,7 +22,14 @@ module.exports = (sequelize, dataTypes) => {
     }
     const Artist = sequelize.define(alias, cols, config); 
 
-    //Aquí debes realizar lo necesario para crear las relaciones con el modelo (Movie)
+    //relacion 1:N tabla artists
+
+    Artist.associate = function(models){
+        Artist.hasMany(models.Show,{
+            as: "Show",
+            foreignKey: "id_artist"
+        })
+    }
  
     return Artist
 };
