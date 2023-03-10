@@ -10,6 +10,7 @@ const phoneTypes = JSON.parse(fs.readFileSync(phonesTypeFilePath, "utf-8"));
 const documentTypes = JSON.parse(fs.readFileSync(documentsTypeFilePath, "utf-8"));
 const usersType = JSON.parse(fs.readFileSync(usersTypeFilePath, "utf-8"));
 const bcrypt = require('bcryptjs');
+const db = require('../database/models');
 
 const controller = {
   /* --------------Muestro la vista del Login----------------- */
@@ -68,24 +69,23 @@ const controller = {
 
     if(errors.isEmpty()) {
       let user = {
-        id: parseInt(users[users.length - 1].id) + 1,
         name: req.body.name,
         lastname: req.body.lastname,
-        documentType: parseInt(req.body.documentType),
-        documentNum: req.body.documentNum,
+        dni: req.body.documentNum,
         birth: req.body.birth,
-        phoneType: parseInt(req.body.phoneType),
         number: req.body.number,
         email: req.body.email,
         password: bcrypt.hashSync(req.body.password, 10),
         userType: 1,
         image: req.file != undefined ? req.file.filename : "default-profile.jpg"
-      }
+      };
   
-      users.push(user);
-      fs.writeFileSync(usersFilePath, JSON.stringify(users, null, " "));
-  
-      res.redirect('/');
+      db.Users.create(user)
+      .then(result => {
+        res.render('/usuarios/login');
+      })
+      .catch(error => res.send(error));
+
     } else {
       const validations = errors.array();
       const inputs = req.body; //Valores del formulario

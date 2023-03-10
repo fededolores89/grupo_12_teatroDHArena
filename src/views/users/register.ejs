@@ -29,16 +29,8 @@
           <input type="text" class="" name="lastname" id="lastname" placeholder="Apellido" value="<%= locals.inputs ? inputs.lastname : '' %>">
         </div>
         <div class="campo-reg">
-          <label class="titulo-campo">Tipo de Documento </label>
-          <select name="documentType" id="documentType">
-            <% documents.forEach(document => { %>
-              <option value="<%= document.id %>" <%= locals.inputs && inputs.documentType == document.id ? 'selected' : '' %>> <%= document.name %> </option>
-            <% }) %>
-          </select>
-        </div>
-        <div class="campo-reg">
           <label class="titulo-campo">No. Documento</label>
-          <input type="text" class="" name="documentNum" id="documentNum" placeholder="Numero de DNI o Pasaporte" value="<%= locals.inputs ? inputs.documentNum : '' %>">
+          <input type="text" class="" name="documentNum" id="documentNum" placeholder="Numero de DNI" value="<%= locals.inputs ? inputs.documentNum : '' %>">
         </div>
         <div class="campo-reg">
           <label for="image" class="titulo-campo">Foto de perfil</label>
@@ -53,12 +45,6 @@
         <div class="linea-titulos"></div>
         <div class="campo-reg">
           <h4 class="titulo-campo"><i class="fas fa-phone-volume"></i> TELEFONO</h4>
-          <label for="phoneType" class="titulo-campo" > Tipo </label>
-          <select name="phoneType" id="phoneType">
-            <% phoneTypes.forEach(type => { %>
-              <option value="<%= type.id %>" <%= locals.inputs && inputs.phoneType == type.id ? 'selected' : '' %>> <%= type.name %> </option>
-            <% }) %>
-          </select>
           <label class="titulo-campo" for="number">Numero</label>
           <input type="number" class="" id="number" name="number" placeholder="+54 XXXXXXXXXX" value="<%= locals.inputs ? inputs.number : '' %>">
         </div> 

@@ -7,39 +7,31 @@ module.exports = (sequelize, dataTypes) => {
             autoIncrement: true
         },
         name: {
-            type: dataTypes.STRING(100)
+            type: dataTypes.STRING
         },
         lastname: {
-            type: dataTypes.STRING(100),
-            timestamps: false
+            type: dataTypes.STRING,
         },
-        DNI: {
+        dni: {
             type: dataTypes.INTEGER,
-            timestamps: false
         },
         birth: {
-            type: dataTypes.STRING(20),
-            timestamps: false
+            type: dataTypes.STRING,
         },
         number: {
-            type: dataTypes.INTEGER,
-            timestamps: false
+            type: dataTypes.STRING,
         },
         email: {
-            type: dataTypes.STRING(20),
-            timestamps: false
+            type: dataTypes.STRING,
         },
         password: {
-            type: dataTypes.STRING(20),
-            timestamps: false
+            type: dataTypes.STRING,
         },
-        Image: {
+        image: {
             type: dataTypes.INTEGER,
-            timestamps: false
         },
-        userTypeID: {
+        userType: {
             type: dataTypes.INTEGER,
-            timestamps: false
         }
 
     };
@@ -50,6 +42,11 @@ module.exports = (sequelize, dataTypes) => {
     const Users = sequelize.define(alias, cols, config); 
 
     //Aquí debes realizar lo necesario para crear las relaciones con el modelo.
+    Users.associate = models => {
+        Users.belongsTo(models.UsersType, {
+            foreignKey: 'userType'
+        })
+    };
 
-    return Users
+    return Users;
 };

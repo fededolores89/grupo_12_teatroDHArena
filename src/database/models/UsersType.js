@@ -8,16 +8,21 @@ module.exports = (sequelize, dataTypes) => {
         },
         
         name: {
-            type: dataTypes.STRING(100),
-            timestamps: false
+            type: dataTypes.STRING,
         }
     };
     let config = {
         timestamps: false,
-        tableName: "usersType"
+        tableName: "userstype"
     }
 
-    const UsersType = sequelize.define(alias, cols, config); 
+    const UsersType = sequelize.define(alias, cols, config);
 
-    return UsersType
+    UsersType.associate = models => {
+        UsersType.hasMany(models.Users, {
+            foreignKey: 'userType'
+        });
+    };
+
+    return UsersType;
 }
