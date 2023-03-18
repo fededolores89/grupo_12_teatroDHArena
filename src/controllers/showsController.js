@@ -5,34 +5,41 @@ const { validationResult } = require('express-validator');
 const showsFilePath = path.join(__dirname, "../db/showsDataBase.json");
 const cartFilePath = path.join(__dirname, "../db/shoppingCart.json");
 const categoriesFilePath = path.join(__dirname, "../db/categories.json");
-const shows = JSON.parse(fs.readFileSync(showsFilePath, "utf-8"));
 const shoppingCartItems = JSON.parse(fs.readFileSync(cartFilePath, "utf-8"));
 const categories = JSON.parse(fs.readFileSync(categoriesFilePath, "utf-8"));
+
+const db = require('../database/models');
+const sequelize = db.sequelize;
 
 const controllers = {
   /* --------------Muestra Todos los Shows----------------- */
   index: (req, res) => {
-
-    res.render("product/allsTheShows", { shows: shows });
-  },
+    db.Shows.findAll({
+         include: [{association: "Artist"} ]
+    })
+         .then(function(shows){
+             res.render("product/allsTheShows", {shows:shows})
+         })
+ },
 
   /* --------------Muestra el show en detalle por id----------------- */
   detalle: (req, res) => {
     let id = req.params.id;
 
-    let showsFiltrado = shows.find((show) => {
-      return show.id == id;
-    });
+    db.Shows.findByPk(id,{
+        include: [{association: "Artist"} ] 
+    })
+        .then(show =>{
+          if (show === undefined){
+                res.send('No se encontro el que busca, intente con otro')
+          }else{
+            let date = show.date.split('-');
 
-    if(showsFiltrado === undefined) {
-      res.send('No se encontro el que busca, intente con otro')
-    } else {
+            res.render("product/productDetail", { show: show, showDate: date });
+          }
+        })
+  },      
 
-      let date = showsFiltrado.date.split('-');
-
-      res.render("product/productDetail", { show: showsFiltrado, showDate: date });
-    }
-  },
 
   /* --------------Muestra El Shows que queremos editar----------------- */
   edit: (req, res) => {
