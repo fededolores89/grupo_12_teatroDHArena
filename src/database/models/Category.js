@@ -21,16 +21,12 @@ module.exports = (sequelize, dataTypes) => {
     }
     const Category = sequelize.define(alias, cols, config); 
 
-    //Aquí debes realizar lo necesario para crear las relaciones con el modelo.
-   /*  Category.associate = function(models){
-        Category.belongsToMany(models.Movie,{
+    Category.associate = function(models){
+        Category.hasMany(models.Shows,{
             as: "Category",
-            through: "actor_movie",
-            foreignKey: "actor_id",
-            otherKey: "movie_id"
-
+            foreignKey: "id_category"
         })
-    } */
+    }
 
     return Category
 };
