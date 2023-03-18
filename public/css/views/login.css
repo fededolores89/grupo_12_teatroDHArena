@@ -22,7 +22,7 @@ h1{
   font-weight: bold;
   width: 60%;
   padding: 5px;
-  color: #ff008a;
+  color: #ffffff;
 }
 
 .contenedor-formulario input{
@@ -34,10 +34,27 @@ h1{
 }
 
 .contenedor-formulario button{
-  width: 25%;
-  height: 40px;
-  background-color: #ff008a;;
+    background-color: #00ffc2;
+    color: black;
+    border: solid black 1px;
+    height: 3rem;
+    width: 11rem;
+    border-radius: 4px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    cursor: pointer;
+  }
+
+.login-titulo{
+  margin-top:15px
 }
+
+input{
+  border-radius: 15px;
+}
+
 .control-formulario{
   padding: 15px;
 }
@@ -53,4 +70,9 @@ h1{
 .remember-me {
   width: 1rem !important;
   height: 1rem !important;
+}
+
+.controles-login{
+  color:deeppink;
+  margin-bottom:15pxx
 }
