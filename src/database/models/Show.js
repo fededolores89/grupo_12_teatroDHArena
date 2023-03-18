@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'Show';
+    let alias = 'Shows';
     let cols = {
         id: {
             type: dataTypes.INTEGER,
@@ -34,12 +34,17 @@ module.exports = (sequelize, dataTypes) => {
     }
     const Show = sequelize.define(alias, cols, config); 
 
-    //relacion 1:N tabla artists
+    //relacion 1:N tabla artists y category
     Show.associate = function(models){
-        Show.belongsTo(models.Artist,{
+        Show.belongsTo(models.Artists,{
             as: "Artist",
             foreignKey: "id_artist"
         })
+        Show.belongsTo(models.Category,{
+            as: "Category",
+            foreignKey: "id_category"
+        })
     }
+
     return Show
 };

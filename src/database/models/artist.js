@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'Artist';
+    let alias = 'Artists';
     let cols = {
         id: {
             type: dataTypes.INTEGER,
@@ -10,8 +10,8 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(100),
             allowNull: false
         },
-        Image: {
-            type: dataTypes.INTEGER,
+        image: {
+            type: dataTypes.STRING(100),
             allowNull: false
         }
     };
@@ -25,8 +25,8 @@ module.exports = (sequelize, dataTypes) => {
     //relacion 1:N tabla artists
 
     Artist.associate = function(models){
-        Artist.hasMany(models.Show,{
-            as: "Show",
+        Artist.hasMany(models.Shows,{
+            as: "Artists",
             foreignKey: "id_artist"
         })
     }
