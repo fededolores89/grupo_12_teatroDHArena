@@ -25,6 +25,12 @@ module.exports = (sequelize, dataTypes) => {
         id_category: {
             type: dataTypes.INTEGER,
             allowNull: false
+        },
+        descriptionHeader:{
+            type :dataTypes.STRING(20) 
+        },
+        descriptionVideo:{
+            type: dataTypes.STRING(20) 
         }
     };
     let config = {
