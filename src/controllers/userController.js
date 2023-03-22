@@ -39,7 +39,9 @@ const controller = {
         req.session.authUser = authUser;
 
         //Validar si se selecciona el checkbox de recordar incio de sesion con cookies
+        // true
         if(req.body.remember != undefined) {
+          //Crear una cookie remember que contiene el email
           res.cookie('remember', authUser.email, { maxAge: 60000});
         }
 
@@ -76,7 +78,7 @@ const controller = {
         number: req.body.number,
         email: req.body.email,
         password: bcrypt.hashSync(req.body.password, 10),
-        userType: 1,
+        userType: 2,
         image: req.file != undefined ? req.file.filename : "default-profile.jpg"
       };
   
