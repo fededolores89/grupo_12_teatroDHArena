@@ -15,11 +15,12 @@ const controllers = {
   /* --------------Muestra Todos los Shows----------------- */
   index: (req, res) => {
     db.Shows.findAll({
-         include: [{association: "Category"} ]
+      include: [{association: "Category"} ]
+ })
+    .then(function(shows){
+      console.log(shows)
+      res.render("product/allsTheShows", {shows:shows})
     })
-         .then(function(shows){
-             res.render("product/allsTheShows", {shows:shows})
-         })
  },
 
   /* --------------Muestra el show en detalle por id----------------- */
@@ -29,7 +30,7 @@ const controllers = {
     db.Shows.findByPk(id,{
         include: [{association: "Category"} ] 
     })
-        .then(shows =>{
+    .then(shows =>{
           if (shows === undefined){
                 res.send('No se encontro el que busca, intente con otro')
           }else{
