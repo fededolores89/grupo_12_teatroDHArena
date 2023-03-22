@@ -21,7 +21,7 @@
           <h2 class="titulo-shows">Shows de <%= categories[i].name %> </h2>
 
           <% for( let j = 0; j < shows.length; j++ ) { %>
-            <% if (shows[j].categoryId === categories[i].id) { %>
+            <% if (shows[j].id_category == categories[i].id) { %>
               <article class="eventos-home">
                 <figure class="Img-Artista"> <img
                   src="/img/Img-Index-Artistas/<%= shows[j].image %>"

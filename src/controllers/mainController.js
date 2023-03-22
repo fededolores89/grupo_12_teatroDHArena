@@ -13,12 +13,16 @@ const shows = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 
 const controller = {
   index: (req, res) => {
-    db.Shows.findAll({
-         include: [ {association: "Category"}  ]
-    })
-         .then(function(shows){
-               res.render("product/allsTheShows", {shows:shows} )
-         })
- }
+     let categories =  db.Category.findAll()
+      
+     let shows = db.Shows.findAll({
+       include: [{association: "Category"} ]
+  })
+ 
+     Promise.all([categories,shows])
+          .then (function([resultadoCategories, resultadoShows]){
+              res.render("main/index", {categories: resultadoCategories, shows: resultadoShows})
+          })
+     }
 }
 module.exports = controller;
