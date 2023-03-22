@@ -36,7 +36,7 @@ const controllers = {
           }else{
             let date = shows.date.split('-');
 
-            res.render("product/productDetail", { shows: shows, showDate: date });
+            res.render("product/productDetail", { show: shows, showDate: date });
           }
         })
   },      
@@ -150,21 +150,14 @@ const controllers = {
   /* --------------Borra el Show de la DataBase ----------------- */
   destroy: (req, res) => {
     // Do the magic
-
-    let id = parseInt(req.params.id);
-
-    let showIndex = shows.findIndex(show => show.id === id);
-
-    if(showIndex != undefined) {
-
-      shows.splice(showIndex, 1);
-
-      fs.writeFileSync(showsFilePath, JSON.stringify(shows, null, " "));
-  
-      res.redirect("/shows");
-    } else {
-      res.send('No se encontro ese show para eliminarse');
-    }
+    db.Shows.destroy({
+      where:{
+          id : req.params.id
+      }
+  })
+  .then(result =>{
+      res.redirect("/shows")
+  }) 
 
   }
 };

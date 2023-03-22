@@ -42,7 +42,10 @@ router.post('/create', upload.single("artistImage"), validations, mainController
 router.get('/:id' , mainController.detalle)
 
 /* Editar Show */
-router.get('/:id/edit', adminMiddleware, mainController.edit)
+router.get('/:id/edit', mainController.edit)
+
+// adminMiddleware,
+
 router.put('/:id/edit', upload.single("editedArtistImage") ,mainController.processEdit)
 
 // Agregar show al carrito
