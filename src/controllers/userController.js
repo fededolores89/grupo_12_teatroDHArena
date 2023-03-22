@@ -19,11 +19,13 @@ const controller = {
   },
 
   processLogin: (req, res) => {
-    const validations = validationResult(req);
-    let authUser = null;
-    let errors = [];
+    db.Users.findAll()
+    .then(users => {
+      let validations = validationResult(req);
+      let authUser = null;
+      let errors = [];
 
-    if(validations.isEmpty()) {
+      if(validations.isEmpty()) {
       for(let i = 0; i < users.length; i++) {
         if(users[i].email == req.body.email) {
           if(bcrypt.compareSync(req.body.password, users[i].password)) {
@@ -54,6 +56,9 @@ const controller = {
 
       res.render('users/login', { errors: errors, inputs: inputs });
     }
+    })
+
+   
   },
 
   processLogout: (req, res) => {
@@ -84,7 +89,7 @@ const controller = {
   
       db.Users.create(user)
       .then(result => {
-        res.render('/usuarios/login');
+        res.render('usuarios/login');
       })
       .catch(error => res.send(error));
 
