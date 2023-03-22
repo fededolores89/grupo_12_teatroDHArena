@@ -10,14 +10,6 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(100),
             allowNull: false
         },
-        Image: {
-            type: dataTypes.STRING(100),
-            allowNull: false
-        },
-        video: {
-            type: dataTypes.STRING(100),
-            allowNull: false
-        },
         price: {
             type: dataTypes.INTEGER,
             allowNull: false
@@ -45,7 +37,7 @@ module.exports = (sequelize, dataTypes) => {
         },
         image:{
             type: dataTypes.STRING
-        },
+        }
     };
     let config = {
         timestamps: false,

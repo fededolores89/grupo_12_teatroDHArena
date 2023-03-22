@@ -14,12 +14,8 @@ const sequelize = db.sequelize;
 const controllers = {
   /* --------------Muestra Todos los Shows----------------- */
   index: (req, res) => {
-    db.Shows.findAll({
-         include: [{association: "Category"} ]
-    })
-         .then(function(shows){
-             res.render("product/allsTheShows", {shows:shows})
-         })
+    db.Shows.findAll()
+    .then(console.log(response));
  },
 
   /* --------------Muestra el show en detalle por id----------------- */
