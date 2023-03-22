@@ -6,20 +6,20 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             autoIncrement: true
         },
+        name: {
+            type: dataTypes.STRING,
+            allowNull: false
+        },
         price: {
             type: dataTypes.INTEGER,
             allowNull: false
         },
         hour: {
-            type: dataTypes.STRING(20),
+            type: dataTypes.STRING,
             allowNull: false
         },
         date: {
-            type: dataTypes.STRING(20),
-            allowNull: false
-        },
-        id_artist: {
-            type: dataTypes.INTEGER,
+            type: dataTypes.STRING,
             allowNull: false
         },
         id_category: {
@@ -27,11 +27,17 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false
         },
         descriptionHeader:{
-            type :dataTypes.STRING(20) 
+            type :dataTypes.STRING 
         },
         descriptionVideo:{
-            type: dataTypes.STRING(20) 
-        }
+            type: dataTypes.STRING
+        },
+        video:{
+            type: dataTypes.STRING
+        },
+        image:{
+            type: dataTypes.STRING
+        },
     };
     let config = {
         timestamps: false,
