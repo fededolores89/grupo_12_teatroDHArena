@@ -6,6 +6,18 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             autoIncrement: true
         },
+        name: {
+            type: dataTypes.STRING(100),
+            allowNull: false
+        },
+        Image: {
+            type: dataTypes.STRING(100),
+            allowNull: false
+        },
+        video: {
+            type: dataTypes.STRING(100),
+            allowNull: false
+        },
         price: {
             type: dataTypes.INTEGER,
             allowNull: false
@@ -18,19 +30,15 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(20),
             allowNull: false
         },
-        id_artist: {
-            type: dataTypes.INTEGER,
-            allowNull: false
-        },
         id_category: {
             type: dataTypes.INTEGER,
             allowNull: false
         },
         descriptionHeader:{
-            type :dataTypes.STRING(20) 
+            type :dataTypes.STRING(255) 
         },
         descriptionVideo:{
-            type: dataTypes.STRING(20) 
+            type: dataTypes.STRING(255) 
         }
     };
     let config = {
@@ -40,12 +48,8 @@ module.exports = (sequelize, dataTypes) => {
     }
     const Show = sequelize.define(alias, cols, config); 
 
-    //relacion 1:N tabla artists y category
+    //relacion 1:N tabla show y category
     Show.associate = function(models){
-        Show.belongsTo(models.Artists,{
-            as: "Artist",
-            foreignKey: "id_artist"
-        })
         Show.belongsTo(models.Category,{
             as: "Category",
             foreignKey: "id_category"

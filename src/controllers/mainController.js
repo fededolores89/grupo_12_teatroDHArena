@@ -1,9 +1,9 @@
 const fs = require("fs");
 const path = require("path");
-const { sequelize } = require("../database/models");
 
-/* const db = require("../database/models");
-const sequelize = db.sequelize; */
+
+const db = require("../database/models");
+const sequelize = db.sequelize;
 
 const productsFilePath = path.join(__dirname, "../db/showsDataBase.json");
 const categoriesFilePath = path.join(__dirname, "../db/categories.json");
@@ -11,12 +11,12 @@ const shows = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 
 const controller = {
   index: (req, res) => {
-
-    const categories = JSON.parse(fs.readFileSync(categoriesFilePath, "utf-8"));
-      
-    res.render("main/index", {categories: categories, shows: shows});
-    }
-  }
-
-
+    db.Shows.findAll({
+         include: [ {association: "Category"}  ]
+    })
+         .then(function(shows){
+             res.render("product/allsTheShows", {shows:shows})
+         })
+ }
+}
 module.exports = controller;

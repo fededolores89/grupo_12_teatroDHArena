@@ -13,7 +13,7 @@
         <div class="evento-portada-container">
           <div class="evento-portada">
             <img
-              src="/img/Img-Index-Artistas/<%= show.Artist.image%>"
+              src="/img/Img-Index-Artistas/<%= Show.image%>"
               alt=""
               srcset=""/>
           </div>
@@ -21,7 +21,7 @@
         <article class="evento-info">
           <div class="evento-info-nombre">
             <!-- <h2>De adentro pa fuera Tour</h2> -->
-            <h1 class="evento-titulo"><%= show.Artist.name %></h1>
+            <h1 class="evento-titulo"><%= show.name %></h1>
           </div>
           <div class="evento-info-detalle">
             <div class="evento-fecha-contenedor">
@@ -90,7 +90,7 @@
             <iframe
               width="100%"
               height="415"
-              src=<%= show.Artist.video %> 
+              src=<%= show.video %> 
               title="YouTube video player"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

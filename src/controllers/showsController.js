@@ -15,7 +15,7 @@ const controllers = {
   /* --------------Muestra Todos los Shows----------------- */
   index: (req, res) => {
     db.Shows.findAll({
-         include: [{association: "Artist"} ]
+         include: [{association: "Category"} ]
     })
          .then(function(shows){
              res.render("product/allsTheShows", {shows:shows})
@@ -27,15 +27,15 @@ const controllers = {
     let id = req.params.id;
 
     db.Shows.findByPk(id,{
-        include: [{association: "Artist"} ] 
+        include: [{association: "Category"} ] 
     })
-        .then(show =>{
-          if (show === undefined){
+        .then(shows =>{
+          if (shows === undefined){
                 res.send('No se encontro el que busca, intente con otro')
           }else{
-            let date = show.date.split('-');
+            let date = shows.date.split('-');
 
-            res.render("product/productDetail", { show: show, showDate: date });
+            res.render("product/productDetail", { shows: shows, showDate: date });
           }
         })
   },      
