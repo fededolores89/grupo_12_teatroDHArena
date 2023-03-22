@@ -19,11 +19,13 @@ const controller = {
   },
 
   processLogin: (req, res) => {
-    const validations = validationResult(req);
-    let authUser = null;
-    let errors = [];
+    db.Users.findAll()
+    .then(users => {
+      let validations = validationResult(req);
+      let authUser = null;
+      let errors = [];
 
-    if(validations.isEmpty()) {
+      if(validations.isEmpty()) {
       for(let i = 0; i < users.length; i++) {
         if(users[i].email == req.body.email) {
           if(bcrypt.compareSync(req.body.password, users[i].password)) {
@@ -39,7 +41,9 @@ const controller = {
         req.session.authUser = authUser;
 
         //Validar si se selecciona el checkbox de recordar incio de sesion con cookies
+        // true
         if(req.body.remember != undefined) {
+          //Crear una cookie remember que contiene el email
           res.cookie('remember', authUser.email, { maxAge: 60000});
         }
 
@@ -52,6 +56,9 @@ const controller = {
 
       res.render('users/login', { errors: errors, inputs: inputs });
     }
+    })
+
+   
   },
 
   processLogout: (req, res) => {
@@ -76,13 +83,13 @@ const controller = {
         number: req.body.number,
         email: req.body.email,
         password: bcrypt.hashSync(req.body.password, 10),
-        userType: 1,
+        userType: 2,
         image: req.file != undefined ? req.file.filename : "default-profile.jpg"
       };
   
       db.Users.create(user)
       .then(result => {
-        res.render('/usuarios/login');
+        res.render('usuarios/login');
       })
       .catch(error => res.send(error));
 
