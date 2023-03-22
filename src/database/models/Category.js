@@ -9,15 +9,11 @@ module.exports = (sequelize, dataTypes) => {
         
         name: {
             type: dataTypes.STRING(100),
-            timestamps: false
         }
     };
     let config = {
-        timestamps: true,
-        createdAt: 'created_at',
-        updatedAt: 'updated_at',
-        deletedAt: false,
-        tableName: "category"
+        tableName: "category",
+        timestamps: false
     }
     const Category = sequelize.define(alias, cols, config); 
 
