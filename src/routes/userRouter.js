@@ -4,6 +4,8 @@ const path = require('path');
 const multer = require('multer');
 const { body } = require('express-validator');
 const mainController = require("../controllers/userController")
+const db = require('../database/models');
+const User = db.User;
 
 const validations = [
   body('name').notEmpty().withMessage('Ingrese su nombre').bail().isLength({ min: 3 }).withMessage('Ingrese un nombre válido'),
