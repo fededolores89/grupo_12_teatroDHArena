@@ -42,10 +42,12 @@ router.post('/login', loginValidations, mainController.processLogin);
 /* --------------Muestra la vista del registro----------------- */
 router.get('/register' ,  mainController.registro )
 
-/* -------------Valido de los usuarios existen o no con la ---------------------- */
+
 User.findAll()
     .then((users) => {
-router.post('/register', upload.single('image'), validations, body('email').custom(function (value) {
+router.post('/register', upload.single('image'), validations,
+/* -------------Valido de los usuarios existen o no con la ---------------------- */
+ [ body('email').custom(function (value) {
   let contador = 0;
   for (let i = 0; i < users.length; i++) {
       if (users[i].email == value) {
@@ -57,7 +59,18 @@ router.post('/register', upload.single('image'), validations, body('email').cust
   } else {
       return true;    //Si retorno true, aparece el mensaje de error
   }
-}).withMessage('Usuario ya se encuentra registrado'), mainController.create);
+}).withMessage('Usuario ya se encuentra registrado'),
+/*----------- Aquí valido si las contraseñas son iguales o no ----------*/
+/* -----El ( value ) viene a ser el valor que viaje en el name del del input del campo --------- */
+/* ------------El valor { req } corresponde a lo que viene desde el formulario----------- */
+
+body('confirm_password').custom((value, {req}) =>{
+        if(req.body.password == value ){
+            return true    // Si yo retorno un true  no se muestra el error     
+        }else{
+            return false   // Si retorno un false si se muestra el error
+        }    
+}).withMessage('Las contraseñas deben ser iguales') ], mainController.create);
     
 })
 router.post('/logout', mainController.processLogout);
