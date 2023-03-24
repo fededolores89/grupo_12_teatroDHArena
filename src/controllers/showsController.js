@@ -18,7 +18,7 @@ const controllers = {
       include: [{association: "Category"} ]
  })
     .then(function(shows){
-      console.log(shows)
+      
       res.render("product/allsTheShows", {shows:shows})
     })
  },

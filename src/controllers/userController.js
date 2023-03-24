@@ -89,7 +89,7 @@ const controller = {
   
       db.Users.create(user)
       .then(result => {
-        res.render('usuarios/login');
+        return res.redirect('/');
       })
       .catch(error => res.send(error));
 
