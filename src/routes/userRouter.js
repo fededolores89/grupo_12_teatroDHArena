@@ -5,7 +5,9 @@ const multer = require('multer');
 const { body } = require('express-validator');
 const mainController = require("../controllers/userController")
 const db = require('../database/models');
-const User = db.User;
+const User = db.Users;
+
+
 
 const validations = [
   body('name').notEmpty().withMessage('Ingrese su nombre').bail().isLength({ min: 3 }).withMessage('Ingrese un nombre válido'),
@@ -40,8 +42,24 @@ router.post('/login', loginValidations, mainController.processLogin);
 /* --------------Muestra la vista del registro----------------- */
 router.get('/register' ,  mainController.registro )
 
-router.post('/register', upload.single('image'), validations, mainController.create);
-
+/* -------------Valido de los usuarios existen o no con la ---------------------- */
+User.findAll()
+    .then((users) => {
+router.post('/register', upload.single('image'), validations, body('email').custom(function (value) {
+  let contador = 0;
+  for (let i = 0; i < users.length; i++) {
+      if (users[i].email == value) {
+          contador++;
+      }
+  }
+  if (contador > 0) {
+      return false;   // Si retorno falso no aparece el mensaje de error
+  } else {
+      return true;    //Si retorno true, aparece el mensaje de error
+  }
+}).withMessage('Usuario ya se encuentra registrado'), mainController.create);
+    
+})
 router.post('/logout', mainController.processLogout);
 
 
