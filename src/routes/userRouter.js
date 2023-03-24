@@ -70,7 +70,25 @@ body('confirm_password').custom((value, {req}) =>{
         }else{
             return false   // Si retorno un false si se muestra el error
         }    
-}).withMessage('Las contraseñas deben ser iguales') ], mainController.create);
+}).withMessage('Las contraseñas deben ser iguales'), 
+/* ---------- Aquí obligo a que el usuario seleccione su avatar y que tienen que ser archivos JPG , JPEG , PNG, GIF------------*/
+body('avatar').custom(function (value, { req }) {
+  let ext
+  if(req.file != undefined ){
+      return true
+  }else{
+      ext = ""+path.extname(req.files[0].filename).toLowerCase();
+  }
+  //console.log(ext);
+  if (
+      ext == ".jpg" ||
+      ext == ".jpeg" ||
+      ext == ".png" ||
+      ext == ".gif"){
+          return true;
+      }
+      return false;
+}).withMessage('Solo debe seleccionar archivos  con extensión JPG, JPEG, PNG o GIF')], mainController.create);
     
 })
 router.post('/logout', mainController.processLogout);
