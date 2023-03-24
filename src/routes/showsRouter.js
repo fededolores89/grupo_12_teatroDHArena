@@ -7,10 +7,10 @@ const path = require('path');
 
 //Validaciones para crear un show
 const validations = [
-    body('name').notEmpty().withMessage('Ingrese el nombre del artista'),
+    body('name').notEmpty().withMessage('Ingrese el nombre del artista').bail().isLength({ min: 5 }),
     body('price').notEmpty().withMessage('Ingrese el precio del show').bail().isNumeric().withMessage('El precio debe ser un valor numerico'),
     body('date').isISO8601().withMessage('Ingrese una fecha válida'),
-    body('descriptionHeader').notEmpty().withMessage('Ingrese la descripción del evento'),
+    body('descriptionHeader').notEmpty().withMessage('Ingrese la descripción del evento').bail().isLength({ min: 20 }),
     body('descriptionVideo').notEmpty().withMessage('Ingrese la descripción del artista')
 ];
 
