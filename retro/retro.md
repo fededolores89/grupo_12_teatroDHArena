@@ -25,3 +25,10 @@ RETRO - SPRINT 5
 3. Continuar haciendo - Dar de nuestra ayuda cuando un compañero tiene un problema en su código, dar seguimiento a que se cumplan todos los requisitos de cada sprint y seguir entregando los sprint a tiempo.
 4. Hacer menos - Hacer un git push al proyecto remoto sin haber resuelto correctamente los conflictos de código
 5. Dejar de hacer - 
+
+RETRO - SPRINT 6
+1. Comenzar a hacer - Revisar los requisitos del sprint 5 y llevarlos a cabo.
+2. Hacer más - Hacer mas reuniones grupales.
+3. Continuar haciendo - Ayudarnos entre nosotros y resolver las complicaciones que tengamos entre todos.
+4. Hacer menos - Dejar pasar tanto tiempo para comenzar a trabajar en el sprint y poder realizar la entrega a tiempo
+5. Dejar de hacer - 
