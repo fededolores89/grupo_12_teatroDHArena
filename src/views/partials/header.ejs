@@ -30,6 +30,16 @@
             <ul class="nav-desktop menu-derecha">
               <% if (userLogged == undefined) { %>
               <li>
+              
+                    <form method="get" class="search-bar">
+                      <input type="text" placeholder="Search show" name="search-show">
+                      <div class="bottom-search">
+                        <i class="fas fa-search icon"></i>
+                      </div>                         
+                    </form>
+                                       
+              </li>
+              <li>
                 <i class="fa-solid fa-circle-user"></i>
                 <a href="/usuarios/login">Iniciar sesion</a>
               </li>

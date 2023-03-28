@@ -134,6 +134,21 @@ nav {
   margin-right: 1rem;
 }
 
+
+.search-bar input{
+  border-radius: 40px;
+  width: 250px;
+  height: 40px;
+}
+
+.bottom-search{
+  position: absolute;
+  top: 25px;
+  right: 340px;
+  color: black
+}
+
+
 /* Tamanio despues de tablet */
 @media screen and (min-width: 769px) {
   .nav-mobile-iconos {
