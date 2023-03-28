@@ -45,51 +45,37 @@ const controllers = {
   /* --------------Muestra El Shows que queremos editar----------------- */
   edit: (req, res) => {
     let id = req.params.id;
-
-    let showsFiltrado = shows.find((show) => {
-      return show.id == id;
-    });
-
-    if(showsFiltrado === undefined) {
-      res.send('No se encontro ese evento. Intento con otro');
-    } else {
-      res.render("product/editShows", { show: showsFiltrado, categories: categories });
-    }
-    
+    db.Shows.findByPk(id)
+      .then(shows =>{
+        if(shows === undefined) {
+          res.send('No se encontro ese evento. Intento con otro');
+        } else {
+          res.render("product/editShows", { show: shows, categories: categories });
+        }
+      })
   },
 
   
   /* --------------Procesa la Edicion----------------- */
   processEdit: (req, res) => {
-
-		let id = req.params.id;
-		let showAnterior = shows.find(show => {
-			return show.id == id
-		})
-
-		let showEditado = {
-			
-			id: showAnterior.id,
+    db.Shows.update({
       name: req.body.name,
       price: parseFloat(req.body.price),
       categoryId: parseInt(req.body.categoryId),
       descriptionHeader: req.body.descriptionHeader,
       descriptionVideo: req.body.descriptionVideo,
       video: req.body.video,
-      image: req.file ? req.file.filename : showAnterior.image,
+      image: req.body.image,
       month: req.body.month,
-		}
-		
-		let indice = shows.findIndex(product => {
-			return product.id == id;
-		})
-
-		shows[indice] = {...showAnterior, ...showEditado};
-   
-	
-		fs.writeFileSync(showsFilePath, JSON.stringify(shows, null, " "));
-		res.redirect("/");
-  },
+    },{
+      where:{
+        id: req.params.id
+      }
+    })
+      .then(result =>{
+          res.redirect("/shows")
+      })
+    },
 
   /* --------------Muestro la vista de crear shows----------------- */
   create: (req, res) => {
