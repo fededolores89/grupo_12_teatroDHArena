@@ -87,21 +87,18 @@ const controllers = {
     const errors = validationResult(req);
 
     if(errors.isEmpty()) {
-      let nuevoShow = {
+      db.Shows.create({
         id: shows[shows.length - 1].id + 1,
         name: req.body.name,
-        price: parseFloat(req.body.price),
-        categoryId: parseInt(req.body.categoryId),
+        price: req.body.price,
+        categoryId: req.body.categoryId,
         descriptionHeader: req.body.descriptionHeader,
         descriptionVideo: req.body.descriptionVideo,
         image: req.file ? req.file.filename : "default-image.png",
         video: req.body.video ? req.body.video: "https://www.youtube.com/embed/WEms4KB2Q3o",
         hour: req.body.hour,
         date: req.body.date
-      };
-  
-      shows.push(nuevoShow);
-      fs.writeFileSync(showsFilePath, JSON.stringify(shows, null, " "));
+      }) ;
       res.redirect("/shows");
     } else {
       const validations = errors.array();
