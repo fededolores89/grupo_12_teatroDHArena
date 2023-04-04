@@ -91,7 +91,7 @@ const controllers = {
         id: shows[shows.length - 1].id + 1,
         name: req.body.name,
         price: req.body.price,
-        categoryId: req.body.categoryId,
+        id_category: req.body.categoryId,
         descriptionHeader: req.body.descriptionHeader,
         descriptionVideo: req.body.descriptionVideo,
         image: req.file ? req.file.filename : "default-image.png",
