@@ -11,6 +11,7 @@ const mainRouter = require('./routes/mainRouter')
 const showsRouter = require('./routes/showsRouter')
 const userRouter = require('./routes/userRouter.js')
 const shoppingRouter = require('./routes/shoppingRouter.js')
+const apiUsersRouter = require("./routes/api/apiUserRouter.js")
 
 const authUserVariableMiddleware = require('./middlewares/users/authUserVariableMiddleware.js');
 const cookieAuthMiddleware = require('./middlewares/users/cookieAuthMiddleware.js');
@@ -49,6 +50,13 @@ app.get('/check', (req, res) => {
     res.send(req.session.authUser);
   }
 })
+
+//Usando los enrutadores para apis
+
+app.use("/api", apiUsersRouter);
+
+
+
 
 
 
