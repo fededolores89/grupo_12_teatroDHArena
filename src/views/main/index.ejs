@@ -18,10 +18,9 @@
 
       <% for( let i = 0; i < categories.length; i++ ) { %>
         <section class="Shows">
-          <h2 class="titulo-shows">Shows de <%= categories[i].name %> </h2>
-
           <% for( let j = 0; j < shows.length; j++ ) { %>
             <% if (shows[j].id_category == categories[i].id) { %>
+              <h2 class="titulo-shows">Shows de <%= categories[i].name %> </h2>
               <article class="eventos-home">
                 <figure class="Img-Artista"> <img
                   src="/img/Img-Index-Artistas/<%= shows[j].image %>"

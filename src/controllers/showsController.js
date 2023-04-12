@@ -88,7 +88,6 @@ const controllers = {
 
     if(errors.isEmpty()) {
       db.Shows.create({
-        id: shows[shows.length - 1].id + 1,
         name: req.body.name,
         price: req.body.price,
         id_category: req.body.categoryId,

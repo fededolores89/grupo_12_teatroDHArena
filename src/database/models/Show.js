@@ -27,7 +27,7 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false
         },
         descriptionHeader:{
-            type :dataTypes.STRING 
+            type: dataTypes.STRING 
         },
         descriptionVideo:{
             type: dataTypes.STRING

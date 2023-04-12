@@ -55,13 +55,13 @@
               </div>
             <div class="col-12">
               <label for="description" class="form-label">Descripción Principal:</label>
-              <textarea name="descriptionHeader" id="description" class="form-input"><%= show.descriptionHeader %></textarea>
+              <textarea name="descriptionHeader" id="description" class="form-input" maxlength="255"><%= show.descriptionHeader %></textarea>
             </div>
             <label for="price" class="form-label">Url de Artistas</label>
             <input value="<%= show.video %>" type="text" id="video" name="video" placeholder="Ej: youtube.com/watch?" class="form-input">
             <div class="col-12">
               <label for="description" class="form-label">Descripción Video:</label>
-              <textarea name="descriptionVideo" id="descriptionVideo" class="form-input"><%= show.descriptionVideo %></textarea>
+              <textarea name="descriptionVideo" id="descriptionVideo" class="form-input" maxlength="255"><%= show.descriptionVideo %></textarea>
             </div>
             <div class="col-12 col-md-6">
               <label for="productImage" class="form-label">Imagen del Artista:</label>
