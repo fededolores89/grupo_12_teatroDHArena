@@ -3,12 +3,15 @@ const router = express.Router()
 
 const apiUserController = require("../../controllers/api/apiUserController.js")
 const apiShowController = require("../../controllers/api/apiShowController.js")
+const apiCategoryController = require('../../controllers/api/apiCategoryController.js');
 
 router.get("/users" , apiUserController.userList)
 
 router.get('/users/:id', apiUserController.detail);
 
 router.get("/shows" , apiShowController.showList)
+
+router.get("/categories" , apiCategoryController.showCategories);
 
 router.get('/shows/:id', apiShowController.detail);
 
