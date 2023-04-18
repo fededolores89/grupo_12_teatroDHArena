@@ -1,0 +1,95 @@
+main{
+  background-color: var(--verde-principal);
+}
+
+h1{
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.contenedor-formulario{
+  padding: 15px;
+  border-top: solid 1px grey;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   
+  align-items: center;
+}
+
+.contenedor-formulario label{
+  font-weight: bold;
+  width: 60%;
+  padding: 5px;
+  color: #ffffff;
+}
+
+.contenedor-formulario input{
+  width: 60%;
+  height: 45px;
+  padding: 5px;
+  margin-bottom: 10px;
+  color: #4180c4;
+}
+
+.contenedor-formulario button{
+    background-color: #00ffc2;
+    color: black;
+    border: solid black 1px;
+    height: 3rem;
+    width: 11rem;
+    border-radius: 4px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    cursor: pointer;
+  }
+
+.login-titulo{
+  margin-top:15px
+}
+
+input{
+  border-radius: 15px;
+}
+
+.control-formulario{
+  padding: 15px;
+}
+
+.error-message {
+  color: white;
+}
+
+.error-input {
+  border-color: red;
+}
+
+.remember-me {
+  width: 1rem !important;
+  height: 1rem !important;
+}
+
+.controles-login{
+  color:deeppink;
+  margin-bottom:15pxx
+}
+
+.is-valid {
+  background-color: #198754;
+  border: 2px #198754;
+}
+
+.is-invalid {
+  background-color: #F8D7DA;
+  border: 2px solid #842029;
+}
+
+.alert-warning{
+  color:#842029;
+  background-color: #F8D7DA;
+  text-align: center;
+  border-radius: 10px;
+}

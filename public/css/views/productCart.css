@@ -1,0 +1,146 @@
+
+
+h2{
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+    color:white;
+}
+
+.Img-Artista{
+    width: 100%;
+    
+}
+
+.carrito-main{
+    background-color: #18435a;;
+    padding: 10px;
+    height: auto;
+}
+
+.carrito-item {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--magenta);
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.item-info {
+    margin-top: 1rem;
+}
+
+.carrito-de-compras{
+    margin-top: 10px;
+}
+  
+.compras{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cant-borrar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-productcart{
+    margin: 10px;
+    
+}
+
+.cantidad-entradas{
+    color: white;
+}
+
+.boton-borrar{
+    cursor: pointer;
+    background: transparent;
+    color: var(--magenta);
+    border: none;
+}
+
+.total{
+    color: white;
+}
+
+.continua-comprando a{
+    color: white;
+    text-decoration: underline;
+}
+
+.carrito-flex{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+
+.payment-methods{
+    margin-top: 1rem;
+    text-align: center;
+    color: white;
+}
+
+.payment-methods h3 {
+    margin-bottom: 0.5rem;
+}
+
+.payment-icons i {
+    font-size: 2rem;
+    margin-right: 0.5rem;
+}
+
+.order-summary {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.order-total {
+    border: 1px solid var(--magenta);
+    padding: 1rem;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+}
+
+.order-buy {
+    padding: 1rem;
+    border-radius: 1rem;
+    border: none;
+    text-transform: uppercase;
+    background-color: var(--magenta);
+    color: white;
+    font-weight: bold;
+    width: 100%;
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    .carrito-item {
+        flex-direction: row;
+    }
+
+    .carrito-item .item-info {
+        width: 50%;
+    }
+
+    .carrito-item .item-img {
+        margin-right: 1rem;
+        width: 50%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .carrito-item .item-nombre {
+        font-size: 3rem;
+    }
+}
+
+@media (min-width: 650px) {
+    .datos-show{
+        font-size: 25px ;
+    }
+}

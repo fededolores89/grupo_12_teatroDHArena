@@ -1,0 +1,85 @@
+ /* --------------------Aca la parte de los Shows ---------------------------*/
+ .boton-entrada{
+    text-decoration: none;
+    background-color: #2cf2c7;
+    padding: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+.boton-entrada {
+  text-decoration: none;
+  background-color: #2cf2c7;
+  border-radius: 12px;
+  padding: 0.6rem;
+  font-weight: bold;
+}
+  
+  .Shows {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #16324f;
+    text-align: center;
+    padding-top: 3rem;
+  }
+  
+  .titulo-shows {
+    width: 100%;
+  }
+  
+  .eventos-home {
+    width: 70%;
+    border: solid 2px white;
+    margin-bottom: 1rem;
+    padding-bottom: 2rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: all .2s ease-in-out;
+  }
+
+  .eventos-home:hover {
+    transform: scale(1.01);
+  }
+  
+  .titulo-shows {
+    color: #ff008a;
+  }
+  
+  .descripcion {
+    color: white;
+    font-family: sans-serif;
+    text-align: left;
+        padding: 0 1rem;
+  }
+
+  .descripcion .nombre {
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    margin-top: 0;
+  }
+
+  .descripcion .fecha {
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .Img-Artista {
+    margin: 0;
+    margin-bottom: 1rem;
+  }
+  
+  /* ----------------- Media queries para table ---------------*/
+  @media (min-width: 460px) {
+    .eventos-home {
+      width: 45%;
+      margin-left: 1rem;
+    }
+  }
+  /* ---------------Media queries para Escritorio ----------------*/
+  @media (min-width: 760px) {
+    .eventos-home {
+      width: 30%;
+    }
+  }

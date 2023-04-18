@@ -1,0 +1,224 @@
+.registro-main {
+  background-image: url(/img/Img-Index-Fondos/hero.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.info-registro {
+  background-color: black;
+  color: white;
+  padding: 2rem;
+}
+
+.form-info {
+  margin-bottom: 1rem;
+}
+
+.info-registro h3 {
+  margin: 1rem 0;
+}
+
+.registro-form {
+  padding: 3rem;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.Titulo-1 {
+  font-family: sans-serif;
+  color: white;
+  font-weight: bold;
+  font-size: 3rem;
+}
+.SubTitulo-2 {
+  color: white;
+  font-family: sans-serif;
+  font-weight: 500;
+}
+
+main a {
+  text-decoration: none;
+  background-color: #2cf2c7;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+.Shows {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #16324f;
+}
+
+.titulo-shows {
+  width: 100%;
+}
+
+.eventos {
+  width: 90%;
+  border: solid 2px red;
+  margin-bottom: 1rem;
+}
+
+.titulo-shows {
+  color: #ff008a;
+}
+
+h4,
+.titulo-campo,
+h6,
+.texto-botoncito {
+  color: white;
+}
+
+/*---------Colocacion de label como titulos de campos-----*/
+.campo-reg:has(input:required) label:after {
+  content: '*';
+  color: red;
+}
+
+.campo-reg {
+  display: flex;
+  flex-direction: column;
+}
+
+.campo-reg input, .campo-reg select {
+  padding: 1rem 0.5rem;
+  border-radius: 12px;
+  border: none;
+  margin-bottom: 1rem;
+}
+
+/*-------------Boton deslizante----------------------------------*/
+.botoncito {
+  position: relative;
+  display: inline-block;
+  width: 3.6rem;
+  height: 2rem;
+}
+
+.botoncito input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.deslizadora {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+}
+
+.deslizadora:before {
+  position: absolute;
+  content: '';
+  height: 1.6rem;
+  width: 1.6rem;
+  left: 0.2rem;
+  bottom: 0.2rem;
+  background-color: white;
+  transition: 0.4s;
+}
+
+.info-errores {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  padding: 1rem 2rem;
+  background-color: var(--magenta);
+}
+
+.error {
+  margin-bottom: 0.5rem;
+}
+
+input:checked + .deslizadora {
+  background-color: #00ffc2;
+}
+
+input:checked + .deslizadora:before {
+  transform: translateX(1.6rem);
+}
+/*-------------------Boton registrarme----------------------*/
+button {
+  background-color: #00ffc2;
+  color: black;
+  border: solid black 1px;
+  height: 3rem;
+  width: 11rem;
+  border-radius: 4px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  cursor: pointer;
+}
+
+.formulario-reg h6,
+.titulo-campo,
+.campo-reg,
+.fecha-nac,
+.num-telefono {
+  margin-bottom: 1rem;
+}
+
+.formulario-reg h6,
+.titulo-campo,
+.campo-reg,
+.fecha-nac,
+.num-telefono {
+  margin-bottom: 1rem;
+}
+/*----------------------------------------------------------------*/
+
+/*---------Header-------------------------------------------------*/
+header{
+  background-color: black;
+  color: white;
+  padding: 10px;
+}
+
+/*------------Linea divisora entre titulos--------------------------*/
+
+   .linea-titulos {
+    background-color: #00ffc2;
+    line-height: -162.8em;
+    background-color:#00ffc2; ;
+    height: 5px;
+    width: 210px;
+    margin-bottom: 1rem;
+}
+
+#image {
+  margin-bottom: 0;
+}
+
+.info-input {
+  color: var(--magenta);
+  font-weight: bold;
+}
+
+/*---------------- VALIDACIONES ------------- */
+
+.is-valid {
+  background-color: #198754;
+  border: 2px #198754;
+}
+
+.is-invalid {
+  background-color: #F8D7DA;
+  border: 2px solid #842029;
+}
+
+.alert-warning{
+  color:#842029;
+  background-color: #F8D7DA;
+  text-align: center;
+  border-radius: 10px;
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+  <%-include ("../partials/head", {cssSheets: "createShow", title: "Crear Shows"}) %>
+  <body>
+    <%- include('../partials/header') %>
+   
+   <!--***************** Formulario de creacion de producto ***************-->
+   <main class="main-container">
+    <h2>Crear Show</h2>
+    <section class="form-container">
+      <% if (locals.errors) { %>
+        <div class="info-errores">
+          <% errors.forEach(error => { %>
+            <span class="error"><i class="fa-solid fa-circle-exclamation"></i> <%= error.msg %></span>
+          <% }) %>
+        </div>
+      <% } %>
+      <form action="/shows/create" method="POST" enctype="multipart/form-data" >
+        <div class="row product-detail">
+          <div class="col-12 col-md-6">
+            <label for="name" class="form-label">Nombre del artista</label>
+            <input type="text" id="name" name="name" class="form-input" placeholder="Ej: Juan Carlos" value="<%= locals.inputs ? inputs.name : '' %>">
+          </div>
+          <div class="col-12 col-md-6">
+            <label for="price" class="form-label">Precio</label>
+            <input type="number" id="price" name="price" class="form-input" placeholder="Ej: 15000" value="<%= locals.inputs ? inputs.price : '' %>">
+          </div>
+          <div class="col-12 col-md-6">
+            <label for="hour" class="form-label">Hora del show</label>
+            <select id="hour" name="hour"  class="form-input">
+              <option value="16:00" <%= locals.inputs && inputs.hour == '16:00' ? 'selected' : '' %>>16:00 hrs</option>
+              <option value="16:30" <%= locals.inputs && inputs.hour == '16:30' ? 'selected' : '' %>>16:30 hrs</option>
+              <option value="17:00" <%= locals.inputs && inputs.hour == '17:00' ? 'selected' : '' %>>17:00 hrs</option>
+              <option value="17:30" <%= locals.inputs && inputs.hour == '17:30' ? 'selected' : '' %>>17:30 hrs</option>
+              <option value="18:00" <%= locals.inputs && inputs.hour == '18:00' ? 'selected' : '' %>>18:00 hrs</option>
+              <option value="18:30" <%= locals.inputs && inputs.hour == '18:30' ? 'selected' : '' %>>18:30 hrs</option>
+              <option value="19:00" <%= locals.inputs && inputs.hour == '19:00' ? 'selected' : '' %>>19:00 hrs</option>
+              <option value="19:30" <%= locals.inputs && inputs.hour == '19:30' ? 'selected' : '' %>>19:30 hrs</option>
+              <option value="20:00" <%= locals.inputs && inputs.hour == '20:00' ? 'selected' : '' %>>20:00 hrs</option>
+              <option value="20:30" <%= locals.inputs && inputs.hour == '20:30' ? 'selected' : '' %>>20:30 hrs</option>
+              <option value="21:00" <%= locals.inputs && inputs.hour == '21:00' ? 'selected' : '' %>>21:00 hrs</option>
+              <option value="21:30" <%= locals.inputs && inputs.hour == '21:30' ? 'selected' : '' %>>21:30 hrs</option>
+              <option value="22:00" <%= locals.inputs && inputs.hour == '22:00' ? 'selected' : '' %>>22:00 hrs</option>
+            </select>
+          </div>
+          <div class="col-12 col-md-6">
+            <label for="date" class="form-label">Fecha:</label>
+            <input class="form-input" type="date" name="date" id="date" value="<%= locals.inputs ? inputs.date : '' %>">
+          </div>
+          <div class="col-12 col-md-6">
+            <label for="categoryId" class="form-label">Categoría:</label>
+            <select name="categoryId" id="categoryId" class="form-input">
+              <% categories.forEach(category => { %>
+                <option value="<%= category.id %> " <%= locals.inputs && inputs.categoryId == category.id ? 'selected' : '' %>  ><%= category.name %> </option>
+              <% }) %>
+            </select>
+          </div>
+          <div class="col-12">
+            <label for="descriptionHeader" class="form-label">Descripcion del evento</label>
+            <textarea name="descriptionHeader" id="descriptionHeader" class="form-input" value="<%= locals.inputs ? inputs.descriptionHeader : '' %>" maxlength="255"></textarea>
+          </div>
+          <div class="col-12">
+            <label for="descriptionVideo" class="form-label">Descripcion del artista</label>
+            <textarea name="descriptionVideo" id="descriptionVideo" class="form-input" value="<%= locals.inputs ? inputs.descriptionVideo : '' %>" maxlength="255"></textarea>
+          </div>
+          <div class="col-12 col-md-6">
+            <label for="video" class="form-label">Url Youtube</label>
+            <input type="text" id="video" name="video"  class="form-input" placeholder="Url del video de Youtube." value="<%= locals.inputs ? inputs.video : '' %>">
+          </div>
+          <div class="col-12 col-md-6">
+            <label for="artistImage" class="form-label">Imagen del Artista:</label>
+            <input class="artistImage" type="file" id="artistImage" name="artistImage">
+          </div>
+          <div class="col-12">
+            <button type="submit" class="save-button">Guardar Show</button>
+          </div>
+        </div>
+      </form>
+    </section>
+   </main>
+    <%- include('../partials/footer') %>
+    <!-- Agregando archivo nav.js para el menu -->
+    <script src="../js/nav/nav.js"></script>

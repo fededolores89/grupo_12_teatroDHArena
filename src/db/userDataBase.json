@@ -1,0 +1,58 @@
+[
+ {
+  "id": 8,
+  "name": "Super",
+  "lastname": "Admin",
+  "documentType": 1,
+  "documentNum": "43022926T",
+  "birth": "1990-04-01",
+  "phoneType": 1,
+  "number": "5078223585",
+  "email": "superadmin@email.com",
+  "password": "$2a$10$vhwV7G2tldaLvU8k1C4LNezCepoIR/zcW3p0c6QAHkoqCUIdmB4we",
+  "userType": 2,
+  "image": "default-profile.jpg"
+ },
+ {
+  "id": 9,
+  "name": "Sara",
+  "lastname": "Watson",
+  "documentType": 1,
+  "documentNum": "35363699A",
+  "birth": "1983-07-14",
+  "phoneType": 1,
+  "number": "3174019518",
+  "email": "sarah@email.com",
+  "password": "$2a$10$bv51fx4PhuNafpfc0mtNN.56GJEyZ/lk2c9vLichZcVn2Z7IuCuxq",
+  "userType": 1,
+  "image": "1674922091209.jpg"
+ },
+ {
+  "id": 10,
+  "name": "Travis",
+  "lastname": "Burrough",
+  "documentType": null,
+  "documentNum": "08590251G",
+  "birth": "1984-03-23",
+  "phoneType": null,
+  "number": "4084458171",
+  "email": "celestine1996@yahoo.com",
+  "password": "$2a$10$ZnqfP4SGeIpqnxtRGK7a/Ozy7POJsIIlaIQPPgQM/i2B1d40dkBPS",
+  "userType": 1,
+  "image": "default-profile.jpg"
+ },
+ {
+  "id": 11,
+  "name": "Travis ",
+  "lastname": "Burrough",
+  "documentType": null,
+  "documentNum": "08590251G",
+  "birth": "1983-03-23",
+  "phoneType": null,
+  "number": "123456789",
+  "email": "celestine1996@yahoo.com",
+  "password": "$2a$10$/9y5iRzqntJGKecjpfTd0uO.nyxVG9UTHIieV4bQIurhuqBxgHJWK",
+  "userType": 1,
+  "image": "default-profile.jpg"
+ }
+]

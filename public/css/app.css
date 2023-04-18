@@ -1,0 +1,51 @@
+/* Importando estilos de las paginas del proyecto */
+@import url(header/header.css);
+@import url(footer/footer.css);
+
+/* Importando fuente del proyecto */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700&display=swap');
+
+/* Importando normalize */
+@import url(normalize.css);
+
+/*Font Awesome*/
+@import url(../assets/fontawesome/css/all.css);
+
+/* Variables globales de estilo css */
+:root {
+  --nunito: 'Nunito Sans', sans-serif;
+  --azul-principal: #16324f;
+  --verde-principal: #18435a;
+  --magenta: #ff008a;
+  --verde-neon: #2cf2c7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--nunito);
+  height: 100vh;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+.registrado {
+  font-size: 12px;
+  vertical-align: top;
+}
+
+

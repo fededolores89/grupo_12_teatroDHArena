@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+  
+<%- include('../partials/head', {cssSheets: "register", title: "Registrarse"}) %>
+
+  <body>
+    <%- include('../partials/header') %>
+    <main class="registro-main">
+      <div class="info-registro">
+        <h3> AUN NO ESTAS REGISTRADO? </h3>
+        <h5>Completa el formulario con tus datos y hacete usuario para obtener grandes beneficios!</h5>
+      </div>
+      <% if (locals.errors) { %>
+        <div class="info-errores">
+          <% errors.forEach(error => { %>
+            <span class="error"><i class="fa-solid fa-circle-exclamation"></i> <%= error.msg %></span>
+          <% }) %>
+        </div>
+      <% } %>
+      <form class="registro-form" action="/usuarios/register" method="POST" enctype="multipart/form-data">
+        <h6 class="form-info">Campos obligatorios (*) </h6>
+        <h4 class="titulo-campo"><i class="fas fa-pen"></i></i> DATOS PERSONALES </h4>
+        <div class="campo-reg">
+          <label class="titulo-campo">Nombre</label>
+          <input type="text" class="" name="name" id="name" placeholder="Nombre completo" value="<%= locals.inputs ? inputs.name : '' %>">
+        </div>
+        <div class="campo-reg">
+          <label class="titulo-campo">Apellido</label>
+          <input type="text" class="" name="lastname" id="lastname" placeholder="Apellido" value="<%= locals.inputs ? inputs.lastname : '' %>">
+        </div>
+        <div class="campo-reg">
+          <label class="titulo-campo">No. Documento</label>
+          <input type="text" class="" name="documentNum" id="documentNum" placeholder="Numero de DNI" value="<%= locals.inputs ? inputs.documentNum : '' %>">
+        </div>
+        <div class="campo-reg">
+          <label for="image" class="titulo-campo">Foto de perfil</label>
+          <input type="file" name="image" id="image">
+          <span class="info-input">* Elige de preferencia una imagen con relacion 1:1 (cuadrada)</span>
+        </div>
+        <h4 class="titulo-campo"> FECHA DE NACIMIENTO</h4>
+        <div class="campo-reg">
+          <input type="date" class="" name="birth" id="birth" placeholder="Fecha de nacimiento" value="<%= locals.inputs ? inputs.birth : '' %>">
+        </div>
+        <br>
+        <div class="linea-titulos"></div>
+        <div class="campo-reg">
+          <h4 class="titulo-campo"><i class="fas fa-phone-volume"></i> TELEFONO</h4>
+          <label class="titulo-campo" for="number">Numero</label>
+          <input type="number" class="" id="number" name="number" placeholder="+54 XXXXXXXXXX" value="<%= locals.inputs ? inputs.number : '' %>">
+        </div> 
+        <br>
+        <div class="linea-titulos"></div>
+          <div class="campo-reg">
+            <h4 class="titulo-campo"><i class="fas fa-envelope"></i></i> CORREO ELECTRONICO</h4>
+            <input type="email" class="" id="email" name="email" placeholder="Email" value="<%= locals.inputs ? inputs.email : '' %>">
+            <input type="email" class="" name="confirmEmail" id="confirmEmail" placeholder="Confirmar email" value="<%= locals.inputs ? inputs.confirmEmail : '' %>">
+          </div>
+          <br>
+        <div class="linea-titulos"></div>
+        <div class="campo-reg">
+          <h4 class="titulo-campo"><i class="fas fa-key"></i> CONTRASEÑA</h4>
+          <input type="password" class="" id="password" name="password" placeholder="Contraseña">
+          <input type="password" class="" id="confirmPaswword" name="confirm_password" placeholder="Confirmar contraseña">
+        </div>
+        <h6 class="form-info"> La contraseña debe tener al menos 8 caracteres, una letra y un número*.</h6>
+        <label for="label-terms" class="texto-botoncito"> Acepto los términos y condiciones.</label>
+        <label class="botoncito"> 
+          <input name="label-terms" type="checkbox">
+          <span class="deslizadora"></span>
+        </label>
+        <br>
+        <button type="submit" class="boton-registrarme"> REGISTRARME </button>
+      </form>
+
+    </main>
+    <%- include('../partials/footer') %>
+    <!-- Agregando archivo nav.js para el menu -->
+    <script src="../js/nav/nav.js"></script>
+  </body>
+</html>
+
+
+
