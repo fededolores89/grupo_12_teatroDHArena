@@ -1,17 +1,17 @@
 const db = require('../../database/models');
 const sequelize = db.sequelize;
 
-const apiUserController = {
-    userList: (req,res) =>{
-        let users = db.Users.findAll()
-            .then(users =>{
+const apiShowController = {
+    showList: (req,res) =>{
+        let shows = db.Shows.findAll()
+            .then(shows =>{
                 let respuesta = {
                     meta:{
                         status:200,
-                        total: users.length,
+                        total: shows.length,
                         url: "api/users"
                     },
-                    data: users
+                    data: shows
                 
                 
                 }
@@ -20,14 +20,14 @@ const apiUserController = {
             })
         },
     detail: (req,res) =>{
-        let user = db.Users.findByPk(req.params.id)
-            .then(user =>{
+        let show = db.Shows.findByPk(req.params.id)
+            .then(show =>{
                 let respuesta = {
                     meta:{
                         status:200,
-                        url: "api/users" + req.params.id
+                        url: "api/shows" + req.params.id
                     },
-                    data: user
+                    data: show
                 }       
                 res.json(respuesta)
             })
@@ -35,4 +35,4 @@ const apiUserController = {
 }
 
 
-module.exports = apiUserController;
+module.exports = apiShowController;
