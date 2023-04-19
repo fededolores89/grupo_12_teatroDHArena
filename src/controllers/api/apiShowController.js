@@ -3,15 +3,21 @@ const sequelize = db.sequelize;
 
 const apiShowController = {
     showList: (req,res) =>{
-        let shows = db.Shows.findAll()
+        let shows = db.Shows.findAll({
+            attributes: ["id", "name", "descriptionHeader"], 
+            include: [{association: "Category"}] 
+        })
             .then(shows =>{
+                let respuestaShow = shows;
+                respuestaShow.detail = 2;
                 let respuesta = {
                     meta:{
                         status:200,   
                         url: "api/shows"
                     },
-                    data: shows
+                    data: respuestaShow
                 }      
+                
                 res.json(respuesta)
             })
         },
@@ -37,20 +43,10 @@ const apiShowController = {
                 res.json(data)
             })
         },      
-        /* db.Shows.findAll({ 
-            attributes: [
-                "Category",
-                [sequelize.fn("COUNT", sequelize.col("id_category"), "count_category")]
-            ],
-            group: "id_category"
-        })
-            .then(data => {
-                res.json(data)
-            })
-        }, */
-    
     detail: (req,res) =>{
-        let show = db.Shows.findByPk(req.params.id)
+        let show = db.Shows.findByPk(req.params.id, {
+            include: [{association: "Category"}] 
+        })
             .then(show =>{
                 let respuesta = {
                     meta:{
