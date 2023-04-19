@@ -39,7 +39,17 @@ const controllers = {
             res.render("product/productDetail", { show: shows, showDate: date });
           }
         })
-  },      
+  },
+  
+  search: (req, res) => {
+    db.Shows.findAll({
+      include: [{association: "Category"} ]
+ })
+    .then(function(shows){
+      
+      res.render("product/allsTheShows", {shows:shows})
+    })
+ },
 
 
   /* --------------Muestra El Shows que queremos editar----------------- */
