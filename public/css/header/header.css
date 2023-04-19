@@ -139,14 +139,14 @@ nav {
   display: flex;
   align-items: center;
   
+  
 }
 
 .bottom-search{
   position: absolute;
   top: 25px;
   right: 340px;
-  color: black
-  
+  color: black;
 }
 
 

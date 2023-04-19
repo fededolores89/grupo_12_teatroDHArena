@@ -11,6 +11,11 @@ router.get('/users/:id', apiUserController.detail);
 
 router.get("/shows" , apiShowController.showList)
 
+router.get("/shows/count" , apiShowController.showCount)
+
+router.get("/shows/countByCategory" , apiShowController.showCountByCategory)
+
+
 router.get("/categories" , apiCategoryController.showCategories);
 
 router.get('/shows/:id', apiShowController.detail);
