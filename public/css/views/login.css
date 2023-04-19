@@ -1,5 +1,6 @@
 main{
   background-color: var(--verde-principal);
+  padding-top: 3rem;
 }
 
 h1{
@@ -9,31 +10,37 @@ h1{
   margin-bottom: 15px;
 }
 
-.contenedor-formulario{
-  padding: 15px;
-  border-top: solid 1px grey;
+.form-input {
+  padding: 5px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.form-input input {
+  height: 45px;
+  padding: 1rem;
+  border-radius: 16px;
+  border: none;
+  width: 300px;
+}
+
+.login-form {
   display: flex;
   flex-direction: column;
   justify-content: center;   
   align-items: center;
 }
 
-.contenedor-formulario label{
+.login-form label{
   font-weight: bold;
-  width: 60%;
   padding: 5px;
   color: #ffffff;
+  text-align: center;
 }
 
-.contenedor-formulario input{
-  width: 60%;
-  height: 45px;
-  padding: 5px;
-  margin-bottom: 10px;
-  color: #4180c4;
-}
-
-.contenedor-formulario button{
+.login-form button{
     background-color: #00ffc2;
     color: black;
     border: solid black 1px;
@@ -48,11 +55,22 @@ h1{
   }
 
 .login-titulo{
-  margin-top:15px
+  margin-top:15px;
+  color: white;
+  font-size: 2.5rem;
 }
 
-input{
-  border-radius: 15px;
+.login-info {
+  margin-top: 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-info p {
+  margin: 0;
+  padding-bottom: 1rem;
 }
 
 .control-formulario{
@@ -68,7 +86,6 @@ input{
 }
 
 .remember-me {
-  width: 1rem !important;
   height: 1rem !important;
 }
 
@@ -92,4 +109,8 @@ input{
   background-color: #F8D7DA;
   text-align: center;
   border-radius: 10px;
+}
+
+.error-container {
+  margin-top: 1rem;
 }
