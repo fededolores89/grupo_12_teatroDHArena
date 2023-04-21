@@ -42,7 +42,6 @@ router.post('/create', upload.single("artistImage"), validations, mainController
 /* Vista a el show */
 router.get('/:id' , mainController.detalle)
 
-router.get("/search", mainController.search)
 
 /* Editar Show */
 router.get('/:id/edit', mainController.edit)

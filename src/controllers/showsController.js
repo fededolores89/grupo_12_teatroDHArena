@@ -42,13 +42,7 @@ const controllers = {
   },
   
   search: (req, res) => {
-    db.Shows.findAll({
-      include: [{association: "Category"} ]
- })
-    .then(function(shows){
-      
-      res.render("product/allsTheShows", {shows:shows})
-    })
+    res.send("Search")
  },
 
 

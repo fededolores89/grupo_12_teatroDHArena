@@ -10,8 +10,10 @@ const cookieParser = require('cookie-parser');
 const mainRouter = require('./routes/mainRouter')
 const showsRouter = require('./routes/showsRouter')
 const userRouter = require('./routes/userRouter.js')
+const searchRouter = require('./routes/searchRouter.js')
 const shoppingRouter = require('./routes/shoppingRouter.js')
 const apiRouter = require("./routes/api/apiRouter.js")
+
 
 const authUserVariableMiddleware = require('./middlewares/users/authUserVariableMiddleware.js');
 const cookieAuthMiddleware = require('./middlewares/users/cookieAuthMiddleware.js');
@@ -42,6 +44,7 @@ app.set("views", path.resolve(__dirname, "views"));
 app.use("/shows", showsRouter); 
 app.use("/usuarios", userRouter);
 app.use("/", mainRouter);
+app.use("/search", searchRouter);
 app.use("/carrito", shoppingRouter);
 app.get('/check', (req, res) => {
   if(req.session.authUser == undefined) {
