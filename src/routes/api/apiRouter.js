@@ -21,4 +21,6 @@ router.get("/categories" , apiCategoryController.showCategories);
 
 router.get('/shows/:id', apiShowController.detail);
 
+router.get('/shows/image/:id' , apiShowController.image)
+
 module.exports = router;

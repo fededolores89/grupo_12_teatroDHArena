@@ -73,6 +73,13 @@ const apiShowController = {
             res.json(respuesta)
         })
         
+    },
+    image: (req , res) => {
+        db.Shows.findAll()
+        .then(data => {
+           console.log(data.image)
+            res.render("product/imageShow", { shows: data })
+        })
     }
 }
 
