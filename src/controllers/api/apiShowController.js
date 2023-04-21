@@ -57,7 +57,23 @@ const apiShowController = {
                 }       
                 res.json(respuesta)
             })
-        }
+        },
+    lastShow: (req,res) =>{
+        let shows = db.Shows.findAll({
+            order: [["id","DESC"], ],
+            limit : 1 
+        })
+        .then(shows =>{
+            let respuesta = {
+                meta:{
+                    status:200,
+                },
+                data: shows,
+            }      
+            res.json(respuesta)
+        })
+        
+    }
 }
 
 
