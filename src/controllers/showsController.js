@@ -6,7 +6,6 @@ const showsFilePath = path.join(__dirname, "../db/showsDataBase.json");
 const cartFilePath = path.join(__dirname, "../db/shoppingCart.json");
 const categoriesFilePath = path.join(__dirname, "../db/categories.json");
 const shoppingCartItems = JSON.parse(fs.readFileSync(cartFilePath, "utf-8"));
-const categories = JSON.parse(fs.readFileSync(categoriesFilePath, "utf-8"));
 
 const db = require('../database/models');
 const sequelize = db.sequelize;
@@ -54,7 +53,10 @@ const controllers = {
         if(shows === undefined) {
           res.send('No se encontro ese evento. Intento con otro');
         } else {
-          res.render("product/editShows", { show: shows, categories: categories });
+          db.Category.findAll()
+          .then(categories => {
+            res.render("product/editShows", { show: shows, categories: categories });
+          })
         }
       })
   },
@@ -65,7 +67,7 @@ const controllers = {
     db.Shows.update({
       name: req.body.name,
       price: parseFloat(req.body.price),
-      categoryId: parseInt(req.body.categoryId),
+      id_category: req.body.categoryId,
       descriptionHeader: req.body.descriptionHeader,
       descriptionVideo: req.body.descriptionVideo,
       video: req.body.video,
@@ -83,7 +85,10 @@ const controllers = {
 
   /* --------------Muestro la vista de crear shows----------------- */
   create: (req, res) => {
-    res.render("product/createShow", {categories: categories});
+    db.Category.findAll()
+    .then(categories => {
+      res.render("product/createShow", {categories: categories});
+    })
   },
 
   /* --------------Guarda el show creado----------------- */
@@ -107,7 +112,11 @@ const controllers = {
       const validations = errors.array();
       const inputs = req.body;
 
-      res.render('product/createShow', {categories: categories, errors: validations, inputs: inputs});
+      db.Category.findAll()
+      .then(categories => {
+        res.render('product/createShow', {categories: categories, errors: validations, inputs: inputs});
+      })
+
     }
 
   },
