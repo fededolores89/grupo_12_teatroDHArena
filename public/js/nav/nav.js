@@ -1,7 +1,7 @@
 // Elementos
 const navMobileBtn = document.querySelector('.nav-mobile-icon');
 const listMobileNav = document.querySelector('.nav-mobile-menu');
-const btnSearch = document.querySelector("#search-button")
+const btnSearch = document.querySelector("#search-icon")
 const searchBar = document.querySelector(".search-bar")
 // Listeners
 navMobileBtn.addEventListener('click', e => {
@@ -14,9 +14,8 @@ navMobileBtn.addEventListener('click', e => {
 });
 
 
-btnSearch.addEventListener("click", function(events){
-/* searchBar.submit() */
-console.log("Boton presionado");
+btnSearch.addEventListener("click", function(e){
+  searchBar.submit();
 })
 
 // Functions
