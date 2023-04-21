@@ -31,12 +31,13 @@
               <% if (userLogged == undefined) { %>
               <li>
               
-              <form method="get" class="search-bar">
+              <form method="get" action="/search" class="search-bar">
                   <div class="bottom-search">
-                    <input type="text" placeholder="Search show" name="search-show">
+                    <input type="text" placeholder="Search show" name="search">
                   </div> 
                   <div class="bottom-search">
-                    <i class="fas fa-search icon"></i>
+                    <input type="submit">
+                   
                   </div>                         
               </form>
                                        

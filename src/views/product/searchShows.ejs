@@ -3,4 +3,26 @@
   <%-include ("../partials/head", {cssSheets: "allsTheShow", title: "Todos los Shows"}) %>
   <body>
     <%- include('../partials/header') %>
+    
+    <section class="Shows">
+      <% shows.forEach(show => { %> 
+   <article class="eventos-home">
+    <figure class="Img-Artista"> <img
+       src="/img/Img-Index-Artistas/<%= show.image%>"
+       alt="Foto-Artista"
+     /></figure>
+     <div class="descripcion">
+       
+       <p class="nombre"><%= show.name %></p>
+       <p class="fecha"><%= show.date %></p>
+    <!--  <p class="Info">más info</p> -->
+       <a href="/shows/<%= show.id %>" class="boton-entrada">Compra tu entrada</a>
+     </div>
+   </article>
+   <% }) %>
+ </section>
+    
+    
+    
+    
     <%- include('../partials/footer') %>
