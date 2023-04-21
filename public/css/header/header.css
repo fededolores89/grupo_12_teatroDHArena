@@ -142,6 +142,11 @@ nav {
   
 }
 
+.search-button {
+  background: none;
+  line-height: 0.8em;
+}
+
 .bottom-search{
   position: absolute;
   top: 25px;
