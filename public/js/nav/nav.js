@@ -1,15 +1,23 @@
 // Elementos
 const navMobileBtn = document.querySelector('.nav-mobile-icon');
 const listMobileNav = document.querySelector('.nav-mobile-menu');
-
+const btnSearch = document.querySelector("#search-button")
+const searchBar = document.querySelector(".search-bar")
 // Listeners
 navMobileBtn.addEventListener('click', e => {
+ 
   // Agregando height al menu para que sea visible
   listMobileNav.classList.toggle('show-menu');
 
   // Cambiando icono del boton
   cambiarDisenioIcono(navMobileBtn);
 });
+
+
+btnSearch.addEventListener("click", function(events){
+/* searchBar.submit() */
+console.log("Boton presionado");
+})
 
 // Functions
 function cambiarDisenioIcono(iconContainer) {

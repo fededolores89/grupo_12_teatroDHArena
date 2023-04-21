@@ -149,6 +149,17 @@ nav {
   color: black;
 }
 
+.bottom-search input{
+  border: none;
+  border-radius: 12px;
+  padding: 6px;
+}
+
+.icon-search input{
+  
+}
+
+
 
 /* Tamanio despues de tablet */
 @media screen and (min-width: 769px) {
