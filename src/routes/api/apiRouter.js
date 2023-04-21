@@ -15,6 +15,7 @@ router.get("/shows/count" , apiShowController.showCount)
 
 router.get("/shows/countByCategory" , apiShowController.showCountByCategory)
 
+router.get("/shows/lastShow" , apiShowController.lastShow)
 
 router.get("/categories" , apiCategoryController.showCategories);
 
