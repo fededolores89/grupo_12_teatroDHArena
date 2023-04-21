@@ -12,7 +12,7 @@ const validations = [
     body('date').isISO8601().withMessage('Ingrese una fecha válida'),
     body('descriptionHeader').notEmpty().withMessage('Ingrese la descripción del evento').bail().isLength({ min: 20 }),
     body('descriptionVideo').notEmpty().withMessage('Ingrese la descripción del artista'),
-    body('image').isIn([ "PNG", "JPEG", "GIF" ]).withMessage('Ingrese un archivo valido de imagen (png, jpeg, gif)')
+    body('image').isIn([ "PNG", "JPEG", "JPG", "GIF" ]).withMessage('Ingrese un archivo valido de imagen (png, jpg, jpeg, gif)')
 ];
 
 const adminMiddleware = require('../middlewares/users/adminMiddleware.js');
