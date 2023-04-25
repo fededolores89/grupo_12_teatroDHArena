@@ -74,13 +74,20 @@ const apiShowController = {
         })
         
     },
-    image: (req , res) => {
-        db.Shows.findAll()
-        .then(data => {
-           console.log(data.image)
-            res.render("product/imageShow", { shows: data })
+    image: (req, res) => {
+        let queryValue = req.params.id;
+      
+        db.Shows.findAll({
+          where: {
+            image: queryValue
+          }
         })
-    }
+        .then(data => {
+          const images = data.map(show => show.image) // crea un nuevo string con los valores de "image" separados por una coma y un espacio
+          console.log(images);
+          res.render("product/imageShow", { shows: images });
+        });
+      }
 }
 
 

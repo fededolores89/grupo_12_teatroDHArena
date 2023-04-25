@@ -7,6 +7,14 @@
     <title>ImageShow</title>
 </head>
 <body>
-    <div><img src="http://localhost:3005/api/shows/image/"+ <%= shows.image  %> alt=""></div>
+    <% if (shows.length > 0) { %>
+        <% shows.forEach(image => { %>
+            <figure class="Img-Artista">
+                <img src="/img/Img-Index-Artistas/<%= image %>" alt="Foto-Artista"  />
+            </figure>
+        <% }) %>
+    <% } else { %>
+        <p>El artista no existe en la base de datos.</p>
+    <% } %>
 </body>
 </html>
