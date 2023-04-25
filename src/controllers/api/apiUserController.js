@@ -5,7 +5,7 @@ const sequelize = db.sequelize;
 const apiUserController = {
     userList: (req,res) =>{
         let users = db.Users.findAll({
-            attributes: ['id', 'name', 'lastname', 'email', 'detail']
+            attributes: ['id', 'name', 'lastname', 'email', 'detail', 'fullname']
         })
             .then(users =>{
                 let respuesta = {

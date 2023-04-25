@@ -39,6 +39,15 @@ module.exports = (sequelize, dataTypes) => {
                 const id = this.getDataValue('id');
                 return `api/users/${id}`
             }
+        },
+        fullname: {
+            type: dataTypes.VIRTUAL,
+            get() {
+                const name = this.getDataValue('name');
+                const lastname = this.getDataValue('lastname');
+
+                return name + ' ' + lastname;
+            }
         }
     };
     let config = {
