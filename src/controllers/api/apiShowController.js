@@ -4,7 +4,7 @@ const sequelize = db.sequelize;
 const apiShowController = {
     showList: (req,res) =>{
         let shows = db.Shows.findAll({
-            attributes: ["id", "name", "descriptionHeader", "detail"], 
+            attributes: ["id", "name", "hour", "date", "price", "descriptionHeader", "detail"], 
             include: [{association: "Category"}] 
         })
             .then(shows =>{
