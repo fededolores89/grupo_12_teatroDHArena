@@ -1,9 +1,12 @@
+const { fn, col } = require('sequelize');
 const db = require('../../database/models');
 const sequelize = db.sequelize;
 
 const apiUserController = {
     userList: (req,res) =>{
-        let users = db.Users.findAll()
+        let users = db.Users.findAll({
+            attributes: ['id', 'name', 'lastname', 'email', 'detail']
+        })
             .then(users =>{
                 let respuesta = {
                     meta:{
@@ -20,7 +23,9 @@ const apiUserController = {
             })
         },
     detail: (req,res) =>{
-        let user = db.Users.findByPk(req.params.id)
+        let user = db.Users.findByPk(req.params.id, {
+            attributes: { exclude: ['password', 'userType'] }
+        })
             .then(user =>{
                 let respuesta = {
                     meta:{

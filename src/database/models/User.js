@@ -32,8 +32,14 @@ module.exports = (sequelize, dataTypes) => {
         },
         userType: {
             type: dataTypes.INTEGER,
+        },
+        detail: {
+            type: dataTypes.VIRTUAL,
+            get() {
+                const id = this.getDataValue('id');
+                return `api/users/${id}`
+            }
         }
-
     };
     let config = {
         timestamps: false,
