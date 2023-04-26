@@ -16,7 +16,7 @@ h1{
   display: flex;
   flex-direction: column;
   text-align: center;
-  width: 50%;
+  width: 80%;
 }
 
 .form-input input {
@@ -31,6 +31,7 @@ h1{
   flex-direction: column;
   justify-content: center;   
   align-items: center;
+  text-align: center;
 }
 
 .login-form label{
@@ -113,4 +114,16 @@ h1{
 
 .error-container {
   margin-top: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    padding: 2rem;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .form-input {
+    width: 50%;
+  }
 }
