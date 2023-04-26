@@ -37,5 +37,5 @@ function getTotalPrice(shoppingItems) {
     total += subTotal;
   })
 
-  return total;
+  return total.toLocaleString('en');
 }

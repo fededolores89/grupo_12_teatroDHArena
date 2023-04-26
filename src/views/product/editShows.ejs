@@ -10,17 +10,17 @@
         <form class="show-form" action="/shows/<%= show.id %>/edit?_method=PUT" method="POST" enctype="multipart/form-data"  >
           <div class="row product-detail" style="background-color: #16324f ;">
             <div class="col-12 col-md-6">
-              <label for="name" class="form-label">Nombre del show:</label>
+              <label for="name" class="form-label">Nombre del artista:</label>
               <input value="<%= show.name %>" type="text" id="name" name="name" placeholder="Ej: Juan Carlos" class="form-input" required>
               <span class="error-container"></span>
             </div>
             <div class="col-12 col-md-6">
-              <label for="price" class="form-label">Precio del show:</label>
+              <label for="price" class="form-label">Precio:</label>
               <input value="<%= show.price %>" type="text" id="price" name="price" placeholder="Ej: 5000" class="form-input" required>
               <span class="error-container"></span>
             </div>
             <div class="col-12 col-md-6">
-              <label for="hour" class="form-label">Hora del show:</label>
+              <label for="hour" class="form-label">Hora del show</label>
               <select id="hour" name="hour"  class="form-input" required>
                 <option value="<%= show.hour %>" selected><%= show.hour %>  hrs</option>
                 <option value="16:00">16:00 hrs</option>
@@ -57,15 +57,17 @@
                 </select>
               </div>
             <div class="col-12">
-              <label for="description" class="form-label">Descripción Principal:</label>
+              <label for="description" class="form-label">Descripción del evento</label>
               <textarea name="descriptionHeader" id="description" class="form-input" maxlength="255"><%= show.descriptionHeader %></textarea>
             </div>
-            <label for="price" class="form-label">Url de Artistas</label>
-            <input value="<%= show.video %>" type="text" id="video" name="video" placeholder="Ej: youtube.com/watch?" class="form-input">
-            <span class="error-container"></span>
             <div class="col-12">
-              <label for="description" class="form-label">Descripción Video:</label>
+              <label for="description" class="form-label">Descripcion del artista</label>
               <textarea name="descriptionVideo" id="descriptionVideo" class="form-input" maxlength="255"><%= show.descriptionVideo %></textarea>
+            </div>
+            <div class="col-12 col-md-6">
+              <label for="price" class="form-label">Url Youtube</label>
+              <input value="<%= show.video %>" type="text" id="video" name="video" placeholder="Ej: youtube.com/watch?" class="form-input">
+              <span class="error-container"></span>
             </div>
             <div class="col-12 col-md-6">
               <label for="productImage" class="form-label">Imagen del Artista:</label>

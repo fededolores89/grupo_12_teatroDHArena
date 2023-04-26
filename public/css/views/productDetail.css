@@ -323,6 +323,11 @@ footer{
 }
 
 @media screen and (min-width: 769px) {
+
+  iframe {
+    height: 460px;
+  }
+
   .main-carritoDetalle {
     padding: 3rem 5rem;
   }
@@ -389,5 +394,11 @@ footer{
 
   .edit-button {
     margin-right: 1rem;
+  }
+}
+
+@media screen and (min-width: 1023px) {
+  iframe {
+    height: 720px;
   }
 }
