@@ -37,7 +37,7 @@
                   <hr>
                   <section class="compras">
                     <div class="continua-comprando"><a href="/shows"><i class="fas fa-reply-all"></i>  Continua comprando</a></div>
-                    <form action="/carrito/<%= shoppingCartItems[index].id %>?_method=DELETE" method="POST">
+                    <form action="/carrito/<%= shoppingCartItems[index].id %>/eliminar?_method=DELETE" method="POST">
                       <button type="submit" class="boton-borrar"><i class="fas fa-times"></i> Borrar</button>
                     </form>
                   </section>

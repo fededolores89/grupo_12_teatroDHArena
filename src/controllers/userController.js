@@ -19,27 +19,28 @@ const controller = {
   },
 
   processLogin: (req, res) => {
+    let validations = validationResult(req);
+    
     db.Users.findAll()
     .then(users => {
-      let validations = validationResult(req);
-      let authUser = null;
-      let errors = [];
-
+      let authUser;
+      
       if(validations.isEmpty()) {
-      for(let i = 0; i < users.length; i++) {
-        if(users[i].email == req.body.email) {
-          if(bcrypt.compareSync(req.body.password, users[i].password)) {
-            authUser = users[i];
-            break;
+
+        users.forEach(user => {
+          if(user.email == req.body.email) {
+            if(bcrypt.compareSync(req.body.password, user.password)) {
+              authUser = user;
+              req.session.authUser = user;
+            } else {
+              authUser = null
+            }
           }
-        }
-      }
+        });
 
       if(authUser == null) {
         res.render('users/login', { errors: { invalidAuth: { msg: 'Las credenciales son incorrectas' } }, inputs: req.body});
       } else {
-        req.session.authUser = authUser;
-
         //Validar si se selecciona el checkbox de recordar incio de sesion con cookies
         // true
         if(req.body.remember != undefined) {

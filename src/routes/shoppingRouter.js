@@ -6,8 +6,11 @@ const shoppingCartController = require('../controllers/shoppingCartController.js
 const authMiddleware = require('../middlewares/users/authMiddleware.js');
 
 /* Carrito de compras */
-router.get('/', authMiddleware, shoppingCartController.shoppingCart);
+router.get('/', shoppingCartController.shoppingCart);
 
-router.delete('/:id', shoppingCartController.deleteItem);
+// Agregar show al carrito
+router.post('/:id/agregar', shoppingCartController.addCart);
+
+router.delete('/:id/eliminar', shoppingCartController.deleteItem);
 
 module.exports = router;

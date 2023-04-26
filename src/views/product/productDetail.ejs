@@ -112,7 +112,9 @@
                 <label for="evento-precio">Precio</label>
                 <span id="evento-precio">$ <%= show.price %> </span>
               </div>
-             <a class="evento-buy" href="/shows/<%= show.id %>/agregar" class="evento-compra-submit">Agregar al carrito</a> 
+            <form action="/carrito/<%= show.id %>/agregar" method="POST">
+              <button type="submit" class="evento-buy" href="/carrito/<%= show.id %>/agregar" class="evento-compra-submit">Agregar al carrito</button> 
+            </form>
           </div>
         </article>
         <% if (userLogged != undefined && userLogged.userType == 2) { %>

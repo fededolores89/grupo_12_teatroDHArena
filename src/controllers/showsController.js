@@ -2,9 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const { emitWarning } = require("process");
 const { validationResult } = require('express-validator');
-const showsFilePath = path.join(__dirname, "../db/showsDataBase.json");
 const cartFilePath = path.join(__dirname, "../db/shoppingCart.json");
-const categoriesFilePath = path.join(__dirname, "../db/categories.json");
 const shoppingCartItems = JSON.parse(fs.readFileSync(cartFilePath, "utf-8"));
 
 const db = require('../database/models');
@@ -119,25 +117,6 @@ const controllers = {
 
     }
 
-  },
-  addCart: async(req, res) => {
-    const id =  parseInt(req.params.id);
-
-    let show = await db.Shows.findByPk(id)
-      .then(data =>{
-        return data
-      })
-
-    if (show.length > 0){
-      console.log(show);
-    }  
-    /* let itemFiltered = shoppingCartItems.find(item => item.id === id);
-
-      if(itemFiltered === undefined) {
-        shoppingCartItems.push(showFiltered);
-        fs.writeFileSync(cartFilePath, JSON.stringify(shoppingCartItems, null, " "));
-        res.redirect("/carrito");
-  } */
   },
   /* --------------Borra el Show de la DataBase ----------------- */
   destroy: (req, res) => {

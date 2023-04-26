@@ -49,9 +49,6 @@ router.get('/:id/edit', mainController.edit)
 
 router.put('/:id/edit', upload.single("editedArtistImage") ,mainController.processEdit)
 
-// Agregar show al carrito
-router.get('/:id/agregar', authMiddleware, mainController.addCart);
-
 /* Borrar un Show */
 router.delete('/:id', mainController.destroy);
 

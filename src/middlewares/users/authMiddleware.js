@@ -1,7 +1,7 @@
 const authMiddleware = (req, res, next) => {
 
   if(req.session.authUser == undefined) {
-    res.redirect('/');
+    res.send('Debe iniciar sesion');
   } else {
     next();
   }

@@ -1,1 +1,16 @@
-[]
+[
+ {
+  "detail": "http://localhost:3005/api/shows/2",
+  "imageUrl": "http://localhost:3005/img/Img-Index-Artistas/artistImage-1681264681380.jpg",
+  "id": 2,
+  "name": "Joaquin Sabina",
+  "price": 20000,
+  "hour": "16:00",
+  "date": "2023-04-11",
+  "id_category": 1,
+  "descriptionHeader": "Joaquín Sabina vuelve a la carretera para presentar una nueva gira con la que recorrerá Latinoamérica, España y Centroamérica. “Contra todo pronóstico” arranca en febrero en Costa Rica y durante el mes de marzo ofrecerá conciertos en Colombia, Perú, Chile",
+  "descriptionVideo": "Joaquín Ramón Martínez Sabina (Úbeda, 12 de febrero de 1949), conocido como Joaquín Sabina, es un cantautor, poeta y pintor español. Ha publicado diecisiete discos de estudio y siete en directo, y ha colaborado con distintos artistas cantando dúos.",
+  "video": "https://www.youtube.com/embed/cmmJ1uiRiUM",
+  "image": "artistImage-1681264681380.jpg"
+ }
+]
