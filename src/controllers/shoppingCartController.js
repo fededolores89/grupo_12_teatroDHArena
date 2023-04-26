@@ -30,10 +30,28 @@ const controller = {
     .then(data => data);
 
     if(show != undefined) {
-      let addOrder = await db.Orders.create({
-        show_id: req.body.show_id,
-        user_id: req.body.user_id
-      }).then(result => res.redirect('/carrito'));
+
+      //Buscar si ya se agrego antes el item para no repetir
+      let prevOrders = await db.Orders.findOne({
+        where: {
+          show_id: req.body.show_id,
+          user_id: req.body.user_id
+        }
+      }).then(result => result);
+
+      //Si es null, entonces el producto no se ha registrado antes y debe crearse
+      if(prevOrders == null) {
+        db.Orders.create({
+          show_id: req.body.show_id,
+          user_id: req.body.user_id
+        })
+        .then(result => res.redirect('/carrito'))
+        .catch(error => console.log(error));
+      } else {
+        //Si ya existe, entonces solo redireccionar al carrito
+        res.redirect('/carrito');
+      }
+
     } 
   },
 
