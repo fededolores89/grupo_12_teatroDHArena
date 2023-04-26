@@ -48,7 +48,7 @@
                 <select name="categoryId" id="categoryId" class="form-input" required>
                   <option value="">Elegí</option>
                   <% categories.forEach(category => { %>
-                    <% if (category.id == show.categoryId) { %>
+                    <% if (category.id == show.id_category) { %>
                       <option value="<%= category.id %>" selected><%= category.name %></option>
                     <% } else { %>
                       <option value="<%= category.id %>"><%= category.name %></option>

@@ -37,6 +37,22 @@ module.exports = (sequelize, dataTypes) => {
         },
         image:{
             type: dataTypes.STRING
+        },
+        detail: {
+            type: dataTypes.VIRTUAL,
+            get() {
+                const id = this.getDataValue('id');
+                return `api/shows/${id}`;
+            }
+        },
+        imageUrl: {
+            type: dataTypes.VIRTUAL,
+            get() {
+                const imageName = this.getDataValue('image');
+                const domain = 'http://localhost:3005/';
+                const imgFolder = 'img/Img-Index-Artistas/'
+                return `${domain}${imgFolder}${imageName}`;
+            }
         }
     };
     let config = {

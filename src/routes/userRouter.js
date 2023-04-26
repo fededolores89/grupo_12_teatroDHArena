@@ -15,8 +15,7 @@ const validations = [
   body('documentNum').notEmpty().withMessage('Ingrese su número de documento').bail().isLength({ min: 8 }).withMessage('Ingrese un número de documento de al menos 8 carácteres'),
   body('number').notEmpty().withMessage('Ingrese su teléfono').bail().isNumeric().withMessage('Ingrese solo valores numéricos en el teléfono'),
   body('email').notEmpty().withMessage('Ingrese su email').bail().isEmail().withMessage('Ingrese un email válido'),
-  body('password').notEmpty().withMessage('Ingrese su contraseña').bail().matches(/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/).withMessage('Su contraseña debe tener al menos una letra mayúscula, una minúscula, un número y al menos 8 carácteres. No debe incluir un caracter especial.'),
-  body('image').isIn([ "PNG", "JPEG", "GIF" ]).withMessage('Ingrese un archivo valido de imagen (png, jpeg, gif)')
+  body('password').notEmpty().withMessage('Ingrese su contraseña').bail().matches(/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/).withMessage('Su contraseña debe tener al menos una letra mayúscula, una minúscula, un número y al menos 8 carácteres. No debe incluir un caracter especial.')
 ];
 
 const loginValidations = [

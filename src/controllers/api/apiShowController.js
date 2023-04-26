@@ -4,7 +4,7 @@ const sequelize = db.sequelize;
 const apiShowController = {
     showList: (req,res) =>{
         let shows = db.Shows.findAll({
-            attributes: ["id", "name", "descriptionHeader"], 
+            attributes: ["id", "name", "hour", "date", "price", "descriptionHeader", "detail"], 
             include: [{association: "Category"}] 
         })
             .then(shows =>{
@@ -73,7 +73,21 @@ const apiShowController = {
             res.json(respuesta)
         })
         
-    }
+    },
+    image: (req, res) => {
+        let queryValue = req.params.id;
+      
+        db.Shows.findAll({
+          where: {
+            image: queryValue
+          }
+        })
+        .then(data => {
+          const images = data.map(show => show.image) // crea un nuevo string con los valores de "image" separados por una coma y un espacio
+          console.log(images);
+          res.render("product/imageShow", { shows: images });
+        });
+      }
 }
 
 
