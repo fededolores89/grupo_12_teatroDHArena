@@ -60,6 +60,10 @@ h6 {
   text-align: center;
 }
 
+a {
+  color: var(--azul-principal);
+}
+
 a:hover {
   color: var(--magenta);
   text-decoration: none;

@@ -59,6 +59,7 @@
     width: 100%;
     margin: 1rem 0;
     font-size: 2rem;
+    font-weight: bold;
   }
   
   .eventos-home {
@@ -111,29 +112,39 @@
    /* --------------------- Aca la parte de club Arena ------------------ */
   .club-arena {
     background-image: url('/img/Img-Index-Fondos/clubbg.jpg');
-  
     background-size: cover;
-    padding: 30%;
     color: white;
     font-family: sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .control-clubarena {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
   }
 
   .control-clubarena p {
-    font-size: 2rem;
+    font-size: 1.4rem;
   }
 
   .control-clubarena a {
     padding: 1rem;
+    width: 150px;
+    display: block;
   }
 
 
   .fa-star {
     color: goldenrod;
     font-size: 3rem;
+    margin-bottom: 1rem;
 }
 
 
@@ -145,6 +156,7 @@
     text-align: center;
     color: var(--magenta);
     font-size: 2rem;
+    font-weight: bold;
 }
 
 .Sponsors {
@@ -187,6 +199,11 @@
     .SubTitulo-2 {
       font-size: 1rem;
     }
+
+    .main-iconos {
+      font-size: 4rem;
+      height: fit-content;
+    }
   }
 
   @media (max-width: 700px) {
@@ -200,4 +217,16 @@
       display: flex;
       justify-content: space-between;
     }
+    .control-clubarena p {
+      font-size: 2rem;
+  } 
+}
+
+@media (max-width: 374px) {
+  .parrafo-img {
+    padding: 1.5rem;
   }
+  .Titulo-1 {
+    font-size: 2rem;
+  }
+}

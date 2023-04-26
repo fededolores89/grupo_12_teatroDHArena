@@ -103,6 +103,7 @@ footer{
 
 .evento-titulo {
   text-align: left;
+  font-weight: bold;
 }
 
 .evento-info-detalle {
@@ -293,6 +294,10 @@ footer{
   cursor: pointer;
 }
 
+.edit-button:hover {
+  color: white;
+}
+
 .cart_info {
   display: flex;
   background-color: var(--verde-neon);
@@ -350,6 +355,7 @@ footer{
 
   .evento-artista h2 {
     font-size: 2.5rem;
+    font-weight: bold;
   }
 
   .evento-compra-contenedor {

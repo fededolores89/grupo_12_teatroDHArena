@@ -21,6 +21,14 @@ h2{
     flex-direction: column;
 }
 
+.carrito-main h2 {
+    font-weight: bold;
+}
+
+.title {
+    margin-top: 2rem;
+}
+
 .carrito-item {
     color: white;
     display: flex;
@@ -36,7 +44,7 @@ h2{
 
 .carrito-de-compras{
     height: inherit;
-    padding: 3rem;
+    padding: 2rem;
 }
   
 .compras{
