@@ -1,22 +1,28 @@
 /* ----------------Main  */
 .hero {
     background-image: url('/img/Img-Index-Fondos/hero.jpg');
+    background-attachment: fixed;
     background-size: cover;
-    padding: 30%;
     display: flex;
     justify-content: center;
+    height: 100vh;
+    align-items: center;
   }
   
   .Titulo-1 {
     font-family: sans-serif;
     color: white;
     font-weight: bold;
-    font-size: 3rem;
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    margin-top: 0;
   }
   .SubTitulo-2 {
     color: white;
     font-family: sans-serif;
     font-weight: 500;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
   }
   /* --------------------Aca la parte de los Shows ---------------------------*/
   main a {
@@ -45,7 +51,8 @@
     flex-wrap: wrap;
     justify-content: center;
     background-color: #16324f;
-    text-align: center
+    text-align: center;
+    padding: 2rem 0;
   }
   
   .titulo-shows {
@@ -115,6 +122,14 @@
     text-align: center;
   }
 
+  .control-clubarena p {
+    font-size: 2rem;
+  }
+
+  .control-clubarena a {
+    padding: 1rem;
+  }
+
 
   .fa-star {
     color: goldenrod;
@@ -126,9 +141,10 @@
 
   /* --------------- Aca los iconos ----------------------- */
 .Sponsors h2 {
-    margin-bottom: 1rem;
+    margin-top: 3rem;
     text-align: center;
     color: var(--magenta);
+    font-size: 2rem;
 }
 
 .Sponsors {
@@ -140,11 +156,13 @@
 .main-iconos{
     display: flex;
     flex-wrap: wrap;
-    font-size: 7rem;
+    font-size: 5rem;
     gap: 4rem;
     justify-content: center;
     padding: 1rem;
-
+    height: 500px;
+    align-items: center;
+    color: white;
 }
 
   /* ----------------- Media queries para table ---------------*/
@@ -158,6 +176,22 @@
   @media (min-width: 760px) {
     .eventos-home {
       width: 30%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .Titulo-1 {
+      font-size: 3rem;
+    }
+
+    .SubTitulo-2 {
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .parrafo-img {
+      padding: 0 2rem;
     }
   }
 
