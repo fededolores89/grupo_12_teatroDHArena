@@ -41,8 +41,9 @@ module.exports = (sequelize, dataTypes) => {
         detail: {
             type: dataTypes.VIRTUAL,
             get() {
+                const domain = 'http://localhost:3005/';
                 const id = this.getDataValue('id');
-                return `api/shows/${id}`;
+                return `${domain}api/shows/${id}`;
             }
         },
         imageUrl: {
