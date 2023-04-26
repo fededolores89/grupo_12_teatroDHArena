@@ -13,7 +13,7 @@ const apiShowController = {
                 let respuesta = {
                     meta:{
                         status:200,   
-                        url: "api/shows"
+                        url: "http://localhost:3005/api/shows/"
                     },
                     data: respuestaShow
                 }      

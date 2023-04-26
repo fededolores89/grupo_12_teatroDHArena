@@ -15,7 +15,7 @@ inputs.forEach(input => {
         message: 'Ingrese un correo electrónico válido'
       },
       'patternMismatch': {
-        message: 'Ingrese un contraseña válida'
+        message: 'Su contraseña debe tener al menos una letra mayúscula, una minúscula, un número y al menos 8 carácteres. No debe incluir un caracter especial.'
       }
     }
 

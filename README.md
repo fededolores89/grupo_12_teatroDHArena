@@ -8,11 +8,9 @@ Nuestro sitio, brindara un servicio de ventas de entradas para diferentes shows.
 
 - Mi nombre es Martin, soy de Buenos Aires, Argentina y tengo 29 años. Actualmente soy gastronómico y quiero hacer un cambio de rumbo de mi vida por eso es que estoy haciendo este curso
 
-- Soy Facundo y soy de Rosario, Argentina. Tengo 26 años, estudio ingenieria industrial y trabajo medio tiempo en atencíon al público.
+- Soy Facundo y soy de Rosario, Argentina. Tengo 26 años, estudio ingenieria industrial y trabajo medio tiempo en atencíon al público. 
 
 - Soy Carlos y soy de México. Tengo 25 años y soy diseñador gráfico. Actualmente en formación para ser un desarrollador web FullStack. Me encanta la programación y el diseño.
-
-- Mi nombre es Federico Dolores. Soy de Santiago del Estero, Argentina y actualmente vivo en Capital Federal. Tengo 33 años, soy Ingeniero Electronico y trabajo como supervisor en una central electrica. Mi objetivo es capacitarme y desempeñarme laboralmente en el rubro de IT.
 
 ====================================================================================================================
 
