@@ -11,6 +11,9 @@
 /*Font Awesome*/
 @import url(../assets/fontawesome/css/all.css);
 
+/* Bootstrap 4 */
+@import url(../assets/bootstrap/bootstrap.min.css);
+
 /* Variables globales de estilo css */
 :root {
   --nunito: 'Nunito Sans', sans-serif;
@@ -55,6 +58,11 @@ h6 {
   padding: 1rem;
   display: block;
   text-align: center;
+}
+
+a:hover {
+  color: var(--magenta);
+  text-decoration: none;
 }
 
 

@@ -84,7 +84,7 @@ const controller = {
         number: req.body.number,
         email: req.body.email,
         password: bcrypt.hashSync(req.body.password, 10),
-        userType: 2,
+        userType: req.body.userType,
         image: req.file != undefined ? req.file.filename : "default-profile.jpg"
       };
   

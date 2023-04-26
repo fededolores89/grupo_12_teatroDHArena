@@ -5,6 +5,19 @@
 
     <%- include('../partials/header') %>
     <main class="login-main">
+      <% if (locals.unAunthenticated) { %>
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          <strong>Oops!</strong> Debes iniciar sesion o crear un usuario antes de usar el carrito de compras :)
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <% } %>
+      <div class="error-message">
+        <% if (locals.errors && errors.invalidAuth) { %>
+          <span class="error"><i class="fa-solid fa-circle-info"></i> <%= errors.invalidAuth.msg %> </span>
+        <% } %>
+      </div>
       <form action="/usuarios/login" method="POST" class="login-form">
         <h2 class="login-titulo">Ingresar a mi cuenta</h2>
         <div class="form-input">
@@ -40,11 +53,6 @@
           <input type="checkbox" class="remember-me" name="remember" id="remember-me">
         </div>
         <button type="submit">Ingresar</button>
-        <div class="error-message">
-          <% if (locals.errors && errors.invalidAuth) { %>
-            <span class="error"><i class="fa-solid fa-circle-info"></i> <%= errors.invalidAuth.msg %> </span>
-          <% } %>
-        </div>
       </form>
       <div class="login-info">
         <p class="controles-login">¿Olvidaste tu contraseña?</p>
@@ -58,5 +66,7 @@
     <!-- Agregando archivo nav.js para el menu -->
     <script src="../js/nav/nav.js"></script>
     <script src="../js/form/validationsLogin.js"></script>
+    <script src="../js/assets/jquery/jquery.min.js"></script>
+    <script src="../js/assets/bootstrap/bootstrap.min.js"></script>
   </body>
 </html>

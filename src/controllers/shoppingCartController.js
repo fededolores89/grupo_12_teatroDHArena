@@ -6,7 +6,21 @@ const db = require('../database/models');
 
 const controller = {
   shoppingCart: (req, res) => {
-    res.render('product/productCart', {shoppingCartItems: shoppingCartItems});
+    let user = req.session.authUser;
+
+    db.Orders.findAll({
+      where: {
+        user_id: user.id
+      },
+      include: [
+        {association: 'Show'}
+      ]
+    })
+    .then(result => {
+      //res.send(result);
+      res.render('product/productCart', {shoppingCartItems: result});
+    })
+
   },
 
   addCart: async(req, res) => {
@@ -16,32 +30,29 @@ const controller = {
     .then(data => data);
 
     if(show != undefined) {
-
-      let itemWasCreatedBefore = shoppingCartItems.find(element => element.id == show.id);
-
-      if(itemWasCreatedBefore == undefined) {
-        shoppingCartItems.push(show);
-        fs.writeFileSync(cartFilePath, JSON.stringify(shoppingCartItems, null, " "));
-
-        setTimeout(() => {
-          res.redirect("/carrito");
-        }, 5000)
-      } else {
-        res.redirect('/carrito');
-      };
-
+      let addOrder = await db.Orders.create({
+        show_id: req.body.show_id,
+        user_id: req.body.user_id
+      }).then(result => res.redirect('/carrito'));
     } 
   },
 
   deleteItem: (req, res) => {
 
-    const id = parseInt(req.params.id);
-    let showIndex = shoppingCartItems.findIndex(show => show.id === id);
+    let userId = req.body.user_id;
+    let showId = req.body.show_id;
 
-    shoppingCartItems.splice(showIndex, 1);
-    fs.writeFileSync(cartFilePath, JSON.stringify(shoppingCartItems, null, " "));
+    db.Orders.destroy({
+      where: {
+        user_id: userId,
+        show_id: showId
+      }
+    })
+    .then(result => {
+      res.redirect('/carrito');
+    })
+    .catch(error => console.log(error));
 
-    res.redirect('/carrito');
   }
 };
 

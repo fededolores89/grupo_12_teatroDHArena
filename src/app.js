@@ -17,6 +17,7 @@ const apiRouter = require("./routes/api/apiRouter.js")
 
 const authUserVariableMiddleware = require('./middlewares/users/authUserVariableMiddleware.js');
 const cookieAuthMiddleware = require('./middlewares/users/cookieAuthMiddleware.js');
+const ordersMiddleware = require('./middlewares/cart/totalOrdersMiddleware.js');
 
 app.set("view engine", "ejs");
 app.set("views", "./src/views");
@@ -31,7 +32,7 @@ app.use(methodOverride('_method')); // Para poder usar los métodos PUT y DELETE
 app.use(session({secret: 'dhsession'}));
 app.use(cookieAuthMiddleware);
 app.use(authUserVariableMiddleware);
-
+app.use(ordersMiddleware);
 
 
 app.listen(PORT, console.log("Servidor en http://localhost:" + PORT));

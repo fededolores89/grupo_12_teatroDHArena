@@ -23,9 +23,14 @@
               <i class="fa-solid fa-bars"></i>
             </div>
             <div class="nav-mobile-carrito">
-              <a href="/carrito"
-                ><i class="fa-solid fa-cart-shopping"></i
-              ></a>
+              <a class="cart_link" href="/carrito">
+                <% if (userLogged != undefined) { %>
+                  <div class="cart_items__container">
+                    <span class="cart_items__value"><%= (locals.orders ? locals.orders : '') %></span>
+                  </div>
+                <% } %>
+                <i class="fa-solid fa-cart-shopping"></i>
+              </a>
             </div>
           </div>
             <ul class="nav-desktop menu-derecha">
@@ -43,8 +48,7 @@
                                        
               </li>
               <li>
-                <i class="fa-solid fa-circle-user"></i>
-                <a href="/usuarios/login">Iniciar sesion</a>
+                <a class="login-btn" href="/usuarios/login"><i class="fa-solid fa-circle-user"></i> Iniciar sesion</a>
               </li>
               <li>
                 <a class="desktop-register-button" href="/usuarios/register"

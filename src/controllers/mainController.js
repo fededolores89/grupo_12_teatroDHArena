@@ -17,8 +17,8 @@ const controller = {
       
      let shows = db.Shows.findAll({
        include: [{association: "Category"} ]
-  })
- 
+     })
+
      Promise.all([categories,shows])
           .then (function([resultadoCategories, resultadoShows]){
               res.render("main/index", {categories: resultadoCategories, shows: resultadoShows})

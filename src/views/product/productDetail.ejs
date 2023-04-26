@@ -112,9 +112,15 @@
                 <label for="evento-precio">Precio</label>
                 <span id="evento-precio">$ <%= show.price %> </span>
               </div>
-            <form action="/carrito/<%= show.id %>/agregar" method="POST">
-              <button type="submit" class="evento-buy" href="/carrito/<%= show.id %>/agregar" class="evento-compra-submit">Agregar al carrito</button> 
-            </form>
+              <% if (userLogged != undefined) { %>
+                <form action="/carrito/<%= show.id %>/agregar" method="POST">
+                  <input type="hidden" name="user_id" value="<%= userLogged.id %>">
+                  <input type="hidden" name="show_id" value="<%= show.id %>">
+                  <button type="submit" class="evento-buy" href="/carrito/<%= show.id %>/agregar" class="evento-compra-submit">Agregar al carrito</button> 
+                </form>
+              <% } else { %>
+                <p>Inicia sesion para agregar al carrito de compras</p>
+              <% } %>
           </div>
         </article>
         <% if (userLogged != undefined && userLogged.userType == 2) { %>
