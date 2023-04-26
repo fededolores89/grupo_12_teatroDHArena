@@ -142,6 +142,11 @@ nav {
   
 }
 
+.search-container {
+  width: 250px;
+  display: block;
+}
+
 .search-button {
   background: none;
   line-height: 0.8em;
@@ -157,14 +162,22 @@ nav {
 .bottom-search input{
   border: none;
   border-radius: 12px;
-  padding: 6px;
+  padding: 14px;
+  height: 2rem;
 }
 
-.icon-search input{
-  
+#search-icon {
+  position: absolute;
+  right: -0.5rem;
+  top: 0.25rem;
 }
 
 
+@media screen and (max-width: 992px) {
+  .search-container {
+    display: none;
+  }
+}
 
 /* Tamanio despues de tablet */
 @media screen and (min-width: 769px) {
@@ -178,7 +191,7 @@ nav {
   }
 
   .nav-titulo {
-    margin-right: 6rem;
+    margin-right: 3rem;
   }
 
   .nav-desktop {
@@ -208,13 +221,7 @@ nav {
   .nav-desktop a:active {
     opacity: 1;
   }
-
-  .menu-derecha li:first-child {
-    display: flex;
-    align-items: center;
-    margin-right: 2.5rem;
-  }
-
+  
   .menu-derecha li:first-child i {
     font-size: 1.5rem;
     margin-right: 1rem;
