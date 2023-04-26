@@ -39,3 +39,10 @@ RETRO - SPRINT 7
 3. Continuar haciendo - Ayudarnos entre nosotros y resolver las complicaciones que tengamos entre todos.
 4. Hacer menos - Dejar pasar tanto tiempo para comenzar a trabajar en el sprint y poder realizar la entrega a tiempo
 5. Dejar de hacer - 
+
+RETRO - SPRINT 7
+1. Comenzar a hacer - Revisar los requisitos del sprint 5 y llevarlos a cabo.
+2. Hacer más - Mejorar la distribución del trabajo entre los miembros del equipo.
+3. Continuar haciendo - Ayudarnos entre nosotros y resolver las complicaciones que tengamos entre todos.
+4. Hacer menos - 
+5. Dejar de hacer - 
