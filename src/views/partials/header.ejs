@@ -10,6 +10,7 @@
           <ul class="nav-desktop menu-izquierda">
             <li><a href="/shows">Eventos</a></li>
             <li><a href="#">Club DH</a></li>
+            <li><a href="#contacto">Contacto</a></li>
             <li><a href="/carrito">Carrito</a></li>
             <% if (userLogged != undefined && userLogged.userType == 2) { %>  
               <li><a href="/shows/create">Crear Show</a></li>
@@ -70,7 +71,7 @@
       <ul class="nav-mobile-menu">
         <li><a href="/shows/">Eventos</a></li>
         <li><a href="#">Club DHArena</a></li>
-        <li><a href="#">Contacto</a></li>
+        <li><a href="#contacto">Contacto</a></li>
         <% if (userLogged != undefined && userLogged.userType == 2) { %>  
           <li><a href="/shows/create">Crear Show</a></li>
         <% } %>
