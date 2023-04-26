@@ -51,7 +51,7 @@ const apiShowController = {
                 let respuesta = {
                     meta:{
                         status:200,
-                        url: "api/shows" + req.params.id
+                        url: "http://localhost:3005/api/shows/" + req.params.id
                     },
                     data: show
                 }       
