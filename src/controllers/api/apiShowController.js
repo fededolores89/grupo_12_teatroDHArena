@@ -45,6 +45,7 @@ const apiShowController = {
         },      
     detail: (req,res) =>{
         let show = db.Shows.findByPk(req.params.id, {
+            attributes: { exclude: ['descriptionHeader', 'descriptionVideo' , 'video', 'id_category' , 'detail'] },
             include: [{association: "Category"}] 
         })
             .then(show =>{

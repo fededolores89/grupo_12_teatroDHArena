@@ -24,7 +24,7 @@ const apiUserController = {
         },
     detail: (req,res) =>{
         let user = db.Users.findByPk(req.params.id, {
-            attributes: { exclude: ['password', 'userType'] }
+            attributes: { exclude: ['password', 'userType', 'detail'] }
         })
             .then(user =>{
                 let respuesta = {
