@@ -119,7 +119,9 @@
                   <button type="submit" class="evento-buy" href="/carrito/<%= show.id %>/agregar" class="evento-compra-submit">Agregar al carrito</button> 
                 </form>
               <% } else { %>
-                <p>Inicia sesion para agregar al carrito de compras</p>
+                <div class="cart_info">
+                  <i class="fa-solid fa-circle-info"></i> 
+                  <p>Debes <a class="createAccount_link__info" href="/usuarios/login">iniciar sesion</a> o <a href="/usuarios/register">crear una cuenta</a>  para comprar tus tickets de este evento :)</p>
               <% } %>
           </div>
         </article>

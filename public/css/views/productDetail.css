@@ -293,6 +293,30 @@ footer{
   cursor: pointer;
 }
 
+.cart_info {
+  display: flex;
+  background-color: var(--verde-neon);
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: 12px;
+  color: var(--verde-principal);
+  font-weight: bold;
+}
+
+.cart_info i {
+  width: auto !important;
+  margin-right: 0.9rem;
+  font-size: 1.5rem;
+}
+
+.cart_info p {
+  margin: 0;
+}
+
+.createAccount_link__info {
+  color: var(--magenta);
+}
+
 @media screen and (min-width: 769px) {
   .main-carritoDetalle {
     padding: 3rem 5rem;
