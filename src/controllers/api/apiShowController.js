@@ -13,7 +13,7 @@ const apiShowController = {
                 let respuesta = {
                     meta:{
                         status:200,   
-                        url: "api/shows"
+                        url: "http://localhost:3005/api/shows/"
                     },
                     data: respuestaShow
                 }      
@@ -45,13 +45,14 @@ const apiShowController = {
         },      
     detail: (req,res) =>{
         let show = db.Shows.findByPk(req.params.id, {
+            attributes: { exclude: ['descriptionHeader', 'descriptionVideo' , 'video', 'id_category' , 'detail'] },
             include: [{association: "Category"}] 
         })
             .then(show =>{
                 let respuesta = {
                     meta:{
                         status:200,
-                        url: "api/shows" + req.params.id
+                        url: "http://localhost:3005/api/shows/" + req.params.id
                     },
                     data: show
                 }       

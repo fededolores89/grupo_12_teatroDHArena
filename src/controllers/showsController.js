@@ -120,28 +120,25 @@ const controllers = {
     }
 
   },
-
-  addCart: (req, res) => {
+  addCart: async(req, res) => {
     const id =  parseInt(req.params.id);
 
-    let showFiltered = shows.find(show => show.id === id);
+    let show = await db.Shows.findByPk(id)
+      .then(data =>{
+        return data
+      })
 
-    if(showFiltered === undefined) {
-      res.send('No fue posible agregar el evento al carrito de compras');
-    } else {
-
-      let itemFiltered = shoppingCartItems.find(item => item.id === id);
+    if (show.length > 0){
+      console.log(show);
+    }  
+    /* let itemFiltered = shoppingCartItems.find(item => item.id === id);
 
       if(itemFiltered === undefined) {
         shoppingCartItems.push(showFiltered);
         fs.writeFileSync(cartFilePath, JSON.stringify(shoppingCartItems, null, " "));
         res.redirect("/carrito");
-      } else {
-        res.redirect("/carrito");
-      }
-    }
+  } */
   },
-
   /* --------------Borra el Show de la DataBase ----------------- */
   destroy: (req, res) => {
     // Do the magic

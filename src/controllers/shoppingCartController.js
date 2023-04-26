@@ -6,8 +6,8 @@ const shoppingCartItems = JSON.parse(fs.readFileSync(cartFilePath, "utf-8"));
 const controller = {
   shoppingCart: (req, res) => {
     const shoppingCartItems = JSON.parse(fs.readFileSync(cartFilePath, "utf-8"));
-
-    res.render('product/productCart', {shoppingCartItems: shoppingCartItems});
+    console.log(shoppingCartItems);
+    /* res.render('product/productCart', {shoppingCartItems: shoppingCartItems}) */;
   },
 
   deleteItem: (req, res) => {
