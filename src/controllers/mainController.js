@@ -16,7 +16,10 @@ const controller = {
      let categories =  db.Category.findAll()
       
      let shows = db.Shows.findAll({
-       include: [{association: "Category"} ]
+       include: [{association: "Category"} ],
+       order: [
+        ['date', 'DESC']
+      ]
      })
 
      Promise.all([categories,shows])

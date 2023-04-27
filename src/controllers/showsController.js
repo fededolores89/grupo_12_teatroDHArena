@@ -12,7 +12,10 @@ const controllers = {
   /* --------------Muestra Todos los Shows----------------- */
   index: (req, res) => {
     db.Shows.findAll({
-      include: [{association: "Category"} ]
+      include: [{association: "Category"} ],
+      order: [
+        ['date', 'DESC']
+      ]
  })
     .then(function(shows){
       
